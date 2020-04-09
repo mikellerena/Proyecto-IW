@@ -5,6 +5,7 @@ from .models import Equipo ,Empleado, Proceso
 
 # Create your views here.
 
+"""Vista para el formulario de creacion de equipo"""
 class CreateEquipoView(View):
     def get(self, request, *args, **kwargs):
         form = EquipoForm()
