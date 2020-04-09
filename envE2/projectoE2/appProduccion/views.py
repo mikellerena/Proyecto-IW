@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import View
+from django.views.generic import DetailView, ListView
 from .forms import EquipoForm, EmpleadoForm, ProcesoForm
 from .models import Equipo ,Empleado, Proceso
 
@@ -22,3 +23,14 @@ class CreateEquipoView(View):
             return redirect('equipos')
 
         return render(request, 'create_equipo_form.html', {'form': form})
+
+"""Vista para ver el listado de equipos"""
+class EquiposListView(ListView):
+    model = Equipo
+    template_name = 'equipos.html'
+    queryset = Equipo.objects.order_by('id')
+
+    def get_context_data(self, **kwargs):
+        context = super(EquiposListView, self).get_context_data(**kwargs)
+        context['titulo_pagin'] = 'Equipos existentes'
+        return context

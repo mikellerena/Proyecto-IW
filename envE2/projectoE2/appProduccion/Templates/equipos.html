@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<ul>
+    {% for eq in equipo_list %}
+    <li>
+        {{ eq.id }}: {{ eq.marca }}
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
