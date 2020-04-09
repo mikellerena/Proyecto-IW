@@ -11,7 +11,7 @@ class CreateEquipoView(View):
         form = EquipoForm()
         context = {
             'form': form,
-            'titulo_pagina': 'Crear Empleado'
+            'titulo_pagina': 'Apartado para la creación de empleados'
         }
         return render(request, 'create_equipo_form.html', context)
 

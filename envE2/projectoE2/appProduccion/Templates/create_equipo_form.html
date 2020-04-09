@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
+<<<<<<< HEAD
 
     <form action="{% url 'equipo_form' %}" method="post">
         {% csrf_token %}
@@ -8,4 +9,9 @@
         <input type="submit" value="Nuevo Equipo">
     </form>
 
+=======
+<fieldset>
+    <legend>Crear equipo</legend>
+</fieldset>
+>>>>>>> master
 {% endblock %}
