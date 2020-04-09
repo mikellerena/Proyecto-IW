@@ -6,11 +6,11 @@ class Equipo(models.Model):
     modelo = models.CharField(max_length=100)
     marca = models.CharField(max_length=100)
     categoria = models.CharField(max_length=100)
-    f_adquisicion = models.DateField()
-    f_intalacion = models.DateField()
+    fecha_adquisicion = models.DateField()
+    fecha_instalacion = models.DateField()
 
     def __str__(self):
-        return f"ID: {self.id}, Modelo: {self.modelo}, Marca: {self.marca}, Categoria: {self.categoria}, F. Adquisicion: {self.f_adquisicion}, F. Instalacion: {self.f_intalacion}"
+        return f"ID: {self.id}, Modelo: {self.modelo}, Marca: {self.marca}, Categoria: {self.categoria}, F. Adquisicion: {self.fecha_adquisicion}, F. Instalacion: {self.fecha_instalacion}"
 
 class Empleado(models.Model):
     """Para introducir DNIs extranjeros"""
