@@ -5,7 +5,11 @@
 <ul>
     {% for eq in equipo_list %}
     <li>
-        {{ eq.id }}: {{ eq.marca }}
+        Equipo {{ eq.id }}
+        <ul>
+            <li>Marca: {{ eq.marca }}</li>
+            <li>Modelo: {{ eq.modelo }}</li>
+        </ul>
     </li>
     {% endfor %}
 </ul>
