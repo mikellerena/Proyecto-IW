@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<ul>
+    {% for em in empleado_list %}
+    <li>
+        {{ em.id }}: {{ em.marca }}
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

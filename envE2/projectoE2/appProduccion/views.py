@@ -45,8 +45,6 @@ class EquiposDetailView(DetailView):
         context['titulo_pagina'] = 'Detalles de los equipos'
         return context
 
-<<<<<<< HEAD
-=======
 """Vista para el formulario de creacion de empleado"""
 class CreateEmpleadoView(View):
     def get(self, request, *args, **kwargs):
@@ -86,4 +84,3 @@ class EmpleadosDetailView(DetailView):
         context['titulo_pagina'] = 'Detalles de los empleados'
         return context
 
->>>>>>> master
