@@ -70,7 +70,7 @@ class EmpleadosListView(ListView):
     queryset = Empleado.objects.order_by('id')
 
     def get_context_data(self, **kwargs):
-        context = super(Empleado, self).get_context_data(**kwargs)
+        context = super(EmpleadosListView, self).get_context_data(**kwargs)
         context['titulo_pagin'] = 'Empleados existentes'
         return context
 
@@ -108,7 +108,7 @@ class ProcesosListView(ListView):
     queryset = Proceso.objects.order_by('id')
 
     def get_context_data(self, **kwargs):
-        context = super(Proceso, self).get_context_data(**kwargs)
+        context = super(ProcesosListView, self).get_context_data(**kwargs)
         context['titulo_pagin'] = 'Procesos existentes'
         return context
 

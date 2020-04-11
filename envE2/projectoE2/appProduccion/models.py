@@ -26,7 +26,7 @@ class Empleado(models.Model):
     fecha_nacimiento = models.DateField()
 
     def __str__(self):
-        return f"ID: {self.id}, DNI: {self.dni}, Nombre: {self.nombre}, Apellidos: {self.apellidos}, Email: {self.email}, Telefono: {self.telefono}, Direccion: {self.direccion}, F. Nacimiento: {self.fecha_nacimiento}"
+        return f"DNI: {self.dni}, Nombre: {self.nombre}, Apellidos: {self.apellidos}, Email: {self.email}, Telefono: {self.telefono}, Direccion: {self.direccion}, F. Nacimiento: {self.fecha_nacimiento}"
 
 class Proceso(models.Model):
     """ codigo_orden_fabricacion numeros y letras"""
@@ -42,4 +42,4 @@ class Proceso(models.Model):
     empleados = models.ManyToManyField(Empleado)
 
     def __str__(self):
-        return f"ID: {self.id}, Codigo OF: {self.codigo_orden_fabricacion}, C. Preceso: {self.codigo_proceso}, Nombre: {self.nombre_proceso}, Referencia: {self.referencia}, F. Inicio: {self.fecha_inicio}, F. Fin: {self.fecha_fin}"
+        return f"Codigo OF: {self.codigo_orden_fabricacion}, C. Preceso: {self.codigo_proceso}, Nombre: {self.nombre_proceso}, Referencia: {self.referencia}, F. Inicio: {self.fecha_inicio}, F. Fin: {self.fecha_fin}"
