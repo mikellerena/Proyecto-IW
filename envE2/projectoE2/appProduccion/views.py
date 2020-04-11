@@ -34,3 +34,13 @@ class EquiposListView(ListView):
         context = super(EquiposListView, self).get_context_data(**kwargs)
         context['titulo_pagin'] = 'Equipos existentes'
         return context
+"""Vista para ver el detalle de los equipos"""
+
+class EquiposDetailView(DetailView):
+    model = Equipo
+    template_name = 'equipos.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(EquiposDetailView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Detalles de los equipos'
+        return context
