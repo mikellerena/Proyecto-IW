@@ -99,8 +99,6 @@ class CreateProcesoView(View):
             form.save()
             return redirect('procesos')
 
-<<<<<<< HEAD
-=======
         return render(request, 'create_proceso_form.html', {'form': form})
 
 """Vista para ver el listado de procesos"""
@@ -123,4 +121,3 @@ class ProcesosDetailView(DetailView):
         context = super(ProcesosDetailView, self).get_context_data(**kwargs)
         context['titulo_pagina'] = 'Detalles de los procesos'
         return context
->>>>>>> master

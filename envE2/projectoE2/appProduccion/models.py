@@ -21,25 +21,25 @@ class Empleado(models.Model):
     apellidos = models.CharField(max_length=150)
     email = models.CharField(max_length=100)
     """Valor defecto ejemplo"""
-    tel = models.IntegerField(default=666666666)
-    dir = models.CharField(max_length=150)
-    f_nacimiento = models.DateField()
+    telefono = models.IntegerField(default=666666666)
+    direccion = models.CharField(max_length=150)
+    fecha_nacimiento = models.DateField()
 
     def __str__(self):
-        return f"ID: {self.id}, DNI: {self.dni}, Nombre: {self.nombre}, Apellidos: {self.apellidos}, Email: {self.email}, Telefono: {self.tel}, Direccion: {self.dir}, F. Nacimiento: {self.f_nacimiento}"
+        return f"ID: {self.id}, DNI: {self.dni}, Nombre: {self.nombre}, Apellidos: {self.apellidos}, Email: {self.email}, Telefono: {self.telefono}, Direccion: {self.direccion}, F. Nacimiento: {self.fecha_nacimiento}"
 
 class Proceso(models.Model):
-    """ cof numeros y letras"""
-    cof = models.CharField(max_length=75)
-    """ cp Mezcla numeros y letras"""
-    cp = models.CharField(primary_key=True, max_length=75)
-    nom_pro = models.CharField(max_length=100)
+    """ codigo_orden_fabricacion numeros y letras"""
+    codigo_orden_fabricacion = models.CharField(max_length=75)
+    """ codigo_proceso Mezcla numeros y letras"""
+    codigo_proceso = models.CharField(primary_key=True, max_length=75)
+    nombre_proceso = models.CharField(max_length=100)
     """ ref Mezcla numeros y letras"""
-    ref = models.CharField(max_length=75)
-    f_inicio = models.DateField()
-    f_fin = models.DateField()
+    referencia = models.CharField(max_length=75)
+    fecha_inicio = models.DateField()
+    fecha_fin = models.DateField()
     equipo = models.ForeignKey(Equipo, on_delete=models.CASCADE)
     empleados = models.ManyToManyField(Empleado)
 
     def __str__(self):
-        return f"ID: {self.id}, Codigo OF: {self.cof}, C. Preceso: {self.cp}, Nombre: {self.nom_pro}, Referencia: {self.ref}, F. Inicio: {self.f_inicio}, F. Fin: {self.f_fin}"
+        return f"ID: {self.id}, Codigo OF: {self.codigo_orden_fabricacion}, C. Preceso: {self.codigo_proceso}, Nombre: {self.nombre_proceso}, Referencia: {self.referencia}, F. Inicio: {self.fecha_inicio}, F. Fin: {self.fecha_fin}"
