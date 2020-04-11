@@ -48,7 +48,7 @@ class EquiposDetailView(DetailView):
 """Vista para el formulario de creacion de empleado"""
 class CreateEmpleadoView(View):
     def get(self, request, *args, **kwargs):
-        form = EquipoForm()
+        form = EmpleadoForm()
         context = {
             'form': form,
             'titulo_pagina': 'Apartado para la creación de empleados'
@@ -56,7 +56,7 @@ class CreateEmpleadoView(View):
         return render(request, 'create_empleado_form.html', context)
 
     def post(self, request, *args, **kwargs):
-        form = Empleado(request.POST)
+        form = EmpleadoForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('empleados')
@@ -83,4 +83,44 @@ class EmpleadosDetailView(DetailView):
         context = super(EmpleadosDetailView, self).get_context_data(**kwargs)
         context['titulo_pagina'] = 'Detalles de los empleados'
         return context
+"""Vista para el formulario de creación de procesos"""
+class CreateProcesoView(View):
+    def get(self, request, *args, **kwargs):
+        form = ProcesoForm()
+        context = {
+            'form': form,
+            'titulo_pagina': 'Apartado para la creación de procesos'
+        }
+        return render(request, 'create_proceso_form.html', context)
 
+    def post(self, request, *args, **kwargs):
+        form = ProcesoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('procesos')
+
+<<<<<<< HEAD
+=======
+        return render(request, 'create_proceso_form.html', {'form': form})
+
+"""Vista para ver el listado de procesos"""
+class ProcesosListView(ListView):
+    model = Proceso
+    template_name = 'procesos.html'
+    queryset = Proceso.objects.order_by('id')
+
+    def get_context_data(self, **kwargs):
+        context = super(Proceso, self).get_context_data(**kwargs)
+        context['titulo_pagin'] = 'Procesos existentes'
+        return context
+
+"""Vista para ver el detalle de los procesos"""
+class ProcesosDetailView(DetailView):
+    model = Proceso
+    template_name = 'procesos.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ProcesosDetailView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Detalles de los procesos'
+        return context
+>>>>>>> master
