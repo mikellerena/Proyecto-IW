@@ -7,6 +7,8 @@ from .models import Equipo, Empleado, Proceso
 # Create your views here.
 
 """Vista para el formulario de creacion de equipo"""
+
+
 class CreateEquipoView(View):
     def get(self, request, *args, **kwargs):
         form = EquipoForm()
@@ -24,7 +26,10 @@ class CreateEquipoView(View):
 
         return render(request, 'create_equipo_form.html', {'form': form})
 
+
 """Vista para ver el listado de equipos"""
+
+
 class EquiposListView(ListView):
     model = Equipo
     template_name = 'equipos_list.html'
@@ -35,7 +40,10 @@ class EquiposListView(ListView):
         context['titulo_pagin'] = 'Equipos existentes'
         return context
 
+
 """Vista para ver el detalle de los equipos"""
+
+
 class EquiposDetailView(DetailView):
     model = Equipo
     template_name = 'equipo_detail.html'
@@ -45,7 +53,10 @@ class EquiposDetailView(DetailView):
         context['titulo_pagina'] = 'Detalles de los equipos'
         return context
 
+
 """Vista para el formulario de creacion de empleado"""
+
+
 class CreateEmpleadoView(View):
     def get(self, request, *args, **kwargs):
         form = EmpleadoForm()
@@ -63,7 +74,10 @@ class CreateEmpleadoView(View):
 
         return render(request, 'create_empleado_form.html', {'form': form})
 
+
 """Vista para ver el listado de empleado"""
+
+
 class EmpleadosListView(ListView):
     model = Empleado
     template_name = 'empleados_list.html'
@@ -74,7 +88,10 @@ class EmpleadosListView(ListView):
         context['titulo_pagin'] = 'Empleados existentes'
         return context
 
+
 """Vista para ver el detalle de los empleados"""
+
+
 class EmpleadosDetailView(DetailView):
     model = Empleado
     template_name = 'empleado_detail.html'
@@ -84,7 +101,13 @@ class EmpleadosDetailView(DetailView):
         context['titulo_pagina'] = 'Detalles de los empleados'
         return context
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 """Vista para el formulario de creación de procesos"""
+
+
 class CreateProcesoView(View):
     def get(self, request, *args, **kwargs):
         form = ProcesoForm()
@@ -102,7 +125,10 @@ class CreateProcesoView(View):
 
         return render(request, 'create_proceso_form.html', {'form': form})
 
+
 """Vista para ver el listado de procesos"""
+
+
 class ProcesosListView(ListView):
     model = Proceso
     template_name = 'procesos_list.html'
@@ -113,7 +139,10 @@ class ProcesosListView(ListView):
         context['titulo_pagin'] = 'Procesos existentes'
         return context
 
+
 """Vista para ver el detalle de los procesos"""
+
+
 class ProcesosDetailView(DetailView):
     model = Proceso
     template_name = 'procesos_detail.html'
