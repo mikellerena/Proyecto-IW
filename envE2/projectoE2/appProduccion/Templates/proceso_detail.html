@@ -1,5 +1,43 @@
 {% extends "base.html" %}
 
 {% block contenido %}
+<table>
+    <tr>
+        <td>ID</td>
+        <td>{{ proceso.id }}</td>
+    </tr>
+    <tr>
+        <td>Códido de la orden de fabricación</td>
+        <td>{{ proceso.cof }}</td>
+    </tr>
+    <tr>
+        <td>Código del proceso</td>
+        <td>{{ proceso.cp }}</td>
+    </tr>
+    <tr>
+        <td>Nombre del proceso</td>
+        <td>{{ proceso.nom_pro }}</td>
+    </tr>
+    <tr>
+        <td>Referencia</td>
+        <td>{{ proceso.ref }}</td>
+    </tr>
+    <tr>
+        <td>Fecha de inicio</td>
+        <td>{{ proceso.f_inicio }}</td>
+    </tr>
+    <tr>
+        <td>Fecha de fin</td>
+        <td>{{ proceso.f_fin }}</td>
+    </tr>
+    <tr>
+        <td>Equipos empleados</td>
+        <td>{{ proceso.equipo }}</td>
+    </tr>
+    <tr>
+        <td>Empleados asignados</td>
+        <td>{{ proceso.empleados }}</td>
+    </tr>
+</table>
 
 {% endblock %}
