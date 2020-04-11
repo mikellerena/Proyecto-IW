@@ -7,8 +7,6 @@ from .models import Equipo, Empleado, Proceso
 # Create your views here.
 
 """Vista para el formulario de creacion de equipo"""
-
-
 class CreateEquipoView(View):
     def get(self, request, *args, **kwargs):
         form = EquipoForm()
@@ -22,14 +20,12 @@ class CreateEquipoView(View):
         form = EquipoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('equipos')
+            return redirect('equipos_list')
 
         return render(request, 'create_equipo_form.html', {'form': form})
 
 
 """Vista para ver el listado de equipos"""
-
-
 class EquiposListView(ListView):
     model = Equipo
     template_name = 'equipos_list.html'
@@ -42,8 +38,6 @@ class EquiposListView(ListView):
 
 
 """Vista para ver el detalle de los equipos"""
-
-
 class EquiposDetailView(DetailView):
     model = Equipo
     template_name = 'equipo_detail.html'
@@ -55,8 +49,6 @@ class EquiposDetailView(DetailView):
 
 
 """Vista para el formulario de creacion de empleado"""
-
-
 class CreateEmpleadoView(View):
     def get(self, request, *args, **kwargs):
         form = EmpleadoForm()
@@ -70,18 +62,16 @@ class CreateEmpleadoView(View):
         form = EmpleadoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('empleados')
+            return redirect('empleados_list')
 
         return render(request, 'create_empleado_form.html', {'form': form})
 
 
 """Vista para ver el listado de empleado"""
-
-
 class EmpleadosListView(ListView):
     model = Empleado
     template_name = 'empleados_list.html'
-    queryset = Empleado.objects.order_by('id')
+    queryset = Empleado.objects.order_by('nombre')
 
     def get_context_data(self, **kwargs):
         context = super(EmpleadosListView, self).get_context_data(**kwargs)
@@ -90,8 +80,6 @@ class EmpleadosListView(ListView):
 
 
 """Vista para ver el detalle de los empleados"""
-
-
 class EmpleadosDetailView(DetailView):
     model = Empleado
     template_name = 'empleado_detail.html'
@@ -101,13 +89,7 @@ class EmpleadosDetailView(DetailView):
         context['titulo_pagina'] = 'Detalles de los empleados'
         return context
 
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 """Vista para el formulario de creación de procesos"""
-
-
 class CreateProcesoView(View):
     def get(self, request, *args, **kwargs):
         form = ProcesoForm()
@@ -121,18 +103,16 @@ class CreateProcesoView(View):
         form = ProcesoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('procesos')
+            return redirect('procesos_list')
 
         return render(request, 'create_proceso_form.html', {'form': form})
 
 
 """Vista para ver el listado de procesos"""
-
-
 class ProcesosListView(ListView):
     model = Proceso
     template_name = 'procesos_list.html'
-    queryset = Proceso.objects.order_by('id')
+    queryset = Proceso.objects.order_by('codigo_proceso')
 
     def get_context_data(self, **kwargs):
         context = super(ProcesosListView, self).get_context_data(**kwargs)
@@ -141,11 +121,9 @@ class ProcesosListView(ListView):
 
 
 """Vista para ver el detalle de los procesos"""
-
-
 class ProcesosDetailView(DetailView):
     model = Proceso
-    template_name = 'procesos_detail.html'
+    template_name = 'proceso_detail.html'
 
     def get_context_data(self, **kwargs):
         context = super(ProcesosDetailView, self).get_context_data(**kwargs)

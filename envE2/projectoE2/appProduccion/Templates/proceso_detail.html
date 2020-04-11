@@ -3,32 +3,28 @@
 {% block contenido %}
 <table>
     <tr>
-        <td>ID</td>
-        <td>{{ proceso.id }}</td>
-    </tr>
-    <tr>
         <td>Códido de la orden de fabricación</td>
-        <td>{{ proceso.cof }}</td>
+        <td>{{ proceso.codigo_orden_fabricacion }}</td>
     </tr>
     <tr>
         <td>Código del proceso</td>
-        <td>{{ proceso.cp }}</td>
+        <td>{{ proceso.codigo_proceso }}</td>
     </tr>
     <tr>
         <td>Nombre del proceso</td>
-        <td>{{ proceso.nom_pro }}</td>
+        <td>{{ proceso.nombre_proceso }}</td>
     </tr>
     <tr>
         <td>Referencia</td>
-        <td>{{ proceso.ref }}</td>
+        <td>{{ proceso.referencia }}</td>
     </tr>
     <tr>
         <td>Fecha de inicio</td>
-        <td>{{ proceso.f_inicio }}</td>
+        <td>{{ proceso.fecha_inicio }}</td>
     </tr>
     <tr>
         <td>Fecha de fin</td>
-        <td>{{ proceso.f_fin }}</td>
+        <td>{{ proceso.fecha_fin }}</td>
     </tr>
     <tr>
         <td>Equipos empleados</td>
@@ -39,5 +35,4 @@
         <td>{{ proceso.empleados }}</td>
     </tr>
 </table>
-
 {% endblock %}

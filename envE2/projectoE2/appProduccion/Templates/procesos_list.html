@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-
+<ol>
+    {% for pro in proceso_list %}
+    <li>
+        Proceso --> <a href="{% url 'proceso_detail' pro.codigo_proceso %}">Ver</a>
+        <ul>
+            <li>Codigo Orden Fabricación: {{ pro.codigo_orden_fabricacion }}</li>
+            <li>Codigo Proceso: {{ pro.codigo_proceso }}</li>
+            <li>Referencia: {{ pro.referencia }}</li>
+        </ul>
+    </li>
+    {% endfor %}
+</ol>
 {% endblock %}

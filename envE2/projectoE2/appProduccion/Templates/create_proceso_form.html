@@ -2,7 +2,7 @@
 
 {% block contenido %}
 <fieldset>
-    <legend>Crear proceso</legend>
+    <legend>Añadir proceso</legend>
     <form action="{% url 'proceso_form' %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}

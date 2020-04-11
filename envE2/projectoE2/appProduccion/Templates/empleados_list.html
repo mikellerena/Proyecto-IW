@@ -2,12 +2,16 @@
 
 {% block contenido %}
 
-<ul>
+<ol>
     {% for em in empleado_list %}
     <li>
-        {{ em.dni }}
+        Empleado --> <a href="{% url 'empleado_detail' em.dni %}">Ver</a>
+        <ul>
+            <li>DNI: {{ em.dni }}</li>
+            <li>Nombre: {{ em.nombre }}</li>
+        </ul>
     </li>
     {% endfor %}
-</ul>
+</ol>
 
 {% endblock %}

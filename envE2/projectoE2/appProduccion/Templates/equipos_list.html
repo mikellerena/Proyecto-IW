@@ -2,16 +2,16 @@
 
 {% block contenido %}
 
-<ul>
+<ol>
     {% for eq in equipo_list %}
     <li>
-        Equipo {{ eq.id }}
+        Equipo --> <a href="{% url 'equipo_detail' eq.id %}">Ver</a>
         <ul>
             <li>Marca: {{ eq.marca }}</li>
             <li>Modelo: {{ eq.modelo }}</li>
         </ul>
     </li>
     {% endfor %}
-</ul>
+</ol>
 
 {% endblock %}
