@@ -27,7 +27,7 @@ class CreateEquipoView(View):
 """Vista para ver el listado de equipos"""
 class EquiposListView(ListView):
     model = Equipo
-    template_name = 'equipos.html'
+    template_name = 'equipos_list.html'
     queryset = Equipo.objects.order_by('id')
 
     def get_context_data(self, **kwargs):
@@ -66,7 +66,7 @@ class CreateEmpleadoView(View):
 """Vista para ver el listado de empleado"""
 class EmpleadosListView(ListView):
     model = Empleado
-    template_name = 'empleados.html'
+    template_name = 'empleados_list.html'
     queryset = Empleado.objects.order_by('id')
 
     def get_context_data(self, **kwargs):
@@ -77,12 +77,13 @@ class EmpleadosListView(ListView):
 """Vista para ver el detalle de los empleados"""
 class EmpleadosDetailView(DetailView):
     model = Empleado
-    template_name = 'empleados.html'
+    template_name = 'empleado_detail.html'
 
     def get_context_data(self, **kwargs):
         context = super(EmpleadosDetailView, self).get_context_data(**kwargs)
         context['titulo_pagina'] = 'Detalles de los empleados'
         return context
+
 """Vista para el formulario de creación de procesos"""
 class CreateProcesoView(View):
     def get(self, request, *args, **kwargs):
@@ -104,7 +105,7 @@ class CreateProcesoView(View):
 """Vista para ver el listado de procesos"""
 class ProcesosListView(ListView):
     model = Proceso
-    template_name = 'procesos.html'
+    template_name = 'procesos_list.html'
     queryset = Proceso.objects.order_by('id')
 
     def get_context_data(self, **kwargs):
@@ -115,7 +116,7 @@ class ProcesosListView(ListView):
 """Vista para ver el detalle de los procesos"""
 class ProcesosDetailView(DetailView):
     model = Proceso
-    template_name = 'procesos.html'
+    template_name = 'procesos_detail.html'
 
     def get_context_data(self, **kwargs):
         context = super(ProcesosDetailView, self).get_context_data(**kwargs)
