@@ -34,3 +34,6 @@ class EquiposListView(ListView):
         context = super(EquiposListView, self).get_context_data(**kwargs)
         context['titulo_pagin'] = 'Equipos existentes'
         return context
+
+
+
