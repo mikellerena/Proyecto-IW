@@ -93,6 +93,11 @@ class EmpleadosDetailView(DetailView):
         context['titulo_pagina'] = 'Detalles de los empleados'
         return context
 
+"""Vista para modificar los datos de los empleados"""
+class EmpleadoUpdate(UpdateView):
+    model = Empleado
+    template_name = 'empleado_update.html'
+
 """Vista para el formulario de creación de procesos"""
 class CreateProcesoView(View):
     def get(self, request, *args, **kwargs):
@@ -133,3 +138,8 @@ class ProcesosDetailView(DetailView):
         context = super(ProcesosDetailView, self).get_context_data(**kwargs)
         context['titulo_pagina'] = 'Detalles de los procesos'
         return context
+
+"""Vista para modificar los datos de los procesos"""
+class ProcesoUpdate(UpdateView):
+    model = Proceso
+    template_name = 'proceso_update.html'

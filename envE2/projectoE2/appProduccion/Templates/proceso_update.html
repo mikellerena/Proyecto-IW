@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<fieldset>
+    <legend>Modificar Proceso</legend>
+    <form action="{% url 'proceso_form' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Editar">
+    </form>
+</fieldset>
+{% endblock %}
