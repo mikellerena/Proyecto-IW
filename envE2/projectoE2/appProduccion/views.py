@@ -53,20 +53,19 @@ class EquipoUpdateView(UpdateView):
     model = Equipo
     form_class = EquipoForm
     template_name = 'equipo_update.html'
-    queryset = Equipo.objects.all()
-    # succesfuly_url = reverse_lazy('equipos_list')
+    success_url = reverse_lazy('equipos_list')
 
-    def post(self,request, equipo_id, *args, **kwargs):
-        post = get_object_or_404(Equipo, id=equipo_id)
-        form = CreateEquipoView(instance=post)
-        if request.method == 'POST':
-            post = get_object_or_404(Equipo, id=equipo_id)
-            form = CreateEquipoView(request.POST)
-            if form.is_valid():
-                post.save()
-                return redirect('equipos_list')
-
-        return render(request, 'equipo_update.html', {'form': form})
+    #def post(self,request, equipo_id, *args, **kwargs):
+        # post = get_object_or_404(Equipo, id=equipo_id)
+        # form = CreateEquipoView(instance=post)
+        # if request.method == 'POST':
+        #     post = get_object_or_404(Equipo, id=equipo_id)
+        #     form = CreateEquipoView(request.POST)
+        #     if form.is_valid():
+        #         post.save()
+        #         return redirect('equipos_list')
+        #
+        # return render(request, 'equipo_update.html', {'form': form})
 
 
     def get_context_data(self, **kwargs):
