@@ -3,7 +3,7 @@
 {% block contenido %}
 <fieldset>
     <legend>Añadir empleado</legend>
-    <form action="{% url 'empleado_form' %}" method="post">
+    <form action="{% url 'empleado_create' %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Nuevo Empleado">

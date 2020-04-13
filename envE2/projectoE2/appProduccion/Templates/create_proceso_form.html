@@ -3,7 +3,7 @@
 {% block contenido %}
 <fieldset>
     <legend>Añadir proceso</legend>
-    <form action="{% url 'proceso_form' %}" method="post">
+    <form action="{% url 'proceso_create' %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Nuevo Proceso">
