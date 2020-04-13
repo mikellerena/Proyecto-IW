@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
-from django.views.generic import DetailView, ListView, UpdateView
+from django.views.generic import DetailView, ListView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .forms import EquipoForm, EmpleadoForm, ProcesoForm
 from .models import Equipo, Empleado, Proceso
@@ -8,7 +8,7 @@ from .models import Equipo, Empleado, Proceso
 # Create your views here.
 
 """Vista para el formulario de creacion de equipo"""
-class CreateEquipoView(View):
+class EquipoCreateView(View):
     def get(self, request, *args, **kwargs):
         form = EquipoForm()
         context = {
@@ -48,6 +48,7 @@ class EquipoDetailView(DetailView):
         context['titulo_pagina'] = 'Detalles de los equipos'
         return context
 
+
 """Vista para modificar los datos de los equipos"""
 class EquipoUpdateView(UpdateView):
     model = Equipo
@@ -60,8 +61,16 @@ class EquipoUpdateView(UpdateView):
         context['titulo_pagina'] = 'Modificar equipos'
         return context
 
+
+"""Vista para eliminar equipos"""
+class EquipoDeleteView(DeleteView):
+    model = Equipo
+    template_name = 'equipo_delete.html'
+    success_url = reverse_lazy('equipo_list')
+
+
 """Vista para el formulario de creacion de empleado"""
-class CreateEmpleadoView(View):
+class EmpleadoCreateView(View):
     def get(self, request, *args, **kwargs):
         form = EmpleadoForm()
         context = {
@@ -101,14 +110,11 @@ class EmpleadoDetailView(DetailView):
         context['titulo_pagina'] = 'Detalles de los empleados'
         return context
 
+
 """Vista para modificar los datos de los empleados"""
 class EmpleadoUpdateView(UpdateView):
     model = Empleado
-<<<<<<< Updated upstream
     form_class = EmpleadoForm
-=======
-
->>>>>>> Stashed changes
     template_name = 'empleado_update.html'
     success_url = reverse_lazy('empleado_list')
 
@@ -116,8 +122,10 @@ class EmpleadoUpdateView(UpdateView):
         context = super(EmpleadoUpdateView, self).get_context_data(**kwargs)
         context['titulo_pagina'] = 'Modificar empleados'
         return context
+
+
 """Vista para el formulario de creación de procesos"""
-class CreateProcesoView(View):
+class ProcesoCreateView(View):
     def get(self, request, *args, **kwargs):
         form = ProcesoForm()
         context = {
@@ -157,10 +165,11 @@ class ProcesoDetailView(DetailView):
         context['titulo_pagina'] = 'Detalles de los procesos'
         return context
 
+
 """Vista para modificar los datos de los procesos"""
 class ProcesoUpdateView(UpdateView):
     model = Proceso
-    form_class = Proceso
+    form_class = ProcesoForm
     template_name = 'proceso_update.html'
     success_url = reverse_lazy('proceso_list')
 
