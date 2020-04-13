@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic import DetailView, ListView, UpdateView
+from django.urls import reverse_lazy
 from .forms import EquipoForm, EmpleadoForm, ProcesoForm
 from .models import Equipo, Empleado, Proceso
 
@@ -48,9 +49,16 @@ class EquiposDetailView(DetailView):
         return context
 
 """Vista para modificar los datos de los equipos"""
-class EquipoUpdate(UpdateView):
+class EquipoUpdateView(UpdateView):
     model = Equipo
+    form_class = EquipoForm
     template_name = 'equipo_update.html'
+    succesfuly_url = reverse_lazy('equipos_list')
+
+    def get_context_data(self, **kwargs):
+        context = super(EquipoUpdateView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Modificar equipos'
+        return context
 
 """Vista para el formulario de creacion de empleado"""
 class CreateEmpleadoView(View):
