@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 class Equipo(models.Model):
@@ -11,6 +12,7 @@ class Equipo(models.Model):
 
     def __str__(self):
         return f"ID: {self.id}, Modelo: {self.modelo}, Marca: {self.marca}, Categoria: {self.categoria}, F. Adquisicion: {self.fecha_adquisicion}, F. Instalacion: {self.fecha_instalacion}"
+
 
 class Empleado(models.Model):
     """Para introducir DNIs extranjeros"""
@@ -27,6 +29,7 @@ class Empleado(models.Model):
 
     def __str__(self):
         return f"DNI: {self.dni}, Nombre: {self.nombre}, Apellidos: {self.apellidos}, Email: {self.email}, Telefono: {self.telefono}, Direccion: {self.direccion}, F. Nacimiento: {self.fecha_nacimiento}"
+
 
 class Proceso(models.Model):
     """ codigo_orden_fabricacion numeros y letras"""

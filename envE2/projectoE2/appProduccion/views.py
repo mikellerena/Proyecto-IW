@@ -8,6 +8,8 @@ from .models import Equipo, Empleado, Proceso
 # Create your views here.
 
 """Vista para el formulario de creacion de equipo"""
+
+
 class EquipoCreateView(View):
     def get(self, request, *args, **kwargs):
         form = EquipoForm()
@@ -27,6 +29,8 @@ class EquipoCreateView(View):
 
 
 """Vista para ver el listado de equipos"""
+
+
 class EquipoListView(ListView):
     model = Equipo
     template_name = 'equipo_list.html'
@@ -39,6 +43,8 @@ class EquipoListView(ListView):
 
 
 """Vista para ver el detalle de los equipos"""
+
+
 class EquipoDetailView(DetailView):
     model = Equipo
     template_name = 'equipo_detail.html'
@@ -50,6 +56,8 @@ class EquipoDetailView(DetailView):
 
 
 """Vista para modificar los datos de los equipos"""
+
+
 class EquipoUpdateView(UpdateView):
     model = Equipo
     form_class = EquipoForm
@@ -63,6 +71,8 @@ class EquipoUpdateView(UpdateView):
 
 
 """Vista para eliminar equipos"""
+
+
 class EquipoDeleteView(DeleteView):
     model = Equipo
     template_name = 'equipo_delete.html'
@@ -70,6 +80,8 @@ class EquipoDeleteView(DeleteView):
 
 
 """Vista para el formulario de creacion de empleado"""
+
+
 class EmpleadoCreateView(View):
     def get(self, request, *args, **kwargs):
         form = EmpleadoForm()
@@ -89,6 +101,8 @@ class EmpleadoCreateView(View):
 
 
 """Vista para ver el listado de empleado"""
+
+
 class EmpleadoListView(ListView):
     model = Empleado
     template_name = 'empleado_list.html'
@@ -101,6 +115,8 @@ class EmpleadoListView(ListView):
 
 
 """Vista para ver el detalle de los empleados"""
+
+
 class EmpleadoDetailView(DetailView):
     model = Empleado
     template_name = 'empleado_detail.html'
@@ -112,6 +128,8 @@ class EmpleadoDetailView(DetailView):
 
 
 """Vista para modificar los datos de los empleados"""
+
+
 class EmpleadoUpdateView(UpdateView):
     model = Empleado
     form_class = EmpleadoForm
@@ -124,7 +142,18 @@ class EmpleadoUpdateView(UpdateView):
         return context
 
 
+"""Vista para eliminar empleados"""
+
+
+class EmpleadoDeleteView(DeleteView):
+    model = Empleado
+    template_name = 'empleado_delete.html'
+    success_url = reverse_lazy('empleado_list')
+
+
 """Vista para el formulario de creación de procesos"""
+
+
 class ProcesoCreateView(View):
     def get(self, request, *args, **kwargs):
         form = ProcesoForm()
@@ -144,6 +173,8 @@ class ProcesoCreateView(View):
 
 
 """Vista para ver el listado de procesos"""
+
+
 class ProcesoListView(ListView):
     model = Proceso
     template_name = 'proceso_list.html'
@@ -156,6 +187,8 @@ class ProcesoListView(ListView):
 
 
 """Vista para ver el detalle de los procesos"""
+
+
 class ProcesoDetailView(DetailView):
     model = Proceso
     template_name = 'proceso_detail.html'
@@ -167,6 +200,8 @@ class ProcesoDetailView(DetailView):
 
 
 """Vista para modificar los datos de los procesos"""
+
+
 class ProcesoUpdateView(UpdateView):
     model = Proceso
     form_class = ProcesoForm
@@ -177,3 +212,9 @@ class ProcesoUpdateView(UpdateView):
         context = super(ProcesoUpdateView, self).get_context_data(**kwargs)
         context['titulo_pagina'] = 'Modificar procesos'
         return context
+
+"""Vista para eliminar procesos"""
+class ProcesoDeleteView(DeleteView):
+    model = Proceso
+    template_name = 'proceso_delete.html'
+    success_url = reverse_lazy('proceso_list')

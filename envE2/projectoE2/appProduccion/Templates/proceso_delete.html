@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<fieldset>
+    <legend>Eliminar proceso</legend>
+    <h2>¿Desea eliminar el proceso de nombre: {{ proceso.nombre_proceso }} y código de proceso: {{
+        proceso.codigo_proceso }}?</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Eliminar">
+    </form>
+</fieldset>
+{% endblock %}
