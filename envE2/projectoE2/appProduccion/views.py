@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from django.views.generic import DetailView, ListView, UpdateView
 from django.urls import reverse_lazy
@@ -53,7 +53,21 @@ class EquipoUpdateView(UpdateView):
     model = Equipo
     form_class = EquipoForm
     template_name = 'equipo_update.html'
-    succesfuly_url = reverse_lazy('equipos_list')
+    queryset = Equipo.objects.all()
+    # succesfuly_url = reverse_lazy('equipos_list')
+
+    def post(self,request, equipo_id, *args, **kwargs):
+        post = get_object_or_404(Equipo, id=equipo_id)
+        form = CreateEquipoView(instance=post)
+        if request.method == 'POST':
+            post = get_object_or_404(Equipo, id=equipo_id)
+            form = CreateEquipoView(request.POST)
+            if form.is_valid():
+                post.save()
+                return redirect('equipos_list')
+
+        return render(request, 'equipo_update.html', {'form': form})
+
 
     def get_context_data(self, **kwargs):
         context = super(EquipoUpdateView, self).get_context_data(**kwargs)
