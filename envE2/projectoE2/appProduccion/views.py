@@ -21,30 +21,30 @@ class CreateEquipoView(View):
         form = EquipoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('equipos_list')
+            return redirect('equipo_list')
 
         return render(request, 'create_equipo_form.html', {'form': form})
 
 
 """Vista para ver el listado de equipos"""
-class EquiposListView(ListView):
+class EquipoListView(ListView):
     model = Equipo
-    template_name = 'equipos_list.html'
+    template_name = 'equipo_list.html'
     queryset = Equipo.objects.order_by('id')
 
     def get_context_data(self, **kwargs):
-        context = super(EquiposListView, self).get_context_data(**kwargs)
+        context = super(EquipoListView, self).get_context_data(**kwargs)
         context['titulo_pagin'] = 'Equipos existentes'
         return context
 
 
 """Vista para ver el detalle de los equipos"""
-class EquiposDetailView(DetailView):
+class EquipoDetailView(DetailView):
     model = Equipo
     template_name = 'equipo_detail.html'
 
     def get_context_data(self, **kwargs):
-        context = super(EquiposDetailView, self).get_context_data(**kwargs)
+        context = super(EquipoDetailView, self).get_context_data(**kwargs)
         context['titulo_pagina'] = 'Detalles de los equipos'
         return context
 
@@ -53,20 +53,7 @@ class EquipoUpdateView(UpdateView):
     model = Equipo
     form_class = EquipoForm
     template_name = 'equipo_update.html'
-    success_url = reverse_lazy('equipos_list')
-
-    #def post(self,request, equipo_id, *args, **kwargs):
-        # post = get_object_or_404(Equipo, id=equipo_id)
-        # form = CreateEquipoView(instance=post)
-        # if request.method == 'POST':
-        #     post = get_object_or_404(Equipo, id=equipo_id)
-        #     form = CreateEquipoView(request.POST)
-        #     if form.is_valid():
-        #         post.save()
-        #         return redirect('equipos_list')
-        #
-        # return render(request, 'equipo_update.html', {'form': form})
-
+    success_url = reverse_lazy('equipo_list')
 
     def get_context_data(self, **kwargs):
         context = super(EquipoUpdateView, self).get_context_data(**kwargs)
@@ -87,38 +74,44 @@ class CreateEmpleadoView(View):
         form = EmpleadoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('empleados_list')
+            return redirect('empleado_list')
 
         return render(request, 'create_empleado_form.html', {'form': form})
 
 
 """Vista para ver el listado de empleado"""
-class EmpleadosListView(ListView):
+class EmpleadoListView(ListView):
     model = Empleado
-    template_name = 'empleados_list.html'
+    template_name = 'empleado_list.html'
     queryset = Empleado.objects.order_by('nombre')
 
     def get_context_data(self, **kwargs):
-        context = super(EmpleadosListView, self).get_context_data(**kwargs)
+        context = super(EmpleadoListView, self).get_context_data(**kwargs)
         context['titulo_pagin'] = 'Empleados existentes'
         return context
 
 
 """Vista para ver el detalle de los empleados"""
-class EmpleadosDetailView(DetailView):
+class EmpleadoDetailView(DetailView):
     model = Empleado
     template_name = 'empleado_detail.html'
 
     def get_context_data(self, **kwargs):
-        context = super(EmpleadosDetailView, self).get_context_data(**kwargs)
+        context = super(EmpleadoDetailView, self).get_context_data(**kwargs)
         context['titulo_pagina'] = 'Detalles de los empleados'
         return context
 
 """Vista para modificar los datos de los empleados"""
-class EmpleadoUpdate(UpdateView):
+class EmpleadoUpdateView(UpdateView):
     model = Empleado
+    form_class = EmpleadoForm
     template_name = 'empleado_update.html'
+    success_url = reverse_lazy('empleado_list')
 
+    def get_context_data(self, **kwargs):
+        context = super(EmpleadoUpdateView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Modificar empleados'
+        return context
 """Vista para el formulario de creación de procesos"""
 class CreateProcesoView(View):
     def get(self, request, *args, **kwargs):
@@ -133,34 +126,41 @@ class CreateProcesoView(View):
         form = ProcesoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('procesos_list')
+            return redirect('proceso_list')
 
         return render(request, 'create_proceso_form.html', {'form': form})
 
 
 """Vista para ver el listado de procesos"""
-class ProcesosListView(ListView):
+class ProcesoListView(ListView):
     model = Proceso
-    template_name = 'procesos_list.html'
+    template_name = 'proceso_list.html'
     queryset = Proceso.objects.order_by('codigo_proceso')
 
     def get_context_data(self, **kwargs):
-        context = super(ProcesosListView, self).get_context_data(**kwargs)
+        context = super(ProcesoListView, self).get_context_data(**kwargs)
         context['titulo_pagin'] = 'Procesos existentes'
         return context
 
 
 """Vista para ver el detalle de los procesos"""
-class ProcesosDetailView(DetailView):
+class ProcesoDetailView(DetailView):
     model = Proceso
     template_name = 'proceso_detail.html'
 
     def get_context_data(self, **kwargs):
-        context = super(ProcesosDetailView, self).get_context_data(**kwargs)
+        context = super(ProcesoDetailView, self).get_context_data(**kwargs)
         context['titulo_pagina'] = 'Detalles de los procesos'
         return context
 
 """Vista para modificar los datos de los procesos"""
-class ProcesoUpdate(UpdateView):
+class ProcesoUpdateView(UpdateView):
     model = Proceso
+    form_class = Proceso
     template_name = 'proceso_update.html'
+    success_url = reverse_lazy('proceso_list')
+
+    def get_context_data(self, **kwargs):
+        context = super(ProcesoUpdateView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Modificar procesos'
+        return context
