@@ -104,7 +104,11 @@ class EmpleadoDetailView(DetailView):
 """Vista para modificar los datos de los empleados"""
 class EmpleadoUpdateView(UpdateView):
     model = Empleado
+<<<<<<< Updated upstream
     form_class = EmpleadoForm
+=======
+
+>>>>>>> Stashed changes
     template_name = 'empleado_update.html'
     success_url = reverse_lazy('empleado_list')
 
