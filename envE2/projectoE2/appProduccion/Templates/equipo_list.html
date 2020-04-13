@@ -7,8 +7,9 @@
     <li>
         Equipo --> <a href="{% url 'equipo_detail' eq.id %}">Ver</a> ||
         <a href="{% url 'equipo_edit' eq.id %}">Editar</a> ||
-        <a href="{% url 'equipo_borrar' eq.id %}">Borrar</a>
+        <a href="{% url 'equipo_delete' eq.id %}">Borrar</a>
         <ul>
+            <li>ID: {{ eq.id }}</li>
             <li>Marca: {{ eq.marca }}</li>
             <li>Modelo: {{ eq.modelo }}</li>
         </ul>
