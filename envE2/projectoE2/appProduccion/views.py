@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView, ListView, UpdateView
 from .forms import EquipoForm, EmpleadoForm, ProcesoForm
 from .models import Equipo, Empleado, Proceso
 
@@ -47,6 +47,10 @@ class EquiposDetailView(DetailView):
         context['titulo_pagina'] = 'Detalles de los equipos'
         return context
 
+"""Vista para modificar los datos de los equipos"""
+class EquipoUpdate(UpdateView):
+    model = Equipo
+    template_name = 'equipo_update.html'
 
 """Vista para el formulario de creacion de empleado"""
 class CreateEmpleadoView(View):
