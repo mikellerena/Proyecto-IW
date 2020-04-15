@@ -1,3 +1,22 @@
-*{
-    box-sizing: border-box;
+#index{
+    background-image: url("https://image.freepik.com/foto-gratis/fondo-madera-textura-madera-fondo-presentaciones-espacio-texto-composicion-imagen-arte-sitio-web-revista-o-grafico-diseno_1962-19.jpg");
+    background-size: 100%;
+    text-align: center;
+    position:absolute;
+    left: 235px;
+    height:200px;
+    top:50%;
+    margin-top:-100px;
+      
+}
+
+#h1_index{
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    font-size: 50px;
+}
+
+#h2_index{
+    font-family: 'Courier New', Courier, monospace;
+
 }
