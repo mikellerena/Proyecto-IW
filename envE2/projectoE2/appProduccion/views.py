@@ -7,6 +7,9 @@ from .models import Equipo, Empleado, Proceso
 
 # Create your views here.
 
+def index(request):
+    return render(request, 'index.html')
+
 
 """Vista para el formulario de creacion de equipo"""
 class EquipoCreateView(View):
@@ -35,7 +38,7 @@ class EquipoListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(EquipoListView, self).get_context_data(**kwargs)
-        context['titulo_pagin'] = 'Equipos existentes'
+        context['titulo_pagina'] = 'Equipos existentes'
         return context
 
 
@@ -97,7 +100,7 @@ class EmpleadoListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(EmpleadoListView, self).get_context_data(**kwargs)
-        context['titulo_pagin'] = 'Empleados existentes'
+        context['titulo_pagina'] = 'Empleados existentes'
         return context
 
 
@@ -159,7 +162,7 @@ class ProcesoListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(ProcesoListView, self).get_context_data(**kwargs)
-        context['titulo_pagin'] = 'Procesos existentes'
+        context['titulo_pagina'] = 'Procesos existentes'
         return context
 
 
