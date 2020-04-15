@@ -7,6 +7,7 @@ from .models import Equipo, Empleado, Proceso
 
 # Create your views here.
 
+"""Vista """
 def index(request):
     return render(request, 'index.html')
 
