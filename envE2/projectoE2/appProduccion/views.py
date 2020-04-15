@@ -7,10 +7,17 @@ from .models import Equipo, Empleado, Proceso
 
 # Create your views here.
 
-"""Vista """
+"""Vista incial"""
 def index(request):
     return render(request, 'index.html')
 
+"""Vista Pagina Principal"""
+def principal(request):
+    return render(request, 'pagina_principal')
+
+"""Vista menu gestionar equipos"""
+def g_equipo(request):
+    return render(request, 'gestion_equipos')
 
 """Vista para el formulario de creacion de equipo"""
 class EquipoCreateView(View):
