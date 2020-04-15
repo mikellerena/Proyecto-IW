@@ -19,6 +19,14 @@ def principal(request):
 def g_equipo(request):
     return render(request, 'gestion_equipos')
 
+"""Vista menu gestionar empleados"""
+def g_empleado(request):
+    return render(request, 'gestion_empleados')
+
+"""Vista menu gestionar procesos"""
+def g_proceso(request):
+    return render(request, 'gestionar_procesos')
+
 """Vista para el formulario de creacion de equipo"""
 class EquipoCreateView(View):
     def get(self, request, *args, **kwargs):
