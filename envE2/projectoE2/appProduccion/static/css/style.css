@@ -83,7 +83,7 @@ header{
     text-align: center;
 }
 
-footer_PP{
+#footer_PP{
     bottom: 8px;
     display: flex;
     font-family: 'Courier New', Courier, monospace;
