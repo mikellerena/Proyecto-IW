@@ -69,16 +69,26 @@ body{
 }
 
 nav{
-    background-color:transparent;
     display: flex;
     font-family: 'Courier New', Courier, monospace;
     justify-content: center;
     margin-bottom:50px;
 }
+
 header{
-    /*background-color:#191B82;*/
+    font-family: 'Courier New', Courier, monospace;
     border-bottom: 4px solid white;
     box-sizing: border-box;
-    display: flex;
     justify-content: center;
+}
+
+footer{
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: center;
+}
+
+main:after {
+    content: "";
+    clear: both;
+    display: table;
 }
