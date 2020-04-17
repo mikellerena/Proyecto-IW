@@ -65,5 +65,16 @@
 
 .enlaces_internos:hover{
     color:blue;
+<<<<<<< HEAD
     font-style: italic;
+=======
+}s
+
+nav{
+    background-color:transparent;
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: center;
+    margin-bottom:50px;
+>>>>>>> master
 }
