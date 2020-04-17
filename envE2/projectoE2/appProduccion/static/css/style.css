@@ -2,8 +2,12 @@
     box-sizing: border-box;
 }
 
-#index{
+body{
     background-image: url(../imagenes/fondo.jpg);
+}
+
+#index{
+
     background-size: 100%;
     text-align: center;
     position:absolute;
