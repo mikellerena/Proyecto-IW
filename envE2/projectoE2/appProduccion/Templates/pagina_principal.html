@@ -1,5 +1,52 @@
-{% extends 'base.html' %}
+{% load static %}
 
-{% block contenido %}
-
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deustubular S.L.</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Deustubular S.L.</h1>
+    </header>
+     <nav>
+        <h2 id="PP"><a href="{% url 'principal' %}" class="enlaces_internos" style="text-decoration:none;">
+            PÁGINA PRINCIPAL</a></h2>
+        <h2 id="gestion_empleados"><a href="{% url 'gestion_empleado' %}" class="enlaces_internos" style="text-decoration:none;">
+            GESTION DE LOS EMPLEADOS</a></h2>
+        <h2 id="gestion_equipos"><a href="{% url 'gestion_equipo' %}" class="enlaces_internos" style="text-decoration:none;">
+            GESTION DE LOS EQUIPOS</a></h2>
+        <h2 id="gestion_procesos"><a href="{% url 'gestion_proceso' %}" class="enlaces_internos" style="text-decoration:none;">
+            GESTION DE LOS PROCESOS</a></h2>
+    </nav>
+    <main>
+    <h3>Esta es la aplicación web para gestionar los procesos, empleados y equipos de esta nuestra fábrica.</h3><br>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, dolores repudiandae.
+Id maiores est reiciendis eligendi doloribus accusamus tempore consequatur minima velit
+sed, modi incidunt excepturi, APLICACIÓN iusto tempora, et illum. Ut inventore praesentium
+eaque rem maiores amet minima quam, tenetur nobis nulla. Eveniet, beatae consectetur necessitatibus
+ad porro ab doloremque vitae quas deserunt sit incidunt accusantium natus non voluptatum labore alias
+nulla aspernatur quo quia quidem earum, voluptas adipisci voluptates! Repellat tempore officiis ut
+repudiandae ea WEB reprehenderit! Architecto dicta consequatur nesciunt et explicabo pariatur
+voluptate officia inventore labore molestias harum fugiat ab consectetur facilis, vero provident
+magnam recusandae nam, quasi CREADA dignissimos dolorum incidunt expedita doloribus? Hic
+accusamus impedit repellendus ab optio labore quod, mollitia quas voluptatem, est cum sapiente
+explicabo ipsum repellat corporis. Nisi repellat non sunt a dignissimos POR assumenda
+est laudantium. Officiis modi odit veniam similique dignissimos fugit deleniti reiciendis tempore
+eum possimus, nisi assumenda impedit ipsa cum sed quasi at distinctio dolore illum harum delectus
+quidem consectetur. Quasi maiores est, sapiente tenetur odit voluptates velit aliquid tempore sint,
+ipsum fugiat eum neque AITOR numquam nulla corrupti! Eum et tempora culpa beatae earum vitae ex, saepe
+inventore modi dolor quae placeat POR. Expedita corporis iure incidunt voluptatibus excepturi pariatur!
+Repellendus dolores quidem quo quis ea expedita, impedit possimus minus Y ullam obcaecati eum unde harum
+reprehenderit maxime ex aut iste, optio voluptates vitae sint velit temporibus est recusandae. Iste odio esse,
+repudiandae iure exercitationem animi facere pariatur beatae tempore corrupti magnam deserunt similique in necessitatibus
+harum et dicta laborum eveniet ducimus consequuntur perferendis voluptas commodi unde quia! A cumque ratione id esse
+exercitationem quas asperiores MIKEL labore nulla eos tempora illo natus quo porro eveniet nemo iusto optio
+doloremque quae commodi, inventore eum nisi? </p>
+    </main>
+</body>
+<footer id="footer_PP">
+    <p>TODOS LOS DERECHOS RESERVADOS PARA ESTOS MARAVILLOSOS ALUMNOS</p>
+</footer>
