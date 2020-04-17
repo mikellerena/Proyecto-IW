@@ -70,3 +70,9 @@ nav{
     justify-content: center;
     margin-bottom:50px;
 }
+header{
+    background-color:#191B82;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
