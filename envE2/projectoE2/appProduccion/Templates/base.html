@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<header>
-    <h1>Deustubular S.L.</h1>
+    <header>
+        <h1>Deustubular S.L.</h1>
+    </header>
      <nav>
         <h2 id="PP"><a href="{% url 'principal' %}" class="enlaces_internos" style="text-decoration:none;">
             PÁGINA PRINCIPAL</a></h2>
@@ -20,12 +21,11 @@
         <h2 id="gestion_procesos"><a href="{% url 'gestion_proceso' %}" class="enlaces_internos" style="text-decoration:none;">
             GESTION DE LOS PROCESOS</a></h2>
     </nav>
-</header>
-<main>
+    <main>
     <h2>{{ titulo_pagina }}</h2>
     {% block contenido %}
     {% endblock %}
-</main>
+    </main>
 </body>
 <footer>
     <p>El código que contiene este repositorio se encuenta bajo la licencia GNU GPL-3.0</p>

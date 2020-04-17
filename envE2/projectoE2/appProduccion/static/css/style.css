@@ -78,3 +78,9 @@ nav{
     margin-bottom:50px;
 >>>>>>> master
 }
+header{
+    background-color:#191B82;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
