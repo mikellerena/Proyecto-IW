@@ -80,6 +80,7 @@ header{
     border-bottom: 4px solid white;
     box-sizing: border-box;
     justify-content: center;
+    text-align: center;
 }
 
 footer_PP{
@@ -98,6 +99,7 @@ footer_PP{
 footer{
     font-family: 'Courier New', Courier, monospace;
     justify-content: center;
+    text-align: center;
 }
 
 main:after {
