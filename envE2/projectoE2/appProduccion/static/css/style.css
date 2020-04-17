@@ -76,7 +76,10 @@ nav{
 }
 
 header{
+<<<<<<< Updated upstream
     font-family: 'Courier New', Courier, monospace;
+=======
+>>>>>>> Stashed changes
     border-bottom: 4px solid white;
     box-sizing: border-box;
     justify-content: center;
