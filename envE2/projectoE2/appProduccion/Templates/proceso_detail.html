@@ -32,7 +32,18 @@
     </tr>
     <tr>
         <td>Empleados asignados</td>
-        <td>{{  }}</td>
+        <td>
+            <ol>
+                {% for empleados in proceso.empleados.all %}
+                    <li>
+                        Nombre: {{ empleados.nombre }}
+                        <br>
+                        Apellidos: {{ empleados.apellidos }}
+                    </li>
+                <br>
+                {% endfor %}
+            </ol>
+        </td>
     </tr>
 </table>
 {% endblock %}
