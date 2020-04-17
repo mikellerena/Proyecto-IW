@@ -18,5 +18,47 @@
 
 #h2_index{
     font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
 
+#PP{
+    box-sizing: border-box;
+    border-right: ridge;
+    font-size: 20px;
+    padding-right: 20px;
+}
+
+
+#gestion_empleados{
+    box-sizing: border-box;
+    border-right: ridge;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+#gestion equipos{
+    box-sizing: border-box;
+    border-right: ridge;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+#gestion_procesos{
+    box-sizing: border-box;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.enlaces_internos{
+    color:black;
+}
+
+
+.enlaces_internos:hover{
+    color:blue;
 }
