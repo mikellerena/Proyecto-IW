@@ -11,13 +11,13 @@
 <header>
     <h1>Deustubular S.L.</h1>
      <nav>
-        <h2 id="PP"><a href="pagina_principal.html" class="enlaces_internos" style="text-decoration:none;">
+        <h2 id="PP"><a href="{% url 'principal' %}" class="enlaces_internos" style="text-decoration:none;">
             PÁGINA PRINCIPAL</a></h2>
-        <h2 id="gestion_empleados"><a href="gestion_empleados.html" class="enlaces_internos" style="text-decoration:none;">
+        <h2 id="gestion_empleados"><a href="{% url 'gestion_empleado' %}" class="enlaces_internos" style="text-decoration:none;">
             GESTION DE LOS EMPLEADOS</a></h2>
-        <h2 id="gestion_equipos"><a href="gestion_equipos.html" class="enlaces_internos" style="text-decoration:none;">
+        <h2 id="gestion_equipos"><a href="{% url 'gestion_equipo' %}" class="enlaces_internos" style="text-decoration:none;">
             GESTION DE LOS EQUIPOS</a></h2>
-        <h2 id="gestion_procesos"><a href="gestion_procesos.html" class="enlaces_internos" style="text-decoration:none;">
+        <h2 id="gestion_procesos"><a href="{% url 'gestion_proceso' %}" class="enlaces_internos" style="text-decoration:none;">
             GESTION DE LOS PROCESOS</a></h2>
     </nav>
 </header>
