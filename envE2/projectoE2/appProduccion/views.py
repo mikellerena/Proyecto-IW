@@ -25,7 +25,7 @@ def g_empleado(request):
 
 """Vista menu gestionar procesos"""
 def g_proceso(request):
-    return render(request, 'gestionar_procesos.html')
+    return render(request, 'gestion_procesos.html')
 
 """Vista para el formulario de creacion de equipo"""
 class EquipoCreateView(View):
