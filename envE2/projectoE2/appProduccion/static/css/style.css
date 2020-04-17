@@ -84,11 +84,11 @@ header{
 }
 
 footer_PP{
-    box-sizing: border-box;
     bottom: 8px;
     display: flex;
     font-family: 'Courier New', Courier, monospace;
     justify-content: center;
+    text-align: center;
     left: 8px;
     padding-right: 8px;
     padding-left: 8px;
