@@ -82,6 +82,19 @@ header{
     justify-content: center;
 }
 
+footer_PP{
+    box-sizing: border-box;
+    bottom: 8px;
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: center;
+    left: 8px;
+    padding-right: 8px;
+    padding-left: 8px;
+    position: absolute;
+    right: 8px;
+}
+
 footer{
     font-family: 'Courier New', Courier, monospace;
     justify-content: center;
