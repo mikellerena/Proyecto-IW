@@ -157,7 +157,7 @@ p{
 }
 
 /*Estilos generales para el conjunto de contacto*/
-#Contacto{
+#Contactos{
     color: white ;
     float: right;
     padding-bottom: 10px;
@@ -170,4 +170,11 @@ p{
     margin-right: 10px;
     vertical-align: middle;
     width:25px;
+}
+
+.h3_footer{
+    font-family: 'Courier New', Courier, monospace;
+    left: 45px;
+    padding-top: 30px;
+    position: absolute;
 }
