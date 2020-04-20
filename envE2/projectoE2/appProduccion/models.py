@@ -32,12 +32,12 @@ class Empleado(models.Model):
 
 
 class Proceso(models.Model):
-    """ codigo_orden_fabricacion numeros y letras"""
-    codigo_orden_fabricacion = models.CharField(max_length=75)
-    """ codigo_proceso Mezcla numeros y letras"""
+    """codigo_orden_fabricacion numeros y letras, foreign key"""
+    codigo_orden_fabricacion = models.ForeignKey(Orden, on_delete=models.CASCADE)
+    """codigo_proceso Mezcla numeros y letras"""
     codigo_proceso = models.CharField(primary_key=True, max_length=75)
     nombre_proceso = models.CharField(max_length=100)
-    """ ref Mezcla numeros y letras"""
+    """ref Mezcla numeros y letras"""
     referencia = models.CharField(max_length=75)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
@@ -46,3 +46,11 @@ class Proceso(models.Model):
 
     def __str__(self):
         return f"Codigo OF: {self.codigo_orden_fabricacion}, C. Preceso: {self.codigo_proceso}, Nombre: {self.nombre_proceso}, Referencia: {self.referencia}, F. Inicio: {self.fecha_inicio}, F. Fin: {self.fecha_fin}"
+
+class Orden(models.Model):
+    """codigo_orden_fabricacion numeros y letras"""
+    codigo = models.CharField(primary_key=True, max_length=75)
+    """Entidad que contrata los servicios"""
+    cliente = models.CharField(max_length=50)
+    fecha_inicio = models.DateField()
+    procesos = models.ForeignKey(Proceso, on_delete=models.CASCADE)

@@ -100,7 +100,6 @@ header{
 
 footer{
     font-family: 'Courier New', Courier, monospace;
-    justify-content: center;
     text-align: center;
 }
 
@@ -116,4 +115,5 @@ h3{
 
 p{
    font-family: 'Courier New', Courier, monospace;
+   text-align: justify;
 }
