@@ -109,6 +109,7 @@ header{
 
 /*Estilos generales para el footer*/
 footer{
+    border-top: 4px solid white;
     bottom: 8px;
     display: flex;
     font-family: 'Courier New', Courier, monospace;
@@ -118,7 +119,6 @@ footer{
     padding-right: 8px;
     padding-left: 12px;
     right: 8px;
-
 }
 
 /*Estilos para lo que venga a continuación del main*/
@@ -161,6 +161,7 @@ p{
     color: black;
     float: right;
     padding-bottom: 10px;
+    text-align: center;
 
 }
 
