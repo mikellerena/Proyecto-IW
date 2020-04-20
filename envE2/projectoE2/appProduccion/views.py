@@ -205,7 +205,6 @@ class ProcesoUpdateView(UpdateView):
         context['titulo_pagina'] = 'Modificar procesos'
         return context
 
-
 """Vista para eliminar procesos"""
 class ProcesoDeleteView(DeleteView):
     model = Proceso
