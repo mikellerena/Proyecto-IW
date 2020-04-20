@@ -30,6 +30,16 @@ class Empleado(models.Model):
     def __str__(self):
         return f"DNI: {self.dni}, Nombre: {self.nombre}, Apellidos: {self.apellidos}, Email: {self.email}, Telefono: {self.telefono}, Direccion: {self.direccion}, F. Nacimiento: {self.fecha_nacimiento}"
 
+class Orden(models.Model):
+    """codigo_orden_fabricacion numeros y letras"""
+    codigo = models.CharField(primary_key=True, max_length=75)
+    """Entidad que contrata los servicios"""
+    cliente = models.CharField(max_length=50)
+    fecha_inicio = models.DateField()
+    #procesos = models.ManyToManyField(Proceso)
+
+    def __str__(self):
+        return f"Codigo: {self.codigo}, Cliente: {self.cliente}, F. Inicio: {self.fecha_inicio}"
 
 class Proceso(models.Model):
     """codigo_orden_fabricacion numeros y letras, foreign key"""
@@ -45,12 +55,6 @@ class Proceso(models.Model):
     empleados = models.ManyToManyField(Empleado)
 
     def __str__(self):
-        return f"Codigo OF: {self.codigo_orden_fabricacion}, C. Preceso: {self.codigo_proceso}, Nombre: {self.nombre_proceso}, Referencia: {self.referencia}, F. Inicio: {self.fecha_inicio}, F. Fin: {self.fecha_fin}"
+        return f"C. Preceso: {self.codigo_proceso}, Nombre: {self.nombre_proceso}, Referencia: {self.referencia}, F. Inicio: {self.fecha_inicio}, F. Fin: {self.fecha_fin}"
 
-class Orden(models.Model):
-    """codigo_orden_fabricacion numeros y letras"""
-    codigo = models.CharField(primary_key=True, max_length=75)
-    """Entidad que contrata los servicios"""
-    cliente = models.CharField(max_length=50)
-    fecha_inicio = models.DateField()
-    procesos = models.ForeignKey(Proceso, on_delete=models.CASCADE)
+
