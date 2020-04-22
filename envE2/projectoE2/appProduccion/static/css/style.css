@@ -194,3 +194,25 @@ p{
     padding: 5px;
     width: 64%
 }
+
+.Submenu{
+    position: absolute;
+    background: #333333;
+    width: 120%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.5s;
+}
+
+.Titulos_submenu{
+    display: block;
+    padding: 15px;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+}
+
+nav h2:hover .Submenu{
+    visibility: visible;
+    opacity: 1;
+}

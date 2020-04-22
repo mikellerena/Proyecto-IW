@@ -20,7 +20,15 @@
         <h2 id="PP"><a href="{% url 'principal' %}" class="enlaces_internos" style="text-decoration:none;">
             PÁGINA PRINCIPAL</a></h2>
         <h2 id="gestion_empleados"><a href="{% url 'gestion_empleado' %}" class="enlaces_internos" style="text-decoration:none;">
-            GESTION DE LOS EMPLEADOS</a></h2>
+            GESTION DE LOS EMPLEADOS</a>
+            <ul class="Submenu">
+                <li><a class="Titulos_submenu" href="{% url 'empleado_create' %}">Añadir empleado</a></li>
+                <li><a class="Titulos_submenu" href="{% url 'empleado_edit' %}">Modificar empleado</a></li>
+                <li><a class="Titulos_submenu" href="{% url 'empleado_list' %}">Listar los empleados</a></li>
+                <li><a class="Titulos_submenu" href="{% url 'empleado_detail' %}">Detalles de los empleados</a></li>
+                <li><a class="Titulos_submenu" href="{% url 'empleado_delete' %}">Eliminar empleado</a></li>
+            </ul>
+        </h2>
         <h2 id="gestion_equipos"><a href="{% url 'gestion_equipo' %}" class="enlaces_internos" style="text-decoration:none;">
             GESTION DE LOS EQUIPOS</a></h2>
         <h2 id="gestion_procesos"><a href="{% url 'gestion_proceso' %}" class="enlaces_internos" style="text-decoration:none;">
