@@ -24,13 +24,11 @@ body{
 
 /*Estilos para el h1 del index*/
 #h1_index{
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
     font-size: 50px;
 }
 
-/*Estilos para el h2 del index*/
-#h2_index{
+/*Estilos para el texto del index*/
+.texto_index{
     color: black;
     font-family: 'Courier New', Courier, monospace;
 }
@@ -157,14 +155,14 @@ p{
 }
 
 #Logo{
-    height:90px;
-    left: 8px;
+    height:80px;
+    left: 5px;
     margin-top: 0px;
-    padding-top: 2px;
+    padding-top: 0px;
     padding-bottom: 5px;
     padding-left: 5px;
     position: absolute;
-    width:90px;
+    width:80px;
 }
 .h3_footer{
     font-family: 'Courier New', Courier, monospace;
