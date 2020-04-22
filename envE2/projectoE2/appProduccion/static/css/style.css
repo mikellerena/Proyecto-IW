@@ -236,9 +236,6 @@ nav h2:hover .Submenu{
 	color: #CE7D35;
     transition: 1s;
 }
-<<<<<<< Updated upstream
-=======
-
 /*Estilos para las notas*/
 nota {
   display:none;
@@ -252,4 +249,7 @@ nota {
   visibility: visible;
   transition: 1s;
 }
->>>>>>> Stashed changes
+h2{
+    font-family: 'Courier New', Courier, monospace;
+}
+

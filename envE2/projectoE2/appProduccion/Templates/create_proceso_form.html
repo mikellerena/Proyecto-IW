@@ -5,7 +5,13 @@
     <legend>Añadir proceso</legend>
     <form action="{% url 'proceso_create' %}" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {% for field in form %}
+            <div>
+                {{ field.errors }}
+                {{ field.label_tag }}<br>
+                {{ field }}
+            </div>
+        {% endfor %}
         <input type="submit" value="Nuevo Proceso">
     </form>
 </fieldset>

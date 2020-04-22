@@ -5,7 +5,13 @@
     <legend>Añadir empleado</legend>
     <form action="{% url 'empleado_create' %}" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {% for field in form %}
+            <div>
+                {{ field.errors }}
+                {{ field.label_tag }}<br>
+                {{ field }}
+            </div>
+        {% endfor %}
         <input type="submit" value="Nuevo Empleado">
     </form>
 </fieldset>
