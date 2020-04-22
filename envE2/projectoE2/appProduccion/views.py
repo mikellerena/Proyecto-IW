@@ -15,18 +15,6 @@ def index(request):
 def principal(request):
     return render(request, 'pagina_principal.html')
 
-"""Vista menu gestionar equipos"""
-def g_equipo(request):
-    return render(request, 'gestion_equipos.html')
-
-"""Vista menu gestionar empleados"""
-def g_empleado(request):
-    return render(request, 'gestion_empleados.html')
-
-"""Vista menu gestionar procesos"""
-def g_proceso(request):
-    return render(request, 'gestion_procesos.html')
-
 """Vista para el formulario de creacion de equipo"""
 class EquipoCreateView(View):
     def get(self, request, *args, **kwargs):
