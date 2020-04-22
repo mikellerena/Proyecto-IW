@@ -88,7 +88,6 @@ nav{
 /*Estilos generales para el header*/
 header{
     border-bottom: 4px solid white;
-    box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
     justify-content: center;
     text-align: center;
@@ -96,29 +95,14 @@ header{
 
 /*Estilos para el footer de la página principal*/
 #footer_PP{
-    bottom: 8px;
-    display: flex;
-    font-family: 'Courier New', Courier, monospace;
-    justify-content: right;
-    left: 8px;
-    padding-left: 8px;
-    padding-right: 8px;
     position: absolute;
-    right: 8px;
 }
 
 /*Estilos generales para el footer*/
 footer{
     border-top: 4px solid white;
-    bottom: 8px;
-    display: flex;
     font-family: 'Courier New', Courier, monospace;
-    justify-content: right;
-    left: 8px;
-    margin-top: 10px;
-    padding-right: 8px;
-    padding-left: 12px;
-    right: 8px;
+    width: 1200px;
 }
 
 /*Estilos para lo que venga a continuación del main*/
@@ -159,7 +143,6 @@ p{
 /*Estilos generales para el conjunto de contacto*/
 #Contactos{
     color: black;
-    float: right;
     padding-bottom: 10px;
     text-align: center;
 
@@ -175,9 +158,7 @@ p{
 
 .h3_footer{
     font-family: 'Courier New', Courier, monospace;
-    left: 45px;
     padding-top: 30px;
-    position: absolute;
 }
 .float-izq-50{
     float: left;
@@ -188,4 +169,14 @@ p{
     float: right;
     padding: 10px;
     width: 50%;
+}
+.footer-izq{
+    float: left;
+    padding-left: 20px;
+    width: 70%
+}
+.footer-der{
+    float: right;
+    padding: 5px;
+    width: 30%
 }
