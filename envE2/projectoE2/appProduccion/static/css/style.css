@@ -237,16 +237,3 @@ nav h2:hover .Submenu{
     transition: 1s;
 
 }
-
-/*Estilos para las notas*/
-nota {
-  display:none;
-  transition: 1s;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-/*Estilos para haver visibles las notas*/
-.Listar:hover > nota {
-  display:block;
-  transition: 1s;
-}
