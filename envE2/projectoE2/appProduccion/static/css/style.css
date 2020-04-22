@@ -179,13 +179,13 @@ p{
     padding-top: 30px;
     position: absolute;
 }
-#p-izq-pp{
+.float-izq-50{
     float: left;
-    margin: 5px;
+    padding: 10px;
     width: 50%;
 }
-#p-der-pp{
+.float-der-50{
     float: right;
-    margin: 5px;
+    padding: 10px;
     width: 50%;
 }
