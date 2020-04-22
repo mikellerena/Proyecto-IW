@@ -173,6 +173,16 @@ p{
     width:25px;
 }
 
+#Logo{
+    height:100px;
+    left: 10px;
+    margin-top: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    position: absolute;
+    width:100px;
+}
 .h3_footer{
     font-family: 'Courier New', Courier, monospace;
     left: 45px;
