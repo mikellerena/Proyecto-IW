@@ -246,7 +246,7 @@ nota {
 }
 
 /*Estilos para haver visibles las notas*/
-.Listar:hover > figcaption {
+.Listar:hover > nota {
   display:block;
   transition: 1s;
 }
