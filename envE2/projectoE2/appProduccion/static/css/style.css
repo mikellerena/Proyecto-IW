@@ -154,7 +154,7 @@ p{
 }
 
 #Logo{
-    height:90px;
+    height:80px;
     width:80px;
 }
 .h3_footer{
@@ -186,7 +186,7 @@ p{
 }
 .header-izq{
     float: left;
-    padding: 5px;
+    padding: 10px 0px 5px 20px;
     width: 36%
 }
 .header-der{

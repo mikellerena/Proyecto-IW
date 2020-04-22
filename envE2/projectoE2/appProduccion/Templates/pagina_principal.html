@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <header>
-        <a href="{% url 'principal' %}"> <img id="Logo" src="{% static 'imagenes/logo.png' %}" alt="LOGO"></a>
-        <h1>Deustubular S.L.</h1>
+    <header class="antifloat">
+        <div class="header-izq">
+            <a href="{% url 'principal' %}"><img id="Logo" src="{% static 'imagenes/logo.png' %}" alt="LOGO"></a>
+        </div>
+        <div class="header-der">
+            <h1>Deustubular S.L.</h1>
+        </div>
     </header>
      <nav>
         <h2 id="PP"><a href="{% url 'principal' %}" class="enlaces_internos" style="text-decoration:none;">
