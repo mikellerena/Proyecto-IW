@@ -89,8 +89,6 @@ nav{
 header{
     border-bottom: 4px solid white;
     font-family: 'Courier New', Courier, monospace;
-    justify-content: center;
-    text-align: center;
 }
 
 /*Estilos para el footer de la página principal*/
@@ -158,12 +156,6 @@ p{
 
 #Logo{
     height:90px;
-    left: 8px;
-    margin-top: 0px;
-    padding-top: 2px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    position: absolute;
     width:90px;
 }
 .h3_footer{
@@ -192,4 +184,14 @@ p{
 }
 .centrar{
     text-align: center;
+}
+.header-izq{
+    float: left;
+    padding: 5px;
+    width: 30%
+}
+.header-der{
+    float: right;
+    padding: 5px;
+    width: 60%
 }
