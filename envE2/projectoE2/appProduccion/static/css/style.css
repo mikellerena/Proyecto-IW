@@ -71,7 +71,6 @@ body{
 
 /*Estilos especiales para los enlaces internos*/
 .enlaces_internos:hover{
-    color:blue;
     font-style: italic;
 }
 
@@ -153,6 +152,7 @@ p{
     width:25px;
 }
 
+/*Estilos para el logo*/
 #Logo{
     height:80px;
     width:80px;
@@ -195,6 +195,7 @@ p{
     width: 64%
 }
 
+/*Estilos para los submenus de los apartados del navegador*/
 .Submenu{
     position: absolute;
     background: #333333;
@@ -202,17 +203,37 @@ p{
     visibility: hidden;
     opacity: 0;
     transition: opacity 1.5s;
+    list-style: none;
+    margin: 0;
+	padding: 0;
+	width: auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
+/*Estilos para los títulos de los submenus*/
 .Titulos_submenu{
     display: block;
     padding: 15px;
     color: #fff;
     font-family: 'Courier New', Courier, monospace;
     text-decoration: none;
+    margin: 5px;
+    padding: 5px;
+    font-size: 15px;
+
 }
 
+/*Estilos para que cuando se pone el cursor encima de los h2 del nav salgan los submenus*/
 nav h2:hover .Submenu{
     visibility: visible;
     opacity: 1;
+}
+
+/*Estilos para que cuando se ponga el cursor encima de una opción de los submenus se pongan de un color al cabo de 1 segundo*/
+.Submenu li a:hover{
+	color: #CE7D35;
+    transition: 1s;
+
 }

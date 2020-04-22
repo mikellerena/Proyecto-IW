@@ -30,9 +30,25 @@
             </ul>
         </h2>
         <h2 id="gestion_equipos"><a href="{% url 'gestion_equipo' %}" class="enlaces_internos" style="text-decoration:none;">
-            GESTION DE LOS EQUIPOS</a></h2>
+            GESTION DE LOS EQUIPOS</a>
+            <ul class="Submenu">
+                <li><a class="Titulos_submenu" href="{% url 'equipo_create' %}">Añadir equipo</a></li>
+                <li><a class="Titulos_submenu" href="{% url 'equipo_edit' %}">Modificar equipo</a></li>
+                <li><a class="Titulos_submenu" href="{% url 'equipo_list' %}">Listar los equipos</a></li>
+                <li><a class="Titulos_submenu" href="{% url 'equipo_detail' %}">Detalles de los equipos</a></li>
+                <li><a class="Titulos_submenu" href="{% url 'equipo_delete' %}">Eliminar equipo</a></li>
+            </ul>
+        </h2>
         <h2 id="gestion_procesos"><a href="{% url 'gestion_proceso' %}" class="enlaces_internos" style="text-decoration:none;">
-            GESTION DE LOS PROCESOS</a></h2>
+            GESTION DE LOS PROCESOS</a>
+        <ul class="Submenu">
+                <li><a class="Titulos_submenu" href="{% url 'proceso_create' %}">Añadir proceso</a></li>
+                <li><a class="Titulos_submenu" href="{% url 'proceso_edit' %}">Modificar proceso</a></li>
+                <li><a class="Titulos_submenu" href="{% url 'proceso_list' %}">Listar los procesos</a></li>
+                <li><a class="Titulos_submenu" href="{% url 'proceso_detail' %}">Detalles de los procesos</a></li>
+                <li><a class="Titulos_submenu" href="{% url 'preceso_delete' %}">Eliminar proceso</a></li>
+            </ul>
+        </h2>
     </nav>
     <main class="antifloat">
         <h3 class="centrar">Esta es la aplicación web para gestionar los procesos, empleados y equipos de esta nuestra fábrica.</h3>
