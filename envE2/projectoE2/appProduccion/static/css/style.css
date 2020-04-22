@@ -157,14 +157,14 @@ p{
 }
 
 #Logo{
-    height:100px;
-    left: 10px;
+    height:90px;
+    left: 8px;
     margin-top: 0px;
-    padding-top: 5px;
+    padding-top: 2px;
     padding-bottom: 5px;
     padding-left: 5px;
     position: absolute;
-    width:100px;
+    width:90px;
 }
 .h3_footer{
     font-family: 'Courier New', Courier, monospace;
