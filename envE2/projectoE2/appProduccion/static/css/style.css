@@ -87,6 +87,7 @@ nav{
 header{
     border-bottom: 4px solid white;
     font-family: 'Courier New', Courier, monospace;
+    width: 1200px;
 }
 
 /*Estilos para el footer de la página principal*/
@@ -102,7 +103,7 @@ footer{
 }
 
 /*Estilos para lo que venga a continuación del main*/
-main:after {
+.antifloat{
     clear: both;
     content: "";
     display: table;
@@ -153,19 +154,8 @@ p{
 }
 
 #Logo{
-<<<<<<< HEAD
     height:90px;
-    width:90px;
-=======
-    height:80px;
-    left: 5px;
-    margin-top: 0px;
-    padding-top: 0px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    position: absolute;
     width:80px;
->>>>>>> master
 }
 .h3_footer{
     font-family: 'Courier New', Courier, monospace;
@@ -197,10 +187,10 @@ p{
 .header-izq{
     float: left;
     padding: 5px;
-    width: 30%
+    width: 36%
 }
 .header-der{
     float: right;
     padding: 5px;
-    width: 60%
+    width: 64%
 }
