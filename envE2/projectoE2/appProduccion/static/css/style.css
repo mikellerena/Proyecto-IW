@@ -197,38 +197,37 @@ p{
 
 /*Estilos para los submenus de los apartados del navegador*/
 .Submenu{
-    position: absolute;
     background: #333333;
-    width: 120%;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 1.5s;
+    box-sizing: border-box;
+    position: absolute;
     list-style: none;
     margin: 0;
-	padding: 0;
+    -moz-box-sizing: border-box;
+    opacity: 0;
+    padding: 0;
+    transition: opacity 1.5s;
+    visibility: hidden;
+    -webkit-box-sizing: border-box;
+    width: 120%;
 	width: auto;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 }
 
 /*Estilos para los títulos de los submenus*/
 .Titulos_submenu{
-    display: block;
-    padding: 15px;
     color: #fff;
+    display: block;
     font-family: 'Courier New', Courier, monospace;
-    text-decoration: none;
-    margin: 5px;
-    padding: 5px;
     font-size: 15px;
-
+    margin: 5px;
+    padding: 15px;
+    text-decoration: none;
+    padding: 5px;
 }
 
 /*Estilos para que cuando se pone el cursor encima de los h2 del nav salgan los submenus*/
 nav h2:hover .Submenu{
-    visibility: visible;
     opacity: 1;
+    visibility: visible;
 }
 
 /*Estilos para que cuando se ponga el cursor encima de una opción de los submenus se pongan de un color al cabo de 1 segundo*/
@@ -236,19 +235,8 @@ nav h2:hover .Submenu{
 	color: #CE7D35;
     transition: 1s;
 }
-/*Estilos para las notas*/
-nota {
-  display:none;
-  transition: 1s;
-  font-family: 'Courier New', Courier, monospace;
-}
 
-/*Estilos para haver visibles las notas*/
-.Listar:hover > nota {
-  display:block;
-  visibility: visible;
-  transition: 1s;
-}
+/*Estilos generales para los h2*/
 h2{
     font-family: 'Courier New', Courier, monospace;
 }
