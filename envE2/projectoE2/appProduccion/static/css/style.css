@@ -267,7 +267,7 @@ fieldset{
     margin-bottom: 8px;
 }
 
-#Lista_empleados li{
+#Lista_empleados{
      display:inline;
      padding-left:20px;
      padding-right:20px;
