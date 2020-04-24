@@ -8,11 +8,16 @@
         {% for field in form %}
             <div>
                 {{ field.errors }}
-                {{ field.label_tag }}<br>
-                {{ field }}
+                <div class="form-izq-50">
+                    {{ field.label_tag }}
+                </div>
+                <div class="float-der-50">
+                    {{ field }}
+                </div>
             </div>
         {% endfor %}
-        <input type="submit" value="Nuevo Equipo">
+        <br>
+        <input class="enviar" type="submit" value="Nuevo Equipo">
     </form>
 </fieldset>
 {% endblock %}
