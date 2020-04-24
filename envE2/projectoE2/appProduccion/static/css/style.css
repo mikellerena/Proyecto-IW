@@ -208,7 +208,6 @@ p{
     transition: opacity 1.5s;
     visibility: hidden;
     -webkit-box-sizing: border-box;
-    width: 120%;
 	width: auto;
 }
 
