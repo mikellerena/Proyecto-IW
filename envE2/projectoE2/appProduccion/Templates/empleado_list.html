@@ -5,7 +5,8 @@
 <ol>
     {% for em in empleado_list %}
     <li>
-        <span>Empleado<img id="Flecha" src="{% static 'imagenes/flecha.png' %}"alt="FLECHA"></span>
+        <p>Empleado</p>
+        <img id="Flecha" src="{% static 'imagenes/flecha.png' %}"alt="FLECHA">
         <a href="{% url 'empleado_detail' em.dni %}">Ver</a> ||
         <a href="{% url 'empleado_edit' em.dni %}">Editar</a> ||
         <a href="{% url 'empleado_delete' em.dni %}">Borrar</a>
