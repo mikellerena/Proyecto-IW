@@ -5,8 +5,19 @@
     <legend>Modificar Empleado</legend>
     <form action="" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Editar">
+        {% for field in form %}
+            <div>
+                {{ field.errors }}
+                <div class="form-izq-50">
+                    {{ field.label_tag }}
+                </div>
+                <div class="float-der-50">
+                    {{ field }}
+                </div>
+            </div>
+        {% endfor %}
+        <br>
+        <input class="enviar" type="submit" value="Editar">
     </form>
 </fieldset>
 {% endblock %}
