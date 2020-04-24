@@ -3,16 +3,21 @@
 {% block contenido %}
 <fieldset>
     <legend>Añadir empleado</legend>
-    <form action="{% url 'empleado_create' %}" method="post">
+    <form action="{% url 'equipo_create' %}" method="post">
         {% csrf_token %}
         {% for field in form %}
             <div>
                 {{ field.errors }}
-                {{ field.label_tag }}<br>
-                {{ field }}
+                <div class="form-izq-50">
+                    {{ field.label_tag }}
+                </div>
+                <div class="float-der-50">
+                    {{ field }}
+                </div>
             </div>
         {% endfor %}
-        <input type="submit" value="Nuevo Empleado">
+        <br>
+        <input class="enviar" type="submit" value="Nuevo Equipo">
     </form>
 </fieldset>
 {% endblock %}
