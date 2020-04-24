@@ -157,6 +157,13 @@ p{
     height:80px;
     width:80px;
 }
+
+/*Estilos para las flechas*/
+#Flecha{
+    height:20px;
+    vertical-align: middle;
+    width:20px;
+}
 .h3_footer{
     font-family: 'Courier New', Courier, monospace;
     padding-top: 30px;
