@@ -4,9 +4,12 @@
 <ol>
     {% for pro in proceso_list %}
     <li>
-        Proceso --> <a href="{% url 'proceso_detail' pro.codigo_proceso %}">Ver</a> ||
-        <a href="{% url 'proceso_edit' pro.codigo_proceso %}">Editar</a> ||
-        <a href="{% url 'proceso_delete' pro.codigo_proceso %}">Borrar</a>
+        <p class="mar-inferior">Proceso</p>
+        <div class="mar-inferior">
+            <a href="{% url 'proceso_detail' pro.codigo_proceso %}">Ver</a> ||
+            <a href="{% url 'proceso_edit' pro.codigo_proceso %}">Editar</a> ||
+            <a href="{% url 'proceso_delete' pro.codigo_proceso %}">Borrar</a>
+        </div>
         <ul>
             <li>Codigo Orden Fabricación: {{ pro.codigo_orden_fabricacion }}</li>
             <li>Codigo Proceso: {{ pro.codigo_proceso }}</li>
