@@ -5,9 +5,12 @@
 <ol>
     {% for eq in equipo_list %}
     <li>
-        Equipo --> <a href="{% url 'equipo_detail' eq.id %}">Ver</a> ||
-        <a href="{% url 'equipo_edit' eq.id %}">Editar</a> ||
-        <a href="{% url 'equipo_delete' eq.id %}">Borrar</a>
+        <p class="mar-inferior">Equipo</p>
+        <div class="mar-inferior">
+            <a href="{% url 'equipo_detail' eq.id %}">Ver</a> ||
+            <a href="{% url 'equipo_edit' eq.id %}">Editar</a> ||
+            <a href="{% url 'equipo_delete' eq.id %}">Borrar</a>
+        </div>
         <ul>
             <li>ID: {{ eq.id }}</li>
             <li>Marca: {{ eq.marca }}</li>

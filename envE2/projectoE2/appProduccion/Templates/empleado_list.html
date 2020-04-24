@@ -1,19 +1,23 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block contenido %}
 
 <ol>
     {% for em in empleado_list %}
     <li>
-        <p>Empleado</p>
-        <img id="Flecha" src="{% static 'imagenes/flecha.png' %}"alt="FLECHA">
-        <a href="{% url 'empleado_detail' em.dni %}">Ver</a> ||
-        <a href="{% url 'empleado_edit' em.dni %}">Editar</a> ||
-        <a href="{% url 'empleado_delete' em.dni %}">Borrar</a>
+        <p class="mar-inferior">Empleado</p>
+        <div class="mar-inferior">
+            <a href="{% url 'empleado_detail' em.dni %}">Ver</a> ||
+            <a href="{% url 'empleado_edit' em.dni %}">Editar</a> ||
+            <a href="{% url 'empleado_delete' em.dni %}">Borrar</a>
+        </div>
         <ul>
             <li>DNI: {{ em.dni }}</li>
             <li>Nombre: {{ em.nombre }}</li>
         </ul>
+        <br>
     </li>
     {% endfor %}
 </ol>
