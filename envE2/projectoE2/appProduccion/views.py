@@ -53,7 +53,7 @@ class EquipoDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(EquipoDetailView, self).get_context_data(**kwargs)
-        context['titulo_pagina'] = 'Detalles de los equipos'
+        context['titulo_pagina'] = 'Detalles del equipo'
         return context
 
 
@@ -115,7 +115,7 @@ class EmpleadoDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(EmpleadoDetailView, self).get_context_data(**kwargs)
-        context['titulo_pagina'] = 'Detalles de los empleados'
+        context['titulo_pagina'] = 'Detalles del empleado'
         return context
 
 
@@ -177,7 +177,7 @@ class ProcesoDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(ProcesoDetailView, self).get_context_data(**kwargs)
-        context['titulo_pagina'] = 'Detalles de los procesos'
+        context['titulo_pagina'] = 'Detalles del proceso'
         return context
 
 
