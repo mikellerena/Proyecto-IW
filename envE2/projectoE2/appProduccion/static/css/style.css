@@ -273,3 +273,7 @@ fieldset{
     padding:0;
 }
 
+.tr_estilos{
+padding:5px 0px 5px px;
+margin-bottom: 3px dotted black;
+}
