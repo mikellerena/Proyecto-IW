@@ -1,49 +1,51 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-<table>
-    <tr>
-        <td>Códido de la orden de fabricación</td>
-        <td>{{ proceso.codigo_orden_fabricacion }}</td>
-    </tr>
-    <tr>
-        <td>Código del proceso</td>
-        <td>{{ proceso.codigo_proceso }}</td>
-    </tr>
-    <tr>
-        <td>Nombre del proceso</td>
-        <td>{{ proceso.nombre_proceso }}</td>
-    </tr>
-    <tr>
-        <td>Referencia</td>
-        <td>{{ proceso.referencia }}</td>
-    </tr>
-    <tr>
-        <td>Fecha de inicio</td>
-        <td>{{ proceso.fecha_inicio }}</td>
-    </tr>
-    <tr>
-        <td>Fecha de fin</td>
-        <td>{{ proceso.fecha_fin }}</td>
-    </tr>
-    <tr>
-        <td>Equipos utilizados</td>
-        <td>{{ proceso.equipo }}</td>
-    </tr>
-    <tr>
-        <td>Empleados asignados</td>
-        <td>
-            <ol>
-                {% for empleados in proceso.empleados.all %}
-                    <li>
-                        Nombre: {{ empleados.nombre }}
-                        <br>
-                        Apellidos: {{ empleados.apellidos }}
-                    </li>
-                <br>
-                {% endfor %}
-            </ol>
-        </td>
-    </tr>
-</table>
+<div class="div-table">
+    <table>
+        <tr>
+            <td>Códido de la orden de fabricación</td>
+            <td class="td_estilos">{{ proceso.codigo_orden_fabricacion }}</td>
+        </tr>
+        <tr>
+            <td>Código del proceso</td>
+            <td class="td_estilos">{{ proceso.codigo_proceso }}</td>
+        </tr>
+        <tr>
+            <td>Nombre del proceso</td>
+            <td class="td_estilos">{{ proceso.nombre_proceso }}</td>
+        </tr>
+        <tr>
+            <td>Referencia</td>
+            <td class="td_estilos">{{ proceso.referencia }}</td>
+        </tr>
+        <tr>
+            <td>Fecha de inicio</td>
+            <td class="td_estilos">{{ proceso.fecha_inicio }}</td>
+        </tr>
+        <tr>
+            <td>Fecha de fin</td>
+            <td class="td_estilos">{{ proceso.fecha_fin }}</td>
+        </tr>
+        <tr>
+            <td>Equipos utilizados</td>
+            <td class="td_estilos">{{ proceso.equipo }}</td>
+        </tr>
+        <tr>
+            <td>Empleados asignados</td>
+            <td class="td_estilos">
+                <ol>
+                    {% for empleados in proceso.empleados.all %}
+                        <li>
+                            Nombre: {{ empleados.nombre }}
+                            <br>
+                            Apellidos: {{ empleados.apellidos }}
+                        </li>
+                    <br>
+                    {% endfor %}
+                </ol>
+            </td>
+        </tr>
+    </table>
+</div>
 {% endblock %}
