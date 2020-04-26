@@ -4,9 +4,9 @@
 
 {% block contenido %}
 
-<ol>
+<ol class="listas">
     {% for em in empleado_list %}
-    <li class="listas">
+    <li>
         <p class="mar-inferior">Empleado</p>
         <div class="mar-inferior">
             <a href="{% url 'empleado_detail' em.dni %}">Ver</a> ||
