@@ -5,21 +5,23 @@
     <legend>Añadir equipo</legend>
     <form action="{% url 'equipo_create' %}" method="post">
         {% csrf_token %}
-        {% for field in form %}
-            <div>
-                {{ field.errors }}
-                <div class="form-izq-50">
-                    {{ field.label_tag }}
-                </div>
-                <div class="float-der-50">
-                    {{ field }}
-                </div>
-            </div>
-        {% endfor %}
+        <div>
+            {{ form.codigo_orden_fabricacion.label_tag }}
+            {{ form.codigo_proceso.label_tag }}
+            {{ form.nombre_proceso.label_tag }}
+            {{ form.referencia.label_tag }}
+            {{ form.fecha_inicio.label_tag }}
+            {{ form.fecha_fin.label_tag }}
+        </div>
+        <div>
+
+        </div>
         <br>
         <input class="enviar" type="submit" value="Nuevo Equipo">
     </form>
 </fieldset>
 
+{{ form.nombre_proceso.label_tag }}<br>
+{{ form.nombre_proceso }}
 
 {% endblock %}
