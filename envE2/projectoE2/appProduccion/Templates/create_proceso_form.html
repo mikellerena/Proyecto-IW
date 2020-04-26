@@ -5,23 +5,33 @@
     <legend>Añadir equipo</legend>
     <form action="{% url 'equipo_create' %}" method="post">
         {% csrf_token %}
-        <div>
-            {{ form.codigo_orden_fabricacion.label_tag }}
-            {{ form.codigo_proceso.label_tag }}
-            {{ form.nombre_proceso.label_tag }}
-            {{ form.referencia.label_tag }}
-            {{ form.fecha_inicio.label_tag }}
-            {{ form.fecha_fin.label_tag }}
+        <div class="antifloat width-100">
+            <div class="form-izq-25 padding-15">
+                <p class="margin-14-20">{{ form.codigo_orden_fabricacion.label_tag }}</p>
+                <p class="margin-14-20">{{ form.codigo_proceso.label_tag }}</p>
+                <p class="margin-14-20">{{ form.nombre_proceso.label_tag }}</p>
+                <p class="margin-14-20">{{ form.referencia.label_tag }}</p>
+                <p class="margin-14-20">{{ form.fecha_inicio.label_tag }}</p>
+                <p class="margin-14-20">{{ form.fecha_fin.label_tag }}</p>
+            </div>
+            <div class="float-der-75 padding-15">
+                <p>{{ form.codigo_orden_fabricacion }}</p>
+                <p>{{ form.codigo_proceso }}</p>
+                <p>{{ form.nombre_proceso }}</p>
+                <p>{{ form.referencia }}</p>
+                <p>{{ form.fecha_inicio }}</p>
+                <p>{{ form.fecha_fin }}</p>
+            </div>
         </div>
-        <div>
-
+        <div class="padding-15 margin-top-0">
+            <p>{{ form.equipo.label_tag }}</p>
+            <p>{{ form.equipo }}</p>
+            <p>{{ form.empleados.label_tag }}</p>
+            <p>{{ form.empleados }}</p>
         </div>
-        <br>
-        <input class="enviar" type="submit" value="Nuevo Equipo">
+        <input class="enviar" type="submit" value="Nuevo Proceso">
     </form>
 </fieldset>
 
-{{ form.nombre_proceso.label_tag }}<br>
-{{ form.nombre_proceso }}
 
 {% endblock %}

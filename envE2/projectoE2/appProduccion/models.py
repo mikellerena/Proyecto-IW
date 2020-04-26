@@ -11,7 +11,7 @@ class Equipo(models.Model):
     fecha_instalacion = models.DateField()
 
     def __str__(self):
-        return f"ID: {self.id}, Modelo: {self.modelo}, Marca: {self.marca}, Categoria: {self.categoria}, F. Adquisicion: {self.fecha_adquisicion}, F. Instalacion: {self.fecha_instalacion}"
+        return f"ID: {self.id} | Modelo: {self.modelo} | Marca: {self.marca} | Categoria: {self.categoria} | F. Adquisicion: {self.fecha_adquisicion} | F. Instalacion: {self.fecha_instalacion}"
 
 
 class Empleado(models.Model):
@@ -28,7 +28,7 @@ class Empleado(models.Model):
     fecha_nacimiento = models.DateField()
 
     def __str__(self):
-        return f"DNI: {self.dni}, Nombre: {self.nombre}, Apellidos: {self.apellidos}, Email: {self.email}, Telefono: {self.telefono}, Direccion: {self.direccion}, F. Nacimiento: {self.fecha_nacimiento}"
+        return f"DNI: {self.dni} | Nombre: {self.nombre} | Apellidos: {self.apellidos} | Email: {self.email} | Telefono: {self.telefono} | Direccion: {self.direccion} | F. Nacimiento: {self.fecha_nacimiento}"
 
 class Proceso(models.Model):
     """codigo_orden_fabricacion numeros y letras"""
@@ -44,6 +44,6 @@ class Proceso(models.Model):
     empleados = models.ManyToManyField(Empleado)
 
     def __str__(self):
-        return f"C. Preceso: {self.codigo_proceso}, Nombre: {self.nombre_proceso}, Referencia: {self.referencia}, F. Inicio: {self.fecha_inicio}, F. Fin: {self.fecha_fin}"
+        return f"C. Preceso: {self.codigo_proceso} | Nombre: {self.nombre_proceso} | Referencia: {self.referencia} | F. Inicio: {self.fecha_inicio} | F. Fin: {self.fecha_fin}"
 
 
