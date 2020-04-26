@@ -34,16 +34,16 @@
         <tr>
             <td>Empleados asignados</td>
             <td class="td_estilos">
-                <ol>
-                    {% for empleados in proceso.empleados.all %}
-                        <li>
-                            Nombre: {{ empleados.nombre }}
-                            <br>
-                            Apellidos: {{ empleados.apellidos }}
-                        </li>
-                    <br>
-                    {% endfor %}
-                </ol>
+                    <ol>
+                        {% for empleados in proceso.empleados.all %}
+                            <li>
+                                Nombre: {{ empleados.nombre }}
+                                <br>
+                                Apellidos: {{ empleados.apellidos }}
+                            </li>
+                        <br>
+                        {% endfor %}
+                    </ol>
             </td>
         </tr>
     </table>
