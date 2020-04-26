@@ -1,36 +1,37 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-
-<table class="centrar">
-    <tr class="tr_estilos">
-        <td>DNI</td>
-        <td>{{ empleado.dni }}</td>
-    </tr>
-    <tr class="tr_estilos">
-        <td>Nombre</td>
-        <td>{{ empleado.nombre }}</td>
-    </tr>
-    <tr class="tr_estilos">
-        <td>Apellidos</td>
-        <td>{{ empleado.apellidos }}</td>
-    </tr>
-    <tr class="tr_estilos">
-        <td>Email</td>
-        <td>{{ empleado.email }}</td>
-    </tr>
-    <tr class="tr_estilos">
-        <td>Teléfono</td>
-        <td>{{ empleado.telefono }}</td>
-    </tr>
-    <tr class="tr_estilos">
-        <td>Dirección</td>
-        <td>{{ empleado.direccion }}</td>
-    </tr>
-    <tr class="tr_estilos">
-        <td>Fecha Nacimiento</td>
-        <td>{{ empleado.fecha_nacimiento }}</td>
-    </tr>
-</table>
+<div class="div-table">
+    <table>
+        <tr>
+            <td>DNI</td>
+            <td class="tr_estilos">{{ empleado.dni }}</td>
+        </tr>
+        <tr>
+            <td>Nombre</td>
+            <td class="tr_estilos">{{ empleado.nombre }}</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td class="tr_estilos">{{ empleado.apellidos }}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td class="tr_estilos">{{ empleado.email }}</td>
+        </tr>
+        <tr>
+            <td>Teléfono</td>
+            <td class="tr_estilos">{{ empleado.telefono }}</td>
+        </tr>
+        <tr>
+            <td>Dirección</td>
+            <td class="tr_estilos">{{ empleado.direccion }}</td>
+        </tr>
+        <tr>
+            <td>Fecha Nacimiento</td>
+            <td class="tr_estilos">{{ empleado.fecha_nacimiento }}</td>
+        </tr>
+    </table>
+</div>
 
 {% endblock %}

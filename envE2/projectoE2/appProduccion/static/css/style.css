@@ -272,12 +272,22 @@ fieldset{
     margin:0;
     padding:0;
 }
+table{
+    border-top: 3px dotted black;
+    border-left: 3px dotted black;
+    border-right: 3px dotted black;
+    margin: 0 auto;
+}
 
-<<<<<<< HEAD
+td{
+    padding:5px 0px 5px px;
+    border-bottom: 3px dotted black;
+}
+
 .tr_estilos{
-padding:5px 0px 5px px;
-margin-bottom: 3px dotted black;
-=======
+    border-left: 3px dotted black;
+}
+
 .width-100{
     margin-bottom: -35px;
     width: 100%;
@@ -301,5 +311,7 @@ margin-bottom: 3px dotted black;
 }
 .margin-top-0{
     margin-top: 0px;
->>>>>>> master
+}
+.div-table{
+    padding: 10px;
 }
