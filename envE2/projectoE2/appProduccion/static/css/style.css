@@ -316,7 +316,7 @@ td{
     padding: 0px 10px 20px 10px;
 }
 
-ol.lista li{
+ul.lista li{
     display: inline-block;
     padding: 10px 20px 5px 15px;
 }
