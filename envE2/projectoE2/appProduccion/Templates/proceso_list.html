@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-<ol>
+<ol class="lista">
     {% for pro in proceso_list %}
     <li>
         <p class="mar-inferior">Proceso</p>
@@ -10,10 +10,11 @@
             <a href="{% url 'proceso_edit' pro.codigo_proceso %}">Editar</a> ||
             <a href="{% url 'proceso_delete' pro.codigo_proceso %}">Borrar</a>
         </div>
-        <ul>
-            <li>Codigo Orden Fabricación: {{ pro.codigo_orden_fabricacion }}</li>
-            <li>Codigo Proceso: {{ pro.codigo_proceso }}</li>
-            <li>Referencia: {{ pro.referencia }}</li>
+        <ul class="listas">
+            <li>Codigo Orden Fabricación: {{ pro.codigo_orden_fabricacion }}</li><br>
+            <li>Codigo Proceso: {{ pro.codigo_proceso }}</li><br>
+            <li>Referencia: {{ pro.referencia }}</li><br>
+            <li>Nombre: {{ pro.nombre_proceso }}</li>
         </ul>
     </li>
     {% endfor %}

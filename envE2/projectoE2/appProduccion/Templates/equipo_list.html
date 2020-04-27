@@ -2,7 +2,7 @@
 
 {% block contenido %}
 
-<ol>
+<ol class="lista">
     {% for eq in equipo_list %}
     <li>
         <p class="mar-inferior">Equipo</p>
@@ -11,9 +11,9 @@
             <a href="{% url 'equipo_edit' eq.id %}">Editar</a> ||
             <a href="{% url 'equipo_delete' eq.id %}">Borrar</a>
         </div>
-        <ul>
-            <li>ID: {{ eq.id }}</li>
-            <li>Marca: {{ eq.marca }}</li>
+        <ul class="listas">
+            <li>ID: {{ eq.id }}</li><br>
+            <li>Marca: {{ eq.marca }}</li><br>
             <li>Modelo: {{ eq.modelo }}</li>
         </ul>
     </li>

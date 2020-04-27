@@ -268,7 +268,6 @@ fieldset{
 }
 
 .listas{
-    display:inline;
     margin:0;
     padding:0;
 }
@@ -319,5 +318,6 @@ td{
 
 ol.lista li{
     display: inline-block;
-    padding: 15px;
+    padding: 10px 20px 5px 15px;
 }
+
