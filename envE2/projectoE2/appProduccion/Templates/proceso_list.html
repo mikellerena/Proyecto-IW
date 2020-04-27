@@ -4,7 +4,7 @@
 <ul class="lista">
     {% for pro in proceso_list %}
     <li>
-        <p class="mar-inferior">Nombre: {{ pro.nombre_proceso }}</p>
+        <p class="mar-inferior p-lista">Proceso</p>
         <div class="mar-inferior">
             <a href="{% url 'proceso_detail' pro.codigo_proceso %}">Ver</a> ||
             <a href="{% url 'proceso_edit' pro.codigo_proceso %}">Editar</a> ||
@@ -13,7 +13,8 @@
         <ul class="listas">
             <li>Codigo Orden Fabricación: {{ pro.codigo_orden_fabricacion }}</li><br>
             <li>Codigo Proceso: {{ pro.codigo_proceso }}</li><br>
-            <li>Referencia: {{ pro.referencia }}</li>
+            <li>Referencia: {{ pro.referencia }}</li><br>
+            <li>Nombre: {{ pro.nombre_proceso }}</li>
         </ul>
     </li>
     {% endfor %}

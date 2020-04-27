@@ -320,4 +320,8 @@ ul.lista li{
     display: inline-block;
     padding: 10px 20px 5px 15px;
 }
-
+.p-lista{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 22px;
+}

@@ -7,13 +7,14 @@
 <ul class="lista">
     {% for em in empleado_list %}
     <li>
-        <p class="mar-inferior">Nombre: {{ em.nombre }}</p>
+        <p class="mar-inferior p-lista">Empleado</p>
         <div class="mar-inferior">
             <a href="{% url 'empleado_detail' em.dni %}">Ver</a> ||
             <a href="{% url 'empleado_edit' em.dni %}">Editar</a> ||
             <a href="{% url 'empleado_delete' em.dni %}">Borrar</a>
         </div>
         <ul class="listas">
+            <li>Nombre: {{ em.nombre }}</li><br>
             <li>DNI: {{ em.dni }}</li>
         </ul>
         <br>
