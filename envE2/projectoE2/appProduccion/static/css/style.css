@@ -318,5 +318,6 @@ td{
 }
 
 ol.lista li{
-display:inline;
+    display: inline-block;
+    padding: 15px;
 }
