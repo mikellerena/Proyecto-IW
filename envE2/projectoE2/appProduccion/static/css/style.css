@@ -312,10 +312,11 @@ td{
 }
 .margin-top-0{
     margin-top: 0px;
-<<<<<<< Updated upstream
 }
 .div-table{
     padding: 0px 10px 20px 10px;
-=======
->>>>>>> Stashed changes
+}
+
+ol.lista li{
+display:inline;
 }
