@@ -164,7 +164,7 @@ fieldset{
 
 /*Estilos generales inico de sesión y registro*/
 #Inicio_sesion,
-#Registro {
+#Registro{
     background: #456;
     font-family: 'Courier New', Courier, monospace;
     width: 400px;
@@ -179,35 +179,30 @@ fieldset{
     padding: 12px;
 }
 
-/*Estilos para el header y los párrafos*/
-  #Inicio_sesion_header,
-  #Inicio_sesion p,
-  #Registro_header,
-  #Registro p {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
 /*Estilos para el header*/
-  #Inicio_sesion_header,
-  #Registro_header {
+#Inicio_sesion_header,
+#Registro_header{
     background: #28d;
-    padding: 20px;
+    color: #fff;
     font-size: 1.4em;
     font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 20px;
     text-align: center;
-    color: #fff;
 }
 
 /*Estilos para los párrafos*/
-  #Inicio_sesion p,
-  #Registro p {
+#Inicio_sesion p,
+#Registro p {
+    margin-top: 0;
+    margin-bottom: 0;
     padding: 12px;
 }
 
 /*Estilos para los inputs*/
-  #Inicio_sesion input,
-  #Registro input {
+#Inicio_sesion input,
+#Registro input {
     box-sizing: border-box;
     display: block;
     width: 100%;
@@ -220,28 +215,28 @@ fieldset{
 }
 
 /*Estilos para el campo email y contraseña*/
-  #Inicio_sesion input[type="text"],
-  #Inicio_sesion input[type="password"],
-  #Registro input[type="text"],
-  #Registro input[type="password"],
-  #Registro input[type="email"] {
+#Inicio_sesion input[type="text"],
+#Inicio_sesion input[type="password"],
+#Registro input[type="text"],
+#Registro input[type="password"],
+#Registro input[type="email"] {
     background: #fff;
     border-color: #bbb;
     color: #555;
 }
 
 /*Estilos especiales para el campo email y contraseña*/
-  #Inicio_sesion input[type="text"]:focus,
-  #Inicio_sesion input[type="password"]:focus,
-  #Registro input[type="text"]:focus,
-  #Registro input[type="password"]:focus,
-  #Registro input[type="email"] {
+#Inicio_sesion input[type="text"]:focus,
+#Inicio_sesion input[type="password"]:focus,
+#Registro input[type="text"]:focus,
+#Registro input[type="password"]:focus,
+#Registro input[type="email"] {
     border-color: #888;
 }
 
 /*Estilos para el botón de confirmar*/
-  #Inicio_sesion input[type="submit"],
-  #Registro input[type="submit"] {
+#Inicio_sesion input[type="submit"],
+#Registro input[type="submit"] {
     background: #28d;
     border-color: transparent;
     color: #fff;
@@ -249,14 +244,14 @@ fieldset{
 }
 
 /*Estilos especiales para el botón de confirmar*/
-  #Inicio_sesion input[type="submit"]:hover,
-  #Registro input[type="submit"]:hover {
+#Inicio_sesion input[type="submit"]:hover,
+#Registro input[type="submit"]:hover {
     background: #17c;
 }
 
 /*Estilos especiales para el botón de confirmar*/
-  #Inicio_sesion input[type="submit"]:focus,
-  #Registro input[type="submit"]:focus {
+#Inicio_sesion input[type="submit"]:focus,
+#Registro input[type="submit"]:focus {
     border-color: #05a;
 }
 
