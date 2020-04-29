@@ -21,11 +21,11 @@
         </tr>
         <tr>
             <td>Fecha Adquisición</td>
-            <td class="td_estilos">{{ equipo.fecha_adquisicion }}</td>
+            <td class="td_estilos">{{ equipo.fecha_adquisicion|date:"d / m /Y" }}</td>
         </tr>
         <tr>
             <td>Fecha Instalación</td>
-            <td class="td_estilos">{{ equipo.fecha_instalacion }}</td>
+            <td class="td_estilos">{{ equipo.fecha_instalacion|date:"d / m /Y" }}</td>
         </tr>
     </table>
 </div>

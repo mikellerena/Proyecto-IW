@@ -21,11 +21,11 @@
         </tr>
         <tr>
             <td>Fecha de inicio</td>
-            <td class="td_estilos">{{ proceso.fecha_inicio }}</td>
+            <td class="td_estilos">{{ proceso.fecha_inicio|date:"d / m /Y" }}</td>
         </tr>
         <tr>
             <td>Fecha de fin</td>
-            <td class="td_estilos">{{ proceso.fecha_fin }}</td>
+            <td class="td_estilos">{{ proceso.fecha_fin|date:"d / m /Y" }}</td>
         </tr>
         <tr>
             <td>Equipos utilizados</td>
