@@ -25,7 +25,7 @@ class Empleado(models.Model):
     """Valor defecto ejemplo"""
     telefono = models.IntegerField(default=666666666)
     direccion = models.CharField(max_length=150)
-    fecha_nacimiento = models.DateField()
+    fecha_nacimiento = models.DateField(default="01/01/1990")
 
     def __str__(self):
         return f"DNI: {self.dni} | Nombre: {self.nombre} | Apellidos: {self.apellidos} | Email: {self.email} | Telefono: {self.telefono} | Direccion: {self.direccion} | F. Nacimiento: {self.fecha_nacimiento}"
