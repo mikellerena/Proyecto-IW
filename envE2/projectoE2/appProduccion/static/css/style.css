@@ -453,16 +453,6 @@ ul.lista li{
     font-style: italic;
 }
 
-/*Estilos para los enlaces de incio de sesión y registro*/
-.Enlaces_inicio_registro{
-    color:white;
-}
-
-/*Estilos especiales para los enlaces de inicio de sesión y registro*/
-.Enlaces_inicio_registro:hover{
-    color:black;
-}
-
 /*Estilos para lo que venga a continuación del main*/
 .antifloat{
     clear: both;
