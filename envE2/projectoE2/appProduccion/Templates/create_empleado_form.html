@@ -7,13 +7,13 @@
         {% csrf_token %}
         {% for field in form %}
             <div>
-                {{ field.errors }}
                 <div class="form-izq-50">
                     {{ field.label_tag }}
                 </div>
                 <div class="float-der-50">
                     {{ field }}
                 </div>
+                {{ field.errors }}
             </div>
         {% endfor %}
         <br>

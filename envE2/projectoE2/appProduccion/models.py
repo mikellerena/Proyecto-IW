@@ -7,8 +7,8 @@ class Equipo(models.Model):
     modelo = models.CharField(max_length=100)
     marca = models.CharField(max_length=100)
     categoria = models.CharField(max_length=100)
-    fecha_adquisicion = models.DateField()
-    fecha_instalacion = models.DateField()
+    fecha_adquisicion = models.DateField(default="01/01/1990")
+    fecha_instalacion = models.DateField(default="01/01/1990")
 
     def __str__(self):
         return f"ID: {self.id} | Modelo: {self.modelo} | Marca: {self.marca} | Categoria: {self.categoria} | F. Adquisicion: {self.fecha_adquisicion} | F. Instalacion: {self.fecha_instalacion}"
@@ -21,7 +21,7 @@ class Empleado(models.Model):
     nombre = models.CharField(max_length=100)
     """Dos apellidos"""
     apellidos = models.CharField(max_length=150)
-    email = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
     """Valor defecto ejemplo"""
     telefono = models.IntegerField(default=666666666)
     direccion = models.CharField(max_length=150)
@@ -38,8 +38,8 @@ class Proceso(models.Model):
     nombre_proceso = models.CharField(max_length=100)
     """ref Mezcla numeros y letras"""
     referencia = models.CharField(max_length=75)
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField()
+    fecha_inicio = models.DateField(default="01/01/1990")
+    fecha_fin = models.DateField(default="01/01/1990")
     equipo = models.ForeignKey(Equipo, on_delete=models.CASCADE)
     empleados = models.ManyToManyField(Empleado)
 
