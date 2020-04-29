@@ -78,12 +78,13 @@ fieldset{
     position: absolute;
     text-align: center;
     top: 60%;
-    width: 50%;
+    width: 33%;
 }
 
 /*Estilos para el h1 del index*/
 #h1_index{
-    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
     color: black;
 }
 
@@ -160,6 +161,105 @@ fieldset{
     vertical-align: middle;
     width:20px;
 }
+
+/*Estilos generales inico de sesión y registro*/
+#Inicio_sesion,
+#Registro {
+    background: #456;
+    font-family: 'Courier New', Courier, monospace;
+    width: 400px;
+    margin: 16px auto;
+    font-size: 16px;
+}
+
+/*Estilos para el cuerpo*/
+#Inicio_sesion_cuerpo,
+#Registro_cuerpo{
+    background: #ebebeb;
+    padding: 12px;
+}
+
+/*Estilos para el header y los párrafos*/
+  #Inicio_sesion_header,
+  #Inicio_sesion p,
+  #Registro_header,
+  #Registro p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/*Estilos para el header*/
+  #Inicio_sesion_header,
+  #Registro_header {
+    background: #28d;
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    color: #fff;
+}
+
+/*Estilos para los párrafos*/
+  #Inicio_sesion p,
+  #Registro p {
+    padding: 12px;
+}
+
+/*Estilos para los inputs*/
+  #Inicio_sesion input,
+  #Registro input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 16px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+
+/*Estilos para el campo email y contraseña*/
+  #Inicio_sesion input[type="text"],
+  #Inicio_sesion input[type="password"],
+  #Registro input[type="text"],
+  #Registro input[type="password"],
+  #Registro input[type="email"] {
+    background: #fff;
+    border-color: #bbb;
+    color: #555;
+}
+
+/*Estilos especiales para el campo email y contraseña*/
+  #Inicio_sesion input[type="text"]:focus,
+  #Inicio_sesion input[type="password"]:focus,
+  #Registro input[type="text"]:focus,
+  #Registro input[type="password"]:focus,
+  #Registro input[type="email"] {
+    border-color: #888;
+}
+
+/*Estilos para el botón de confirmar*/
+  #Inicio_sesion input[type="submit"],
+  #Registro input[type="submit"] {
+    background: #28d;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+/*Estilos especiales para el botón de confirmar*/
+  #Inicio_sesion input[type="submit"]:hover,
+  #Registro input[type="submit"]:hover {
+    background: #17c;
+}
+
+/*Estilos especiales para el botón de confirmar*/
+  #Inicio_sesion input[type="submit"]:focus,
+  #Registro input[type="submit"]:focus {
+    border-color: #05a;
+}
+
 /********************************************ESTILOS PARA LAS CLASES********************************************/
 /*Estilos para el h3 del footer*/
 .h3_footer{
@@ -304,6 +404,17 @@ nav h2:hover .Submenu{
     width: 75%;
 }
 
+/*Estilos para aplicar un float a la izquierda del 33%*/
+.float-izq-33{
+    float:left;
+    width:33%;
+}
+
+/*Estilos para aplicar un float a la derecha del 33%*/
+.float-der-33{
+    float:right;
+    width:33%;
+}
 /*Estilos para aplicar un padding de 15px arriba, 50px derecha, 8px abajo y 50 px derecha*/
 .padding-15{
     padding: 15px 50px 8px 50px;
@@ -332,11 +443,6 @@ ul.lista li{
     font-size: 22px;
 }
 
-/*Estilos para el texto del index*/
-.texto_index{
-    font-family: 'Courier New', Courier, monospace;
-}
-
 /*Estilos para los enlaces internos*/
 .enlaces_internos{
     color:black;
@@ -345,6 +451,16 @@ ul.lista li{
 /*Estilos especiales para los enlaces internos*/
 .enlaces_internos:hover{
     font-style: italic;
+}
+
+/*Estilos para los enlaces de incio de sesión y registro*/
+.Enlaces_inicio_registro{
+    color:white;
+}
+
+/*Estilos especiales para los enlaces de inicio de sesión y registro*/
+.Enlaces_inicio_registro:hover{
+    color:black;
 }
 
 /*Estilos para lo que venga a continuación del main*/
