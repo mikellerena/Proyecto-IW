@@ -7,9 +7,29 @@
     <title>Title</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body id="index">
-        <h1 id="h1_index" class="texto_index">BIENVENIDO A DEUSTUBULAR S.L.</h1>
-        <h2 class="texto_index"><a href="{% url 'principal' %}" style="text-decoration:none">PÁGINA PRINCIPAL</a></h2>
+<body>
+    <div id="index">
+        <h1 id="h1_index" >BIENVENIDO A DEUSTUBULAR S.L.</h1>
+    </div>
+        <div id="Inicio_sesion" class="float-izq-33">
+            <h2 id="Inicio_sesion_header">Iniciar sesion</h2>
+            <form class="Inicio_sesion_cuerpo">
+                <p><input type="text" placeholder="Nombre de usuario"></p>
+                <p><input type="password" placeholder="Contraseña"></p>
+                <p><input type="submit" value="Confirmar"></p>
+            </form>
+        </div>
+        <div id="Registro" class="float-der-33">
+            <h2 id="Registro_header">Registrate</h2>
+            <form class="Registro_cuerpo">
+                <p><input type="text" placeholder="Nombre"></p>
+                <p><input type="text" placeholder="Apellidos"></p>
+                <p><input type="text" placeholder="Nombre de usuario"></p>
+                <p><input type="email" placeholder="Email"></p>
+                <p><input type="password" placeholder="Contraseña"></p>
+                <p><input type="password" placeholder="Confirmar contraseña"></p>
+                <p><input type="submit" value="Confirmar"></p>
+            </form>
+        </div>
 </body>
-
 </html>
