@@ -9,9 +9,15 @@
 </head>
 <body>
     <div id="index">
-        <h1 id="h1_index" >BIENVENIDO A DEUSTUBULAR S.L.</h1>
+        <div id="index-izq">
+            <img id="Logo" src="{% static 'imagenes/logo.png' %}" alt="LOGO">
+        </div>
+        <div id="index-der">
+            <h1 id="h1_index" >BIENVENIDO A DEUSTUBULAR S.L.</h1>
+        </div>
     </div>
         <div id="Inicio_sesion" class="float-izq-33">
+<<<<<<< HEAD
             <h2 id="Inicio_sesion_header">Iniciar sesion</h2>
             <form class="Inicio_sesion_cuerpo" method="POST" action="{% url 'login' %}">
 <!--                <p><input type="text" placeholder="Nombre de usuario"></p>-->
@@ -25,6 +31,12 @@
                 {{ form.password }}
 
                 {{ form.errors }}
+=======
+            <h2 id="Inicio_sesion_header">Inicia sesion</h2>
+            <form class="Inicio_sesion_cuerpo">
+                <p><input type="text" placeholder="Nombre de usuario"></p>
+                <p><input type="password" placeholder="Contraseña"></p>
+>>>>>>> master
                 <p><input type="submit" value="Confirmar"></p>
             </form>
         </div>

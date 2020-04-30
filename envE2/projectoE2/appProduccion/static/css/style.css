@@ -72,13 +72,8 @@ fieldset{
 /********************************************ESTILOS PARA LAS ID`S********************************************/
 /*Estilos exclusivos para el body del index*/
 #index{
-    height: 30%;
-    left: 50%;
-    margin: -15% 0 0 -25%;
-    position: absolute;
-    text-align: center;
-    top: 60%;
-    width: 33%;
+    font-family: 'Courier New', Courier, monospace;
+    width: 1200px;
 }
 
 /*Estilos para el h1 del index*/
@@ -253,6 +248,19 @@ fieldset{
 #Inicio_sesion input[type="submit"]:focus,
 #Registro input[type="submit"]:focus {
     border-color: #05a;
+}
+
+/*Estilos para situar elementos a la izquierda del index*/
+#index-izq{
+    float: left;
+    padding: 10px 0px 5px 20px;
+    width: 10%
+}
+/*Estilos para situar elementos a la derecha del index*/
+#index-der{
+    float: right;
+    padding: 5px;
+    width: 90%
 }
 
 /********************************************ESTILOS PARA LAS CLASES********************************************/
