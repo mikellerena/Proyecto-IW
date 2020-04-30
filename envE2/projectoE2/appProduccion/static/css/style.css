@@ -163,7 +163,7 @@ fieldset{
     background: #456;
     font-family: 'Courier New', Courier, monospace;
     width: 400px;
-    margin: 16px auto;
+    margin: 16px 30px 16px 30px;
     font-size: 16px;
 }
 
@@ -254,13 +254,13 @@ fieldset{
 #index-izq{
     float: left;
     padding: 10px 0px 5px 20px;
-    width: 10%
+    width: 30%
 }
 /*Estilos para situar elementos a la derecha del index*/
 #index-der{
     float: right;
     padding: 5px;
-    width: 90%
+    width: 70%
 }
 
 /********************************************ESTILOS PARA LAS CLASES********************************************/

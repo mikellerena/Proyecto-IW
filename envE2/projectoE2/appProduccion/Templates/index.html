@@ -17,11 +17,7 @@
         </div>
     </div>
         <div id="Inicio_sesion" class="float-izq-33">
-<<<<<<< HEAD
-            <h2 class="Inicio_sesion_header">Iniciar sesion</h2>
-=======
             <h2 id="Inicio_sesion_header">Inicia sesion</h2>
->>>>>>> master
             <form class="Inicio_sesion_cuerpo" method="POST" action="{% url 'login' %}">
 <!--                <p><input type="text" placeholder="Nombre de usuario"></p>-->
 <!--                <p><input type="password" placeholder="Contraseña"></p>-->
@@ -34,6 +30,8 @@
                 {{ form.password }}
 
                 {{ form.errors }}
+            <h2 id="Inicio_sesion_header">Inicia sesion</h2>
+            <form class="Inicio_sesion_cuerpo">
                 <p><input type="text" placeholder="Nombre de usuario"></p>
                 <p><input type="password" placeholder="Contraseña"></p>
                 <p><input type="submit" value="Confirmar"></p>
