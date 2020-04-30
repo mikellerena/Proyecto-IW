@@ -175,7 +175,7 @@ fieldset{
 }
 
 /*Estilos para el header*/
-#Inicio_sesion_header,
+.Inicio_sesion_header,
 #Registro_header{
     background: #28d;
     color: #fff;

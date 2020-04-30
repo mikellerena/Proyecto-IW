@@ -9,7 +9,7 @@ from .models import Equipo, Empleado, Proceso
 
 """Vista incial"""
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'login.html')
 
 """Vista Pagina Principal"""
 def principal(request):
