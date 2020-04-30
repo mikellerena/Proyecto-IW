@@ -263,6 +263,25 @@ fieldset{
     width: 70%
 }
 
+/*Estilos para el botón de cerrar sesión*/
+#Log_out{
+    float:right;
+    color: #333;
+    padding: 12px;
+    width:10%;
+    text-align: center;
+    vertical-align:center;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 6px 6px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background: #28d;
+    border-color: transparent;
+    color: #fff;
+}
 /********************************************ESTILOS PARA LAS CLASES********************************************/
 /*Estilos para el h3 del footer*/
 .h3_footer{
