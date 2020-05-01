@@ -262,6 +262,36 @@ fieldset{
     padding: 5px;
     width: 70%
 }
+
+/*Estilos para el botón soy nuevo*/
+#boton_soy_nuevo{
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    background: #28d;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-family: inherit;
+    font-size: 0.95em;
+    margin-top: 0;
+    margin-bottom: 0;
+    outline: 0;
+    padding: 12px;
+    padding: 16px;
+    width: 100%;
+}
+
+/*Estilos especiales para el boton de soy nuevo*/
+#boton_soy_nuevo button:hover{
+    background: #17c;
+}
+
+/*Estilos especiales para el boton de soy nuevo*/
+#boton_soy_nuevo button:focus{
+    border-color: #05a;
+}
 /********************************************ESTILOS PARA LAS CLASES********************************************/
 /*Estilos para el h3 del footer*/
 .h3_footer{
@@ -529,3 +559,11 @@ ul.lista li{
 .conjunto_logout a {
     text-decoration: none;
 }
+
+/*Estilos para centrar los divs en la pagina*/
+.centrar_contenido{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
