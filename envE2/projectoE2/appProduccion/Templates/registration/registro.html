@@ -16,21 +16,21 @@
             <h1 id="h1_index" >BIENVENIDO A DEUSTUBULAR S.L.</h1>
         </div>
     </div>
-        <div id="Registro">
-            <h2 id="Registro_header">Registrate</h2>
-            <form class="Registro_cuerpo" method="POST" action="{% url 'registro' %}">
-                {% csrf_token %}
-                <p><input type="text" placeholder="Nombre" name=""></p>
-                <p><input type="text" placeholder="Apellidos"></p>
-                <p><input type="text" placeholder="Nombre de usuario"></p>
-                <p><input type="email" placeholder="Email"></p>
-                <p><input type="password" placeholder="Contraseña"></p>
-                <p><input type="password" placeholder="Confirmar contraseña"></p>
-                {% if form.errors %}
-                    <p>Revisa los campos, todos deben ser rellenados correctamente</p>
-                {% endif %}
-                <p><input type="submit" value="Confirmar"></p>
-            </form>
-        </div>
+    <div id="Registro">
+        <h2 id="Registro_header">Registrate</h2>
+        <form class="Registro_cuerpo" method="POST" action="{% url 'registro' %}">
+            {% csrf_token %}
+            <p><input type="text" placeholder="Nombre" name=""></p>
+            <p><input type="text" placeholder="Apellidos"></p>
+            <p><input type="text" placeholder="Nombre de usuario"></p>
+            <p><input type="email" placeholder="Email"></p>
+            <p><input type="password" placeholder="Contraseña"></p>
+            <p><input type="password" placeholder="Confirmar contraseña"></p>
+            {% if form.errors %}
+            <p>Revisa los campos, todos deben ser rellenados correctamente</p>
+            {% endif %}
+            <p><input type="submit" value="Confirmar"></p>
+        </form>
+    </div>
 </body>
 </html>
