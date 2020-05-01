@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="index">
+        <div id="index-izq">
+            <img id="Logo" src="{% static 'imagenes/logo.png' %}" alt="LOGO">
+        </div>
+        <div id="index-der">
+            <h1 id="h1_index" >BIENVENIDO A DEUSTUBULAR S.L.</h1>
+        </div>
+    </div>
+        <div id="Registro" class="float-der-33">
+            <h2 id="Registro_header">Registrate</h2>
+            <form class="Registro_cuerpo" method="POST" action="{% url 'registro' %}">
+                {% csrf_token %}
+                <p><input type="text" placeholder="Nombre" name=""></p>
+                <p><input type="text" placeholder="Apellidos"></p>
+                <p><input type="text" placeholder="Nombre de usuario"></p>
+                <p><input type="email" placeholder="Email"></p>
+                <p><input type="password" placeholder="Contraseña"></p>
+                <p><input type="password" placeholder="Confirmar contraseña"></p>
+                {% if form.errors %}
+                    <p>Revisa los campos, todos deben ser rellenados correctamente</p>
+                {% endif %}
+                <p><input type="submit" value="Confirmar"></p>
+            </form>
+        </div>
+</body>
+</html>

@@ -19,31 +19,12 @@
         <div id="Inicio_sesion" class="float-izq-33">
             <h2 class="Inicio_sesion_header">Iniciar sesion</h2>
             <form class="Inicio_sesion_cuerpo" method="POST" action="{% url 'login' %}">
-
                 {% csrf_token %}
-                {% if form.username.label_tag %}
-                    <p>Usuario:</p>
-                {% endif %}
-                <p>{{ form.username }}</p>
-                {% if form.password.label_tag %}
-                    <p>Contraseña:</p>
-                {% endif %}
-                <p>{{ form.password }}</p>
+                <p><input type="text" placeholder="Nombre de usuario" name="username"></p>
+                <p><input type="password" placeholder="Contraseña" name="password"></p>
                 {% if form.errors %}
                     <p>Usuario o contraseña incorrectos</p>
                 {% endif %}
-                <p><input type="submit" value="Confirmar"></p>
-            </form>
-        </div>
-        <div id="Registro" class="float-der-33">
-            <h2 id="Registro_header">Registrate</h2>
-            <form class="Registro_cuerpo">
-                <p><input type="text" placeholder="Nombre"></p>
-                <p><input type="text" placeholder="Apellidos"></p>
-                <p><input type="text" placeholder="Nombre de usuario"></p>
-                <p><input type="email" placeholder="Email"></p>
-                <p><input type="password" placeholder="Contraseña"></p>
-                <p><input type="password" placeholder="Confirmar contraseña"></p>
                 <p><input type="submit" value="Confirmar"></p>
             </form>
         </div>

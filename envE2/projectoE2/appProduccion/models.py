@@ -46,4 +46,12 @@ class Proceso(models.Model):
     def __str__(self):
         return f"C. Preceso: {self.codigo_proceso} | Nombre: {self.nombre_proceso} | Referencia: {self.referencia} | F. Inicio: {self.fecha_inicio} | F. Fin: {self.fecha_fin}"
 
+class Usuario(models.Model):
+    nombre = models.CharField(max_length=50)
+    apellidos = models.CharField(max_length=100)
+    nombre_usuario = models.CharField(max_length=50)
+    email = models.EmailField(max_length=100)
+    contraseña = models.PasswordField(max_length=200)
 
+    def __str__(self):
+        return f"Nombre: {self.nombre} | Apellidos: {self.apellidos} | Nombre de usuario: {self.nombre_usuario} | Email: {self.email}"
