@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
 # Create your models here.
@@ -46,12 +49,19 @@ class Proceso(models.Model):
     def __str__(self):
         return f"C. Preceso: {self.codigo_proceso} | Nombre: {self.nombre_proceso} | Referencia: {self.referencia} | F. Inicio: {self.fecha_inicio} | F. Fin: {self.fecha_fin}"
 
-# class Usuario(models.Model):
-#     nombre = models.CharField(max_length=50)
-#     apellidos = models.CharField(max_length=100)
-#     nombre_usuario = models.CharField(max_length=50)
-#     email = models.EmailField(max_length=100)
-#     contraseña = models.PasswordField(max_length=200)
-#
-#     def __str__(self):
-#         return f"Nombre: {self.nombre} | Apellidos: {self.apellidos} | Nombre de usuario: {self.nombre_usuario} | Email: {self.email}"
+class Usuario(models.Model):
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.CharField(max_length=255, blank=True)
+    web = models.URLField(blank=True)
+
+    def __str__(self):
+        return self.usuario.username
+
+@receiver(post_save, sender=User)
+def crear_usuario_perfil(sender, instance, created, **kwargs):
+    if created:
+        Perfil.objects.create(usuario=instance)
+
+@receiver(post_save, sender=User)
+def guardar_usuario_perfil(sender, instance, **kwargs):
+    instance.perfil.save()

@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
+from django.contrib.auth import login, authenticate
 from django.views import View
-from django.views.generic import DetailView, ListView, UpdateView, DeleteView, CreateView
+from django.views.generic import DetailView, ListView, UpdateView, DeleteView, CreateView, TemplateView
 from django.urls import reverse_lazy
-from .forms import EquipoForm, EmpleadoForm, ProcesoForm
-from .models import Equipo, Empleado, Proceso
+from .forms import EquipoForm, EmpleadoForm, ProcesoForm, RegistroForm
+from .models import Equipo, Empleado, Proceso, Usuario
 
 # Create your views here.
 
@@ -199,9 +200,17 @@ class ProcesoDeleteView(DeleteView):
     template_name = 'proceso_delete.html'
     success_url = reverse_lazy('proceso_list')
 
+"""Vista para registrar usuario"""
+class RegistroUsuarioView(CreateView):
+    model = Usuario
+    form_class = RegistroForm
 
-# class RegistroUsuario(CreateView):
-#     model = Usuario
-#     template_name = 'registro.html'
-#     form_class = RegistroForm
-#     success_url = reverse_lazy('principal')
+    def form_valid(self, form):
+        if form.is_valid():
+            form.save()
+            usuario = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            usuario = authenticate(username=usuario, password=password)
+            login(self.request, usuario)
+            return redirect('principal')
+
