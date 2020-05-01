@@ -265,12 +265,12 @@ fieldset{
 }
 
 /*Estilos para soy nuevo de login*/
-#Soy_nuevo{
+#invitado{
     color:white;
 }
 
 /*Estilos especiales para soy nuevo de login*/
-#Soy_nuevo:hover{
+#invitado:hover{
     color:black;
 }
 /********************************************ESTILOS PARA LAS CLASES********************************************/
