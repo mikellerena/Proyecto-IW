@@ -16,6 +16,7 @@
             <h1 id="h1_index" >BIENVENIDO A DEUSTUBULAR S.L.</h1>
         </div>
     </div>
+<<<<<<< HEAD
     <div id="Inicio_sesion">
         <h2 class="Inicio_sesion_header">Iniciar sesion</h2>
         <form class="Inicio_sesion_cuerpo" method="POST" action="{% url 'login' %}">
@@ -29,5 +30,20 @@
             <p><a href="{'% url 'registrar' %}" class="boton_soy_nuevo">Soy nuevo</a></p>
         </form>
     </div>
+=======
+        <div id="Inicio_sesion">
+            <h2 class="Inicio_sesion_header">Iniciar sesion</h2>
+            <form class="Inicio_sesion_cuerpo" method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <p><input type="text" placeholder="Nombre de usuario" name="username"></p>
+                <p><input type="password" placeholder="Contraseña" name="password"></p>
+                {% if form.errors %}
+                <p>Usuario o contraseña incorrectos</p>
+                {% endif %}
+                <p><input type="submit" value="Confirmar"></p>
+            </form>
+            <a id="boton_soy_nuevo" href="{% url 'registrar' %}"><button>Soy nuevo</button></a>
+        </div>
+>>>>>>> master
 </body>
 </html>
