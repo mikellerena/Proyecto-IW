@@ -1,6 +1,6 @@
 from django import forms
-from .models import Equipo, Empleado, Proceso, Usuario
-from django.contrib.auth.forms import UserCreationForm
+from .models import Equipo, Empleado, Proceso
+
 
 """Formulario Equipo"""
 class EquipoForm(forms.ModelForm):
@@ -21,19 +21,19 @@ class ProcesoForm(forms.ModelForm):
         fields = '__all__'
 
 
-"""Formulario para registro"""
-class RegistroForm(UserCreationForm):
-    class Meta:
-        model = Usuario
-        fields = [
-            'first_name',
-            'last_name',
-            'username',
-            'email'
-        ]
-        labels = {
-            'first_name': 'Nombre',
-            'last_name': 'Apellidos',
-            'username': 'Nombre de usuario',
-            'email': 'Email'
-        }
+# """Formulario para registro"""
+# class RegistroForm(UserCreationForm):
+#     class Meta:
+#         model = Usuario
+#         fields = [
+#             'first_name',
+#             'last_name',
+#             'username',
+#             'email'
+#         ]
+#         labels = {
+#             'first_name': 'Nombre',
+#             'last_name': 'Apellidos',
+#             'username': 'Nombre de usuario',
+#             'email': 'Email'
+#         }

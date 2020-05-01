@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from django.views.generic import DetailView, ListView, UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
-from .forms import EquipoForm, EmpleadoForm, ProcesoForm, RegistroForm
-from .models import Equipo, Empleado, Proceso, Usuario
+from .forms import EquipoForm, EmpleadoForm, ProcesoForm
+from .models import Equipo, Empleado, Proceso
 
 # Create your views here.
 
@@ -200,8 +200,8 @@ class ProcesoDeleteView(DeleteView):
     success_url = reverse_lazy('proceso_list')
 
 
-class RegistroUsuario(CreateView):
-    model = Usuario
-    template_name = 'registro.html'
-    form_class = RegistroForm
-    success_url = reverse_lazy('principal')
+# class RegistroUsuario(CreateView):
+#     model = Usuario
+#     template_name = 'registro.html'
+#     form_class = RegistroForm
+#     success_url = reverse_lazy('principal')
