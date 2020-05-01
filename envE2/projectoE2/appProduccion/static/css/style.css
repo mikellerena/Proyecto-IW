@@ -478,9 +478,53 @@ ul.lista li{
 
 /*Estilos para el botón de cerrar sesión*/
 .Log_out{
-    float:right;
+    bottom: -4px;
+    font-size: .8em;
     font-family: 'Courier New', Courier, monospace;
-    cursor: pointer;
-    background: #28d;
-    color: #fff;
+    letter-spacing: 3px;
+    overflow: hidden;
+    opacity: 0;
+    position: relative;
+    right: -18px;
+}
+
+/*Estilos para la imagen y logout*/
+.conjunto_logout{
+    background-color: black;
+    width: 100%;
+}
+
+ /*Estilos para la imagen del log out*/
+.img_log_out{
+    border-radius: 50px;
+    float: left;
+    width: 25px;
+}
+
+/*Estilos para el boton de log out*/
+.boton_log_out{
+    background-color: black;
+    color: white;
+    float: right;
+    margin: 15px;
+    overflow: hidden
+    padding: 12px;
+    text-decoration: none;
+    transition: .5s;
+    width: 25px;
+}
+
+/*Estilos especiales para cuando el cursor se pone encima de los a que se encuentran dentro de la clase conjunto_logout*/
+.conjunto_logout a:hover {
+    width: 100px;
+}
+
+/*Estilos especiales para cuando el cursor se pone encima de los a que se encuentran dentro de la clase conjunto_logout y para la clase logout*/
+.conjunto_logout a:hover .logout{
+    opacity: .9;
+}
+
+/*Estilos para los a que se encuentran dentro de la clase conjunto_logout*/
+.conjunto_logout a {
+    text-decoration: none;
 }
