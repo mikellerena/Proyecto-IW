@@ -14,7 +14,12 @@
         </div>
         <div class="header-der">
             <h1>Deustubular S.L.</h1>
-             <a class="log_out" href="{% url 'login' %}"><button class="log_out">Log out</button></a>
+            <div class="conjunto_logout">
+                <a class="boton_log_out" href="{% url 'login' %}">
+                    <img class="img_log_out" src="{% static 'imagenes/logout.png '%}" alt="LOGOUT">
+                    <div class="Log_out">LOG OUT</div>
+                </a>
+            </div>
         </div>
     </header>
     <nav>
