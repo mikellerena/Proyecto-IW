@@ -1,23 +1,34 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
+from django.contrib.admin.views.decorators import staff_member_required
+from django.utils.decorators import method_decorator
+from django.contrib.auth import login, logout, authenticate
 from django.views import View
-from django.views.generic import DetailView, ListView, UpdateView, DeleteView, CreateView, TemplateView
+from django.views.generic import DetailView, ListView, UpdateView, DeleteView, CreateView, RedirectView
 from django.urls import reverse_lazy
-from .forms import EquipoForm, EmpleadoForm, ProcesoForm
+from .forms import EquipoForm, EmpleadoForm, ProcesoForm, UserForm
 from .models import Equipo, Empleado, Proceso
+from django.contrib.auth.models import User
 
 # Create your views here.
+"""Clase para no poder usar otras clases sin estar registrado"""
+class StaffRequiredMixin(object):
+    @method_decorator(staff_member_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super(StaffRequiredMixin, self).dispatch(request, *args, **kwargs)
 
-"""Vista incial"""
-def index(request):
-    return render(request, 'login.html')
+
+# """Vista incial"""
+# def index(request):
+#     return render(request, 'login.html')
+
 
 """Vista Pagina Principal"""
 def principal(request):
     return render(request, 'pagina_principal.html')
 
+
 """Vista para el formulario de creacion de equipo"""
-class EquipoCreateView(View):
+class EquipoCreateView(StaffRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         form = EquipoForm()
         context = {
@@ -59,7 +70,7 @@ class EquipoDetailView(DetailView):
 
 
 """Vista para modificar los datos de los equipos"""
-class EquipoUpdateView(UpdateView):
+class EquipoUpdateView(StaffRequiredMixin, UpdateView):
     model = Equipo
     form_class = EquipoForm
     template_name = 'equipo_update.html'
@@ -72,14 +83,14 @@ class EquipoUpdateView(UpdateView):
 
 
 """Vista para eliminar equipos"""
-class EquipoDeleteView(DeleteView):
+class EquipoDeleteView(StaffRequiredMixin, DeleteView):
     model = Equipo
     template_name = 'equipo_delete.html'
     success_url = reverse_lazy('equipo_list')
 
 
 """Vista para el formulario de creacion de empleado"""
-class EmpleadoCreateView(View):
+class EmpleadoCreateView(StaffRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         form = EmpleadoForm()
         context = {
@@ -121,7 +132,7 @@ class EmpleadoDetailView(DetailView):
 
 
 """Vista para modificar los datos de los empleados"""
-class EmpleadoUpdateView(UpdateView):
+class EmpleadoUpdateView(StaffRequiredMixin, UpdateView):
     model = Empleado
     form_class = EmpleadoForm
     template_name = 'empleado_update.html'
@@ -134,14 +145,14 @@ class EmpleadoUpdateView(UpdateView):
 
 
 """Vista para eliminar empleados"""
-class EmpleadoDeleteView(DeleteView):
+class EmpleadoDeleteView(StaffRequiredMixin, DeleteView):
     model = Empleado
     template_name = 'empleado_delete.html'
     success_url = reverse_lazy('empleado_list')
 
 
 """Vista para el formulario de creación de procesos"""
-class ProcesoCreateView(View):
+class ProcesoCreateView(StaffRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         form = ProcesoForm()
         context = {
@@ -183,7 +194,7 @@ class ProcesoDetailView(DetailView):
 
 
 """Vista para modificar los datos de los procesos"""
-class ProcesoUpdateView(UpdateView):
+class ProcesoUpdateView(StaffRequiredMixin, UpdateView):
     model = Proceso
     form_class = ProcesoForm
     template_name = 'proceso_update.html'
@@ -195,10 +206,18 @@ class ProcesoUpdateView(UpdateView):
         return context
 
 """Vista para eliminar procesos"""
-class ProcesoDeleteView(DeleteView):
+class ProcesoDeleteView(StaffRequiredMixin, DeleteView):
     model = Proceso
     template_name = 'proceso_delete.html'
     success_url = reverse_lazy('proceso_list')
 
 
-
+class LogoutView(RedirectView):
+    permanent = False
+    query_string = True
+    pattern_name = 'login'
+    
+    def get_redirect_url(self, *args, **kwargs):
+        if self.request.user.is_authenticated():
+            logout(self.request)
+        return super(LogoutView, self).get_redirect_url(*args, **kwargs)

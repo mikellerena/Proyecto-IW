@@ -490,10 +490,6 @@ ul.lista li{
 /*Estilos para el botón de cerrar sesión*/
 .Log_out{
     bottom: -4px;
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     font-size: .8em;
     font-family: 'Courier New', Courier, monospace;
     letter-spacing: 3px;
@@ -542,6 +538,10 @@ ul.lista li{
 /*Estilos para los a que se encuentran dentro de la clase conjunto_logout*/
 .conjunto_logout a {
     text-decoration: none;
+}
+
+.error{
+    color: white;
 }
 
 
