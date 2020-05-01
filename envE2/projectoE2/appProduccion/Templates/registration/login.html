@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <div id="index">
-        <div id="index-izq">
-            <img id="Logo" src="{% static 'imagenes/logo.png' %}" alt="LOGO">
+    <header>
+        <div id="index">
+            <div id="index-izq">
+                <img id="Logo" src="{% static 'imagenes/logo.png' %}" alt="LOGO">
+            </div>
+            <div id="index-der">
+                <h1 id="h1_index" >BIENVENIDO A DEUSTUBULAR S.L.</h1>
+            </div>
         </div>
-        <div id="index-der">
-            <h1 id="h1_index" >BIENVENIDO A DEUSTUBULAR S.L.</h1>
-        </div>
-    </div>
+    </header>
     <div id="Inicio_sesion">
         <h2 class="Inicio_sesion_header">Iniciar sesion</h2>
         <form class="Inicio_sesion_cuerpo" method="POST" action="{% url 'login' %}">
@@ -26,8 +28,8 @@
             <p>Usuario o contraseña incorrectos</p>
             {% endif %}
             <p><input type="submit" value="Confirmar"></p>
-            <p><a href="{% 'registrar' %}" id="Soy_nuevo" style="text-decoration:none">Soy nuevo</a></p>
         </form>
+            <p><a href="{% 'registrar' %}" id="Soy_nuevo" style="text-decoration:none">Soy nuevo</a></p>
     </div>
 </body>
 </html>

@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <div id="index">
-        <div id="index-izq">
-            <img id="Logo" src="{% static 'imagenes/logo.png' %}" alt="LOGO">
+    <header>
+        <div id="index">
+            <div id="index-izq">
+                <img id="Logo" src="{% static 'imagenes/logo.png' %}" alt="LOGO">
+            </div>
+            <div id="index-der">
+                <h1 id="h1_index" >BIENVENIDO A DEUSTUBULAR S.L.</h1>
+            </div>
         </div>
-        <div id="index-der">
-            <h1 id="h1_index" >BIENVENIDO A DEUSTUBULAR S.L.</h1>
-        </div>
-    </div>
+    </header>
     <div id="Registro">
         <h2 id="Registro_header">Registrate</h2>
         <form class="Registro_cuerpo" method="POST" action="{% url 'registro' %}">
