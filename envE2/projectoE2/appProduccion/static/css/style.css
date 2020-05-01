@@ -518,7 +518,7 @@ ul.lista li{
     color: white;
     float: right;
     margin: 15px;
-    overflow: hidden;
+    overflow: hidden
     padding: 12px;
     text-decoration: none;
     transition: .5s;
