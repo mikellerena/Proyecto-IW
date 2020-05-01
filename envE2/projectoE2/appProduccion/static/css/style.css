@@ -560,10 +560,3 @@ ul.lista li{
     text-decoration: none;
 }
 
-/*Estilos para centrar los divs en la pagina*/
-.centrar_contenido{
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-
