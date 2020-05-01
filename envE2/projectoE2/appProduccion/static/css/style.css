@@ -490,6 +490,10 @@ ul.lista li{
 /*Estilos para el botón de cerrar sesión*/
 .Log_out{
     bottom: -4px;
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     font-size: .8em;
     font-family: 'Courier New', Courier, monospace;
     letter-spacing: 3px;
