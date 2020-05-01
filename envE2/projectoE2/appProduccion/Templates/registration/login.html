@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <header>
+    <header class="antifloat">
         <div id="index">
             <div id="index-izq">
                 <img id="Logo" src="{% static 'imagenes/logo.png' %}" alt="LOGO">
@@ -18,22 +18,20 @@
             </div>
         </div>
     </header>
-    <div id="Inicio_sesion">
-        <h2 class="Inicio_sesion_header">Iniciar sesion</h2>
-        <form class="Inicio_sesion_cuerpo" method="POST" action="{% url 'login' %}">
-            {% csrf_token %}
-            <p><input type="text" placeholder="Nombre de usuario" name="username"></p>
-            <p><input type="password" placeholder="Contraseña" name="password"></p>
-            {% if form.errors %}
-            <p>Usuario o contraseña incorrectos</p>
-            {% endif %}
-            <p><input type="submit" value="Confirmar"></p>
-        </form>
-<<<<<<< Updated upstream
-            <p><a href="{% 'registrar' %}" id="Soy_nuevo" style="text-decoration:none">Soy nuevo</a></p>
-=======
-        <p><a href="{% url 'registrar' %}" id="Soy_nuevo" style="text-decoration:none">Soy nuevo</a></p>
->>>>>>> Stashed changes
-    </div>
+    <main>
+        <div id="Inicio_sesion">
+            <h2 class="Inicio_sesion_header">Iniciar sesion</h2>
+            <form class="Inicio_sesion_cuerpo" method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <p><input type="text" placeholder="Nombre de usuario" name="username"></p>
+                <p><input type="password" placeholder="Contraseña" name="password"></p>
+                {% if form.errors %}
+                <p>Usuario o contraseña incorrectos</p>
+                {% endif %}
+                <p><input type="submit" value="Confirmar"></p>
+            </form>
+            <p><a href="{% url 'registrar' %}" id="Soy_nuevo" style="text-decoration:none">Soy nuevo</a></p>
+        </div>
+    </main>
 </body>
 </html>

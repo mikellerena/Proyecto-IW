@@ -1,7 +1,5 @@
 from django import forms
-from .models import Equipo, Empleado, Proceso, Usuario
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth.models import User
+from .models import Equipo, Empleado, Proceso
 
 
 """Formulario Equipo"""
@@ -23,15 +21,4 @@ class ProcesoForm(forms.ModelForm):
         fields = '__all__'
 
 
-"""Formulario para registro"""
-class SingUpForm(UserCreationForm):
-    class Meta:
-        model = User
-        fields = [
-            'first_name',
-            'last_name',
-            'username',
-            'email',
-            'password1',
-            'password2'
-        ]
+

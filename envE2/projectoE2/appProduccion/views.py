@@ -3,8 +3,8 @@ from django.contrib.auth import login, authenticate
 from django.views import View
 from django.views.generic import DetailView, ListView, UpdateView, DeleteView, CreateView, TemplateView
 from django.urls import reverse_lazy
-from .forms import EquipoForm, EmpleadoForm, ProcesoForm, SingUpForm
-from .models import Equipo, Empleado, Proceso, Usuario
+from .forms import EquipoForm, EmpleadoForm, ProcesoForm
+from .models import Equipo, Empleado, Proceso
 
 # Create your views here.
 
@@ -200,17 +200,5 @@ class ProcesoDeleteView(DeleteView):
     template_name = 'proceso_delete.html'
     success_url = reverse_lazy('proceso_list')
 
-"""Vista para registrar usuario"""
-class SingUpView(CreateView):
-    model = Usuario
-    form_class = SingUpForm
 
-    def form_valid(self, form):
-        if form.is_valid():
-            form.save()
-            usuario = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password1')
-            usuario = authenticate(username=usuario, password=password)
-            login(self.request, usuario)
-            return redirect('principal')
 
