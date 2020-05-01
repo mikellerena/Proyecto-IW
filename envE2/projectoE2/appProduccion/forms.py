@@ -24,7 +24,7 @@ class ProcesoForm(forms.ModelForm):
 
 
 """Formulario para registro"""
-class RegistroForm(UserCreationForm):
+class SingUpForm(UserCreationForm):
     class Meta:
         model = User
         fields = [
