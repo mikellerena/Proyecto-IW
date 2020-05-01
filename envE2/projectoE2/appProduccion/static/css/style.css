@@ -490,7 +490,6 @@ ul.lista li{
 /*Estilos para el botón de cerrar sesión*/
 .Log_out{
     bottom: -4px;
-    color:white;
     font-size: .8em;
     font-family: 'Courier New', Courier, monospace;
     letter-spacing: 3px;
@@ -519,7 +518,7 @@ ul.lista li{
     color: white;
     float: right;
     margin: 15px;
-    overflow: hidden
+    overflow: hidden;
     padding: 12px;
     text-decoration: none;
     transition: .5s;
