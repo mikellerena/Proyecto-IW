@@ -205,7 +205,7 @@ class ProcesoDeleteView(StaffRequiredMixin, DeleteView):
     template_name = 'proceso_delete.html'
     success_url = reverse_lazy('proceso_list')
 
-
+"""Vista para que el usuario pueda cerrar sesión"""
 class LogoutView(RedirectView):
     permanent = False
     query_string = True
