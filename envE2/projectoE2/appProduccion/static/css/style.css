@@ -146,10 +146,10 @@ fieldset{
 
 /*Estilos para la imagen de Logout*/
 #Log_out{
-    height:50px;
-    width:80px;
+    height:45px;
+    width:100px;
     position: absolute;
-    left: 1200px;
+    left: 1150px;
     top:30px;
     cursor: pointer;
 
