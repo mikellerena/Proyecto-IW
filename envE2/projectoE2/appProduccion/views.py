@@ -7,17 +7,13 @@ from django.urls import reverse_lazy
 from .forms import EquipoForm, EmpleadoForm, ProcesoForm
 from .models import Equipo, Empleado, Proceso
 
+
 # Create your views here.
 """Clase para no poder usar las clases crear, actualizar y borrar sin iniciar sesion"""
 class StaffRequiredMixin(object):
     @method_decorator(staff_member_required)
     def dispatch(self, request, *args, **kwargs):
         return super(StaffRequiredMixin, self).dispatch(request, *args, **kwargs)
-
-
-# """Vista incial"""
-# def index(request):
-#     return render(request, 'login.html')
 
 
 """Vista Pagina Principal"""
