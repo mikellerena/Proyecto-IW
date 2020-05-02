@@ -144,6 +144,34 @@ fieldset{
     width:25px;
 }
 
+/*Estilos para el botón de Logout*/
+#Log_out{
+    height:30px;
+    width:80px;
+    position: absolute;
+    left: 1250px;
+    top:30px;
+    background: #28d;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    border-style: solid;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+/*Estilos especiales para el botón de Logout*/
+#Log_out:hover{
+    background: #17c;
+
+}
+
+/*Estilos especiales para el botón de Logout*/
+#Log_out:focus{
+
+    border-color: #05a;
+}
+
 /*Estilos para el logo*/
 #Logo{
     height:80px;
@@ -487,62 +515,10 @@ ul.lista li{
     width:25px;
 }
 
-/*Estilos para el botón de cerrar sesión*/
-.Log_out{
-    bottom: -4px;
-    font-size: .8em;
-    font-family: 'Courier New', Courier, monospace;
-    letter-spacing: 3px;
-    overflow: hidden;
-    opacity: 0;
-    position: relative;
-    right: -18px;
-}
-
-/*Estilos para la imagen y logout*/
-.conjunto_logout{
-    background-color: black;
-    width: 100%;
-}
-
- /*Estilos para la imagen del log out*/
-.img_log_out{
-    border-radius: 50px;
-    float: left;
-    width: 25px;
-}
-
-/*Estilos para el boton de log out*/
-.boton_log_out{
-    background-color: black;
-    color: white;
-    float: right;
-    margin: 15px;
-    overflow: hidden
-    padding: 12px;
-    text-decoration: none;
-    transition: .5s;
-    width: 25px;
-}
-
-/*Estilos especiales para cuando el cursor se pone encima de los a que se encuentran dentro de la clase conjunto_logout*/
-.conjunto_logout a:hover {
-    width: 100px;
-}
-
-/*Estilos especiales para cuando el cursor se pone encima de los a que se encuentran dentro de la clase conjunto_logout y para la clase logout*/
-.conjunto_logout a:hover .logout{
-    opacity: .9;
-}
-
-/*Estilos para los a que se encuentran dentro de la clase conjunto_logout*/
-.conjunto_logout a {
-    text-decoration: none;
-}
-
 .error{
     color: white;
 }
+
 
 
 

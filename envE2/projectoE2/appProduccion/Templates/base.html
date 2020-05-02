@@ -12,14 +12,9 @@
         <div class="header-izq">
             <a href="{% url 'principal' %}"><img id="Logo" src="{% static 'imagenes/logo.png' %}" alt="LOGO"></a>
         </div>
-        <div class="header-der">
+       <div class="header-der">
             <h1>Deustubular S.L.</h1>
-            <div class="conjunto_logout">
-                <a class="boton_log_out" href="{% url 'logout' %}">
-                    <img class="img_log_out" src="{% static 'imagenes/logout.png '%}" alt="LOGOUT">
-                    <div class="Log_out"><p>LOG OUT</p></div>
-                </a>
-            </div>
+            <a href="{% url 'login' %}" ><button id="Log_out">Log out</button></a>
         </div>
     </header>
     <nav>
