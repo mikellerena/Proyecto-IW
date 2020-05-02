@@ -144,19 +144,14 @@ fieldset{
     width:25px;
 }
 
-/*Estilos para el botón de Logout*/
+/*Estilos para la imagen de Logout*/
 #Log_out{
-    height:30px;
+    height:50px;
     width:80px;
     position: absolute;
     left: 1200px;
     top:30px;
-    background: #28d;
-    border-color: transparent;
-    color: #fff;
     cursor: pointer;
-    border-style: solid;
-    font-family: 'Courier New', Courier, monospace;
 
 }
 
