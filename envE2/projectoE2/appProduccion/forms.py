@@ -21,4 +21,3 @@ class ProcesoForm(forms.ModelForm):
         fields = '__all__'
 
 
-
