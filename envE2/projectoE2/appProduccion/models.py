@@ -40,7 +40,8 @@ class Proceso(models.Model):
     fecha_fin = models.DateField(default="01/01/1990")
     equipo = models.ForeignKey(Equipo, on_delete=models.CASCADE)
     empleados = models.ManyToManyField(Empleado)
+    activo = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"C. Preceso: {self.codigo_proceso} | Nombre: {self.nombre_proceso} | Referencia: {self.referencia} | F. Inicio: {self.fecha_inicio} | F. Fin: {self.fecha_fin}"
+        return f"C. Preceso: {self.codigo_proceso} | Nombre: {self.nombre_proceso} | Referencia: {self.referencia} | F. Inicio: {self.fecha_inicio} | F. Fin: {self.fecha_fin} | Activo: {self.activo}"
 

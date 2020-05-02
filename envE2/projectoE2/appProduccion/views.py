@@ -199,11 +199,13 @@ class ProcesoUpdateView(StaffRequiredMixin, UpdateView):
         context['titulo_pagina'] = 'Modificar procesos'
         return context
 
+
 """Vista para eliminar procesos"""
 class ProcesoDeleteView(StaffRequiredMixin, DeleteView):
     model = Proceso
     template_name = 'proceso_delete.html'
     success_url = reverse_lazy('proceso_list')
+
 
 """Vista para que el usuario pueda cerrar sesión"""
 class LogoutView(RedirectView):
