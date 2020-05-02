@@ -15,11 +15,6 @@ class StaffRequiredMixin(object):
         return super(StaffRequiredMixin, self).dispatch(request, *args, **kwargs)
 
 
-# """Vista incial"""
-# def index(request):
-#     return render(request, 'login.html')
-
-
 """Vista Pagina Principal"""
 def principal(request):
     return render(request, 'pagina_principal.html')
