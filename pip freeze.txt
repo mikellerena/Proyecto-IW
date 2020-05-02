@@ -1,0 +1,17 @@
+Comando pip freeze ejecutado en el host
+	appdirs==1.4.3
+	asgiref==3.2.5
+	distlib==0.3.0
+	Django==3.0.4
+	filelock==3.0.12
+	pytz==2019.3
+	six==1.14.0
+	sqlparse==0.3.1
+	virtualenv==20.0.13
+	virtualenvwrapper-win==1.2.6
+
+Comando pip freeze ejecutado en el entorno envE2
+	asgiref==3.2.7
+	Django==3.0.5
+	pytz==2019.3
+	sqlparse==0.3.1
