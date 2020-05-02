@@ -1,6 +1,5 @@
 from django import forms
 from .models import Equipo, Empleado, Proceso
-from django.contrib.auth.models import User
 
 
 """Formulario Equipo"""
@@ -22,15 +21,3 @@ class ProcesoForm(forms.ModelForm):
         fields = '__all__'
 
 
-class UserForm(forms.ModelForm):
-    class Meta:
-        model = User
-        exclude = [
-            'last_login',
-            'is_superuser',
-            'groups',
-            'user_permissions',
-            'is_staff',
-            'is_active',
-            'date_joined'
-        ]

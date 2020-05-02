@@ -1,16 +1,14 @@
 from django.shortcuts import render, redirect
 from django.contrib.admin.views.decorators import staff_member_required
 from django.utils.decorators import method_decorator
-from django.contrib.auth import login, logout, authenticate
 from django.views import View
 from django.views.generic import DetailView, ListView, UpdateView, DeleteView, CreateView, RedirectView
 from django.urls import reverse_lazy
-from .forms import EquipoForm, EmpleadoForm, ProcesoForm, UserForm
+from .forms import EquipoForm, EmpleadoForm, ProcesoForm
 from .models import Equipo, Empleado, Proceso
-from django.contrib.auth.models import User
 
 # Create your views here.
-"""Clase para no poder usar otras clases sin estar registrado"""
+"""Clase para no poder usar las clases crear, actualizar y borrar sin iniciar sesion"""
 class StaffRequiredMixin(object):
     @method_decorator(staff_member_required)
     def dispatch(self, request, *args, **kwargs):
