@@ -4,8 +4,8 @@ from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.generic import DetailView, ListView, UpdateView, DeleteView, CreateView, RedirectView
 from django.urls import reverse_lazy
-from .forms import EquipoForm, EmpleadoForm, ProcesoForm
-from .models import Equipo, Empleado, Proceso
+from .forms import EquipoForm, EmpleadoForm, ProcesoForm, NovedadesForm
+from .models import Equipo, Empleado, Proceso, Novedades
 
 
 # Create your views here.
@@ -217,3 +217,20 @@ class LogoutView(RedirectView):
         if self.request.user.is_authenticated():
             logout(self.request)
         return super(LogoutView, self).get_redirect_url(*args, **kwargs)
+
+
+class NovedadesCreateView(View):
+    def get(self, request, *args, **kwargs):
+        form = NovedadesForm
+        context = {
+            'form': form,
+            'titulo_pagina': 'Subscribete a nuestras novedades'
+        }
+        return render(request, 'create_usuario_novedad_form.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = NovedadesForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+        return render(request, 'create_usuario_novedad_form.html', context)

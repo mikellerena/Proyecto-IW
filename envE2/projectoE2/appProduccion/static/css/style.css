@@ -515,4 +515,8 @@ ul.lista li{
     text-align: justify;
 }
 
+/*Estilo para hacer el fondo blanco*/
+.bc-white{
+    background-color: #fff;
+}
 

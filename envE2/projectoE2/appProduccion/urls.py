@@ -21,4 +21,5 @@ urlpatterns = [
     path('produccion/procesos/<str:pk>/', views.ProcesoDetailView.as_view(), name='proceso_detail'),
     path('produccion/procesos/<str:pk>/update/', views.ProcesoUpdateView.as_view(), name='proceso_edit'),
     path('produccion/procesos/<str:pk>/delete/', views.ProcesoDeleteView.as_view(), name='proceso_delete'),
+    path('produccion/novedades', views.NovedadesCreateView.as_view(), name='novedades_create')
 ]

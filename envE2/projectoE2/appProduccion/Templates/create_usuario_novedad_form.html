@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div id="Inicio_sesion">
+            <h2 class="Inicio_sesion_header">Novedades</h2>
+            <form class="Inicio_sesion_cuerpo" method="POST" action="">
+                {% csrf_token %}
+                <div class="bc-white">
+                    <p class="margin-14-20 form-izq-30 padding-15">{{ form.genero.label_tag }}</p>
+                    <p class="float-der-70 padding-15">{{ form.genero }}</p>
+                </div>
+                <p><input type="text" placeholder="Nombre de usuario" name="usuario"></p>
+                <p><input type="password" placeholder="Contraseña" name="email"></p>
+                {% if form.errors %}
+                    <p>Introduzca un email correcto</p>
+                {% endif %}
+                <p><input type="submit" value="Confirmar"></p>
+            </form>
+        </div>
+{% endblock %}

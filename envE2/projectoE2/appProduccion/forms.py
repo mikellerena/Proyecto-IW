@@ -1,6 +1,5 @@
 from django import forms
-from .models import Equipo, Empleado, Proceso
-
+from .models import Equipo, Empleado, Proceso, Novedades
 
 """Formulario Equipo"""
 class EquipoForm(forms.ModelForm):
@@ -20,4 +19,7 @@ class ProcesoForm(forms.ModelForm):
         model = Proceso
         fields = '__all__'
 
-
+class NovedadesForm(forms.ModelForm):
+    class Meta:
+        model = Novedades
+        fields = '__all__'

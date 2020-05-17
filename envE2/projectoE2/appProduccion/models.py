@@ -45,3 +45,12 @@ class Proceso(models.Model):
     def __str__(self):
         return f"C. Preceso: {self.codigo_proceso} | Nombre: {self.nombre_proceso} | Referencia: {self.referencia} | F. Inicio: {self.fecha_inicio} | F. Fin: {self.fecha_fin} | Activo: {self.activo}"
 
+"""Modelo para el envio novedades via email"""
+class Novedades(models.Model):
+    usuario = models.CharField(max_length=50)
+    genero = models.CharField(max_length=9, choices=(('1', 'Masculino'), ('2', 'Femenino'), ('3', 'Otro')), default='Otro')
+    email = models.EmailField(max_length=100)
+
+    def __str__(self):
+        return f"Usuario: {self.usuario} | Genero: {self.genero} | Email: {self.email}"
+
