@@ -28,6 +28,8 @@
                 {% if form.errors %}
                 <p>Usuario o contraseña incorrectos</p>
                 {% endif %}
+                <input id="correo" type="checkbox" name="novedades">
+                <label for="correo">Recibir notificaciones</label>
                 <p><input type="submit" value="Confirmar"></p>
             </form>
             <p><a href="{% url 'principal' %}" id="invitado" style="text-decoration:none">Entrar como invitado</a></p>

@@ -27,6 +27,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_HOST = 'smtp.gamil.com'
+EMAIL_HOST_USER = 'dustubular@gmail.com'
+EMAIL_HOST_PASSWORD = 'notaiw10'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 
 # Application definition
 
@@ -121,5 +127,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-LOGIN_REDIRECT_URL = '/appProduccion/principal'
-LOGOUT_REDIRECT_URL = '/appProduccion'
+LOGIN_REDIRECT_URL = '/appProduccion/produccion/principal'
+LOGOUT_REDIRECT_URL = '/appProduccion/produccion'
