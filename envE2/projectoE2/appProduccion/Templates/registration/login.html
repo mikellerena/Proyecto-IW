@@ -23,12 +23,12 @@
             <h2 class="Inicio_sesion_header">Iniciar sesion</h2>
             <form class="Inicio_sesion_cuerpo" method="POST" action="{% url 'login' %}">
                 {% csrf_token %}
-                <p><input type="text" placeholder="Nombre de usuario" name="username"></p>
-                <p><input type="password" placeholder="Contraseña" name="password"></p>
+                <p><input class="db-w100"  type="text" placeholder="Nombre de usuario" name="username"></p>
+                <p><input class="db-w100"  type="password" placeholder="Contraseña" name="password"></p>
                 {% if form.errors %}
-                <p>Usuario o contraseña incorrectos</p>
+                    <p>Usuario o contraseña incorrectos</p>
                 {% endif %}
-                <p><input type="submit" value="Confirmar"></p>
+                <p><input class="db-w100"  type="submit" value="Confirmar"></p>
             </form>
             <p><a href="{% url 'principal' %}" id="invitado" style="text-decoration:none">Entrar como invitado</a></p>
         </div>

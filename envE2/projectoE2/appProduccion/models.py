@@ -48,7 +48,7 @@ class Proceso(models.Model):
 """Modelo para el envio novedades via email"""
 class Novedades(models.Model):
     usuario = models.CharField(max_length=50)
-    genero = models.CharField(max_length=9, choices=(('1', 'Masculino'), ('2', 'Femenino'), ('3', 'Otro')), default='Otro')
+    genero = models.CharField(max_length=9, choices=(('mas', 'Masculino'), ('fem', 'Femenino'), ('otro', 'Otro')), default='otro')
     email = models.EmailField(max_length=100)
 
     def __str__(self):

@@ -221,16 +221,21 @@ class LogoutView(RedirectView):
 
 class NovedadesCreateView(View):
     def get(self, request, *args, **kwargs):
-        form = NovedadesForm
+        form = NovedadesForm()
         context = {
             'form': form,
-            'titulo_pagina': 'Subscribete a nuestras novedades'
+            'titulo_pagina': 'Suscribete a nuestras novedades'
         }
         return render(request, 'create_usuario_novedad_form.html', context)
 
     def post(self, request, *args, **kwargs):
         form = NovedadesForm(request.POST)
         if form.is_valid():
+            email = Novedades.objects.get('email')
+            for mail in email:
+                if form.request.POST['email'] == email.mail:
+                    return render(request, 'create_usuario_novedad_form.html', {'form': form})
             form.save()
+            return redirect ('principal')
 
-        return render(request, 'create_usuario_novedad_form.html', context)
+        return render(request, 'create_usuario_novedad_form.html', {'form': form})

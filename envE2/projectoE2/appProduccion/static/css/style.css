@@ -223,8 +223,7 @@ fieldset{
 #Inicio_sesion input,
 #Registro input {
     box-sizing: border-box;
-    display: block;
-    width: 100%;
+
     border-width: 1px;
     border-style: solid;
     padding: 16px;
@@ -295,6 +294,12 @@ fieldset{
 /*Estilos especiales para soy nuevo de login*/
 #invitado:hover{
     color:black;
+}
+
+/*Estilos para la nota de de novedades*/
+#nota{
+    margin-bottom: -20px;
+    margin-left: 25px;
 }
 /********************************************ESTILOS PARA LAS CLASES********************************************/
 /*Estilos para el h3 del footer*/
@@ -520,3 +525,13 @@ ul.lista li{
     background-color: #fff;
 }
 
+/*Estilo para poner en la misma linea*/
+.ib{
+    display: inline-block;
+}
+
+/*Estilo para poner en la siguiente linea y ocupar el 100%*/
+.db-w100{
+    display: block;
+    width: 100%;
+}
