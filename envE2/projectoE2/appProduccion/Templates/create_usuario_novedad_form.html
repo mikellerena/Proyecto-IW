@@ -3,7 +3,7 @@
 {% block contenido %}
 <fieldset>
     <legend>Novedades</legend>
-    <form action="{% url 'novedades_create' %}" method="post">
+    <form method="post" id="id_nov_form" data-post-url="{% url 'novedades_create' %}">
         {% csrf_token %}
         {% for field in form %}
             <div>
@@ -19,7 +19,13 @@
         <ul class="antifloat">
             <li id="nota"><p>Nota: Una vez suscrito te enviaremos un email de prueba.</p></li>
         </ul>
-        <p><input class="enviar" type="submit" value="Suscribirse"></p>
+        <p><input class="enviar" id="btn-nov" type="submit" value="Suscribirse"></p>
     </form>
 </fieldset>
 {% endblock %}
+
+{% block js%}
+
+{% endblock %}
+
+
