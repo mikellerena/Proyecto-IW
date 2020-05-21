@@ -17,7 +17,8 @@
             </div>
         {% endfor %}
         <br>
-        <input class="enviar" type="submit" value="Nuevo Empleado">
+        <input class="enviar_cancelar" type="submit" value="Nuevo Empleado">
+        <a class="enviar_cancelar" href="{% url 'principal' %}">Cancelar</a>
     </form>
 </fieldset>
 {% endblock %}
