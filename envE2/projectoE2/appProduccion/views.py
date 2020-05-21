@@ -246,6 +246,13 @@ class NovedadesCreateView(View):
 
 
 class EquipoJsonList(View):
-    def get(self):
-        eList = Equipo.objects.all()
-        return JsonResponse(list(eList.values(), safe=False))
+    def get(self, request):
+        if('marca' in request.GET):
+            eList = Equipo.objects.filter(marca__contains=request.GET['marca'])
+        elif ('modelo' in request.GET):
+            eList = Equipo.objects.filter(modelo__contains=request.GET['modelo'])
+        else:
+            eList = Equipo.objects.all()
+        return JsonResponse(list(eList.values()), safe=False)
+
+
