@@ -4,8 +4,9 @@ from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.generic import DetailView, ListView, UpdateView, DeleteView, CreateView, RedirectView
 from django.urls import reverse_lazy
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.forms.models import model_to_dict
+from django.views.decorators.csrf import csrf_exempt
 from .forms import EquipoForm, EmpleadoForm, ProcesoForm, NovedadesForm
 from .models import Equipo, Empleado, Proceso, Novedades
 
@@ -220,7 +221,7 @@ class LogoutView(RedirectView):
             logout(self.request)
         return super(LogoutView, self).get_redirect_url(*args, **kwargs)
 
-
+@method_decorator(csrf_exempt, name='dispatch')
 class NovedadesCreateView(View):
     def get(self, request, *args, **kwargs):
         form = NovedadesForm()
@@ -232,16 +233,19 @@ class NovedadesCreateView(View):
 
     def post(self, request, *args, **kwargs):
         form = NovedadesForm(request.POST)
+        print(request.POST["usuario"])
         if form.is_valid():
             # email = Novedades.objects.get('email')
             # for mail in email:
-            #     if form.request.POST['email'] == email.mail:
-            #         return render(request, 'create_usuario_novedad_form.html', {'form': form})
+            #     if form.request.GET['email'] == email.mail:
+            #         return HttpResponse("Ha habido un error.")
             form.save()
-            return JsonResponse({
-                'content': {
-                    'message': 'Has sido registrado.'
-                }
-            })
+            return HttpResponse('Has sido registrado.')
         else:
-            return render(request, 'create_usuario_novedad_form.html', {'form': form})
+            return HttpResponse("Ha habido un error.")
+
+
+class EquipoJsonList(View):
+    def get(self):
+        eList = Equipo.objects.all()
+        return JsonResponse(list(eList.values(), safe=False))

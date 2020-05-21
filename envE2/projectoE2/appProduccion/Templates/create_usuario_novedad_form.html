@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block contenido %}
 <fieldset>
     <legend>Novedades</legend>
@@ -24,8 +24,9 @@
 </fieldset>
 {% endblock %}
 
-{% block js%}
-
+{% block js %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="{% static 'js/app.js'%}"></script>
 {% endblock %}
 
 

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-
+<a href="{% url 'json_equipo_list' %}">Listado</a>
 <ul class="lista">
     {% for eq in equipo_list %}
     <li>
@@ -9,7 +9,7 @@
         <div class="mar-inferior">
             <a href="{% url 'equipo_detail' eq.id %}">Ver</a> ||
             <a href="{% url 'equipo_edit' eq.id %}">Editar</a> ||
-            <a href="{% url 'equipo_delete' eq.id %}">Borrar</a>
+            <a href="{% url 'equipo_delete' eq.id %}">Borrar</a> ||
         </div>
         <ul class="listas">
             <li>ID: {{ eq.id }}</li><br>
