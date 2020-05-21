@@ -1,7 +1,7 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block contenido %}
-<a href="{% url 'json_equipo_list' %}">Listado</a>
 <ul class="lista">
     {% for eq in equipo_list %}
     <li>
@@ -19,5 +19,10 @@
     </li>
     {% endfor %}
 </ul>
+<div id="cont"></div>
+{% endblock %}
 
+{% block js %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
 {% endblock %}
