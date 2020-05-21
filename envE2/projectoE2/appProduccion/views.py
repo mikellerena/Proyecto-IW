@@ -4,6 +4,8 @@ from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.generic import DetailView, ListView, UpdateView, DeleteView, CreateView, RedirectView
 from django.urls import reverse_lazy
+from django.http import JsonResponse
+from django.forms.models import model_to_dict
 from .forms import EquipoForm, EmpleadoForm, ProcesoForm, NovedadesForm
 from .models import Equipo, Empleado, Proceso, Novedades
 
@@ -231,11 +233,15 @@ class NovedadesCreateView(View):
     def post(self, request, *args, **kwargs):
         form = NovedadesForm(request.POST)
         if form.is_valid():
-            email = Novedades.objects.get('email')
-            for mail in email:
-                if form.request.POST['email'] == email.mail:
-                    return render(request, 'create_usuario_novedad_form.html', {'form': form})
+            # email = Novedades.objects.get('email')
+            # for mail in email:
+            #     if form.request.POST['email'] == email.mail:
+            #         return render(request, 'create_usuario_novedad_form.html', {'form': form})
             form.save()
-            return redirect ('principal')
-
-        return render(request, 'create_usuario_novedad_form.html', {'form': form})
+            return JsonResponse({
+                'content': {
+                    'message': 'Has sido registrado.'
+                }
+            })
+        else:
+            return render(request, 'create_usuario_novedad_form.html', {'form': form})

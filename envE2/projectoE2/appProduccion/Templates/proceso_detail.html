@@ -29,7 +29,13 @@
         </tr>
         <tr>
             <td>Activo actualmente</td>
-            <td class="td_estilos">{{ proceso.activo }}</td>
+            <td class="td_estilos">
+                {% if proceso.activo %}
+                    Actualmente activo
+                {% else %}
+                    Desactivado
+                {% endif %}
+            </td>
         </tr>
         <tr>
             <td>Equipos utilizados</td>
