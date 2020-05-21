@@ -144,6 +144,12 @@ fieldset{
     width:25px;
 }
 
+/*Estilos para el boton atras*/
+#Atras{
+    height:25px;
+    margin-right: 10px;
+    width:25px;
+}
 /*Estilos para la imagen de Logout*/
 #Log_out{
     height:45px;
