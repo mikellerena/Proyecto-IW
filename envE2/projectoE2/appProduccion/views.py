@@ -1,4 +1,6 @@
+from django.conf import settings
 from django.shortcuts import render, redirect
+from django.core.mail import send_mail
 from django.contrib.admin.views.decorators import staff_member_required
 from django.utils.decorators import method_decorator
 from django.views import View
@@ -287,16 +289,21 @@ class NovedadesCreateView(View):
 
     def post(self, request, *args, **kwargs):
         form = NovedadesForm(request.POST)
-        print(request.POST["usuario"])
         if form.is_valid():
-            # email = Novedades.objects.get('email')
-            # for mail in email:
-            #     if form.request.GET['email'] == email.mail:
-            #         return HttpResponse("Ha habido un error.")
             form.save()
+
+            email = form.cleaned_data_get("email")
+            mensaje = "Este es un mensaje de prueba para confirmar tu email"
+            usuario = form.cleaned_data_get("usuario")
+            asunto = "Confirmacion email"
+            email_from = settings.EMAIL_HOST_USER
+            email_to = form.cleaned_data_get("email")
+            
             return HttpResponse('Has sido registrado.')
         else:
             return HttpResponse("Ha habido un error.")
+
+
 
 
 
