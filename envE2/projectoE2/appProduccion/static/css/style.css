@@ -149,6 +149,10 @@ fieldset{
     height: 25px;
     margin-right: 10px;
     width:25px;
+    position: absolute;
+    left: 1050px;
+    top:30px;
+    cursor: pointer;
 }
 /*Estilos para la imagen de Logout*/
 #Log_out{
