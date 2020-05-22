@@ -262,19 +262,3 @@ class NovedadesCreateView(View):
             return HttpResponse('Has sido registrado.')
         else:
             return HttpResponse("Ha habido un error.")
-
-
-class EquipoJsonList(View):
-    def get(self, request):
-        if('marca' in request.GET):
-            eList = Equipo.objects.filter(marca__contains=request.GET['marca'])
-        elif ('modelo' in request.GET):
-            eList = Equipo.objects.filter(modelo__contains=request.GET['modelo'])
-        else:
-            eList = Equipo.objects.all()
-        return JsonResponse(list(eList.values()), safe=False)
-
-class EquipoJsonDetail(View):
-    def get(self, request, pk):
-        equipo = Equipo.objects.get(pk=pk)
-        return JsonResponse(model_to_dict(equipo))
