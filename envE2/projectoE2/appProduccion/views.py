@@ -292,24 +292,8 @@ class NovedadesCreateView(View):
         if form.is_valid():
             form.save()
 
-            email = form.cleaned_data_get("email")
-            mensaje = "Este es un mensaje de prueba para confirmar tu email"
-            usuario = form.cleaned_data_get("usuario")
-            asunto = "Confirmacion email"
-            email_from = settings.EMAIL_HOST_USER
-            email_to = form.cleaned_data_get("email")
             
             return HttpResponse('Has sido registrado.')
         else:
             return HttpResponse("Ha habido un error.")
-<<<<<<< HEAD
-=======
 
-
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> master
->>>>>>> master
