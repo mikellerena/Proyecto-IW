@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+<fieldset>
+    <legend>Novedades</legend>
+    <form method="post" id="id_nov_form" data-post-url="{% url 'novedades_create' %}">
+        {% csrf_token %}
+        {% for field in form %}
+            <div>
+                <div class="form-izq-50">
+                    {{ field.label_tag}}
+                </div>
+                <div class="float-der-50">
+                    {{ field }}
+                </div>
+                {{ field.errors }}
+            </div>
+        {% endfor %}
+        <ul class="antifloat">
+            <li id="nota"><p>Nota: Una vez suscrito te enviaremos un email de prueba.</p></li>
+        </ul>
+        <p><input class="enviar" id="btn-nov" type="submit" value="Suscribirse"></p>
+    </form>
+</fieldset>
+{% endblock %}
+
+{% block js %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="{% static 'js/ajax_novedades.js' %}"></script>
+{% endblock %}
+
+

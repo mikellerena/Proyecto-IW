@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<fieldset>
+    <legend>Eliminar Equipo</legend>
+    <h2>¿Desea eliminar el equipo de marca: {{ equipo.marca }} y modelo: {{ equipo.modelo }}?</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Eliminar">
+    </form>
+</fieldset>
+{% endblock %}

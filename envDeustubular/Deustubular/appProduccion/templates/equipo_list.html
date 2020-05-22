@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenido %}
+<div class="centrar">
+    <a href="{% url 'equipo_list' %}"><button>Ver como<br>Lista</button></a>
+    <button id="ver">Ver como<br>Tabla</button>
+</div>
+<div id="cont">
+    <ul class="lista">
+        {% for eq in equipo_list %}
+        <li>
+            <p class="mar-inferior p-lista">Equipo</p>
+            <div class="mar-inferior">
+                <a href="{% url 'equipo_detail' eq.id %}">Ver</a> ||
+                <a href="{% url 'equipo_edit' eq.id %}">Editar</a> ||
+                <a href="{% url 'equipo_delete' eq.id %}">Borrar</a>
+            </div>
+            <ul class="listas">
+                <li>ID: {{ eq.id }}</li><br>
+                <li>Marca: {{ eq.marca }}</li><br>
+                <li>Modelo: {{ eq.modelo }}</li>
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/equipo.js' %}"></script>
+{% endblock %}

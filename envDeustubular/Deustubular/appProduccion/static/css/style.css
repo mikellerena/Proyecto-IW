@@ -1,0 +1,547 @@
+/********************************************ESTILOS GENERALES********************************************/
+*{
+    background-size: 100%;
+    box-sizing: border-box;
+}
+
+/*Estilos para el body de todas las páginas*/
+body{
+    background-image: url(../imagenes/fondo.jpg);
+    margin: 0 auto;
+    width: 1200px;
+}
+
+/*Estilos generales para el menú de navegación*/
+nav{
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: center;
+    margin-bottom:20px;
+}
+
+/*Estilos generales para el header*/
+header{
+    border-bottom: 4px solid white;
+    font-family: 'Courier New', Courier, monospace;
+    width: 1200px;
+}
+
+/*Estilos generales para los h3*/
+h3{
+   font-family: 'Courier New', Courier, monospace;
+}
+
+/*Estilos generales para el footer*/
+footer{
+    border-top: 4px solid white;
+    font-family: 'Courier New', Courier, monospace;
+    width: 1200px;
+}
+
+/*Estilos generales para los h2*/
+h2{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/*Estilos para el main*/
+main{
+    width: 100%;
+}
+
+/*Estilos para las tablas*/
+table{
+    text-align: center;
+    border-top: 3px dotted black;
+    border-left: 3px dotted black;
+    border-right: 3px dotted black;
+    margin: 0 auto;
+}
+
+/*Estilos para los td generales*/
+td{
+    padding:10px 5px 10px 5px;
+    border-bottom: 3px dotted black;
+}
+
+/*Estilos generales para los formularios*/
+fieldset{
+    margin: 0 auto;
+    margin-bottom: 25px;
+    width: 50%;
+}
+/********************************************ESTILOS PARA LAS ID`S********************************************/
+/*Estilos exclusivos para el body del index*/
+#index{
+    font-family: 'Courier New', Courier, monospace;
+    width: 1200px;
+}
+
+/*Estilos para el h1 del index*/
+#h1_index{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    color: black;
+}
+
+/*Estilos para la opción página principal del menú de navegación*/
+#PP{
+    border-right: ridge;
+    font-size: 20px;
+    padding-right: 20px;
+}
+
+/*Estilos para la opción gestión de empleados del menú de navegación*/
+#gestion_empleados{
+    border-right: ridge;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/*Estilos para la opción gestión de equipos del menú de navegación*/
+#gestion_equipos{
+    border-right: ridge;
+    box-sizing: border-box;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/*Estilos para la opción gestión de procesos del menú de navegación*/
+#gestion_procesos{
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/*Estilos para el footer de la página principal*/
+#footer_PP{
+    position: absolute;
+}
+
+/*Estilos para la imagen con enlace de twitter*/
+#Twitter{
+    height:25px;
+    margin-left: 25px;
+    margin-right: 15px;
+    vertical-align: middle;
+    width:25px;
+}
+
+/*Estilos generales para el conjunto de contacto*/
+#Contactos{
+    color: black;
+    padding-bottom: 10px;
+    text-align: center;
+
+}
+
+/*Estilos para la imágen del teléfono*/
+#Telefono{
+    height:25px;
+    margin-right: 10px;
+    vertical-align: middle;
+    width:25px;
+}
+
+/*Estilos para el boton atras*/
+#Atras{
+    height: 25px;
+    margin-right: 10px;
+    width:25px;
+    position: absolute;
+    left: 1100px;
+    top:40px;
+    cursor: pointer;
+}
+/*Estilos para la imagen de Logout*/
+#Log_out{
+    height:45px;
+    width:100px;
+    position: absolute;
+    left: 1150px;
+    top:30px;
+    cursor: pointer;
+
+}
+
+/*Estilos especiales para el botón de Logout*/
+#Log_out:hover{
+    background: #17c;
+
+}
+
+/*Estilos especiales para el botón de Logout*/
+#Log_out:focus{
+
+    border-color: #05a;
+}
+
+/*Estilos para el logo*/
+#Logo{
+    height:80px;
+    width:80px;
+}
+
+/*Estilos para las flechas*/
+#Flecha{
+    height:20px;
+    vertical-align: middle;
+    width:20px;
+}
+
+/*Estilos generales inico de sesión y registro*/
+#Inicio_sesion,
+#Registro{
+    background: #456;
+    font-family: 'Courier New', Courier, monospace;
+    width: 400px;
+    margin: 16px 30px 16px 30px;
+    font-size: 16px;
+    margin: 50px auto;
+}
+
+/*Estilos para el cuerpo*/
+#Inicio_sesion_cuerpo,
+#Registro_cuerpo{
+    background: #ebebeb;
+    padding: 12px;
+}
+
+/*Estilos para el header*/
+.Inicio_sesion_header,
+#Registro_header{
+    background: #28d;
+    color: #fff;
+    font-size: 1.4em;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/*Estilos para los párrafos*/
+#Inicio_sesion p,
+#Registro p {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 12px;
+}
+
+/*Estilos para los inputs*/
+#Inicio_sesion input,
+#Registro input {
+    box-sizing: border-box;
+
+    border-width: 1px;
+    border-style: solid;
+    padding: 16px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+
+/*Estilos para el campo email y contraseña*/
+#Inicio_sesion input[type="text"],
+#Inicio_sesion input[type="password"],
+#Registro input[type="text"],
+#Registro input[type="password"],
+#Registro input[type="email"] {
+    background: #fff;
+    border-color: #bbb;
+    color: #555;
+}
+
+/*Estilos especiales para el campo email y contraseña*/
+#Inicio_sesion input[type="text"]:focus,
+#Inicio_sesion input[type="password"]:focus,
+#Registro input[type="text"]:focus,
+#Registro input[type="password"]:focus,
+#Registro input[type="email"] {
+    border-color: #888;
+}
+
+/*Estilos para el botón de confirmar*/
+#Inicio_sesion input[type="submit"],
+#Registro input[type="submit"] {
+    background: #28d;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+/*Estilos especiales para el botón de confirmar*/
+#Inicio_sesion input[type="submit"]:hover,
+#Registro input[type="submit"]:hover {
+    background: #17c;
+}
+
+/*Estilos especiales para el botón de confirmar*/
+#Inicio_sesion input[type="submit"]:focus,
+#Registro input[type="submit"]:focus {
+    border-color: #05a;
+}
+
+/*Estilos para situar elementos a la izquierda del index*/
+#index-izq{
+    float: left;
+    padding: 10px 0px 5px 20px;
+    width: 25%
+}
+/*Estilos para situar elementos a la derecha del index*/
+#index-der{
+    float: right;
+    padding: 5px;
+    width: 75%
+}
+
+/*Estilos para soy nuevo de login*/
+#invitado{
+    color:white;
+}
+
+/*Estilos especiales para soy nuevo de login*/
+#invitado:hover{
+    color:black;
+}
+
+/*Estilos para la nota de de novedades*/
+#nota{
+    margin-bottom: -20px;
+    margin-left: 25px;
+}
+/********************************************ESTILOS PARA LAS CLASES********************************************/
+/*Estilos para el h3 del footer*/
+.h3_footer{
+    font-family: 'Courier New', Courier, monospace;
+    padding-top: 30px;
+}
+
+/*Estilos para situar parte del texto en la parte izquierda de la página hasta un 50%*/
+.float-izq-50{
+    float: left;
+    padding: 10px;
+    width: 50%;
+}
+
+/*Estilos para situar parte del texto en la parte derecha de la página hasta un 50%*/
+.float-der-50{
+    float: right;
+    padding: 10px;
+    width: 50%;
+}
+
+/*Estilos para situar elementos a la izquierda del footer*/
+.footer-izq{
+    float: left;
+    padding-left: 20px;
+    width: 70%
+}
+
+/*Estilos para situar elementos a la derecha del footer*/
+.footer-der{
+    float: right;
+    padding: 5px;
+    width: 30%
+}
+
+/*Estilos para centrar el texto de cualquier página o estructura*/
+.centrar{
+    text-align: center;
+}
+
+/*Estilos para situar elementos a la izquierda del header*/
+.header-izq{
+    float: left;
+    padding: 10px 0px 5px 20px;
+    width: 36%
+}
+/*Estilos para situar elementos a la derecha del header*/
+.header-der{
+    float: right;
+    padding: 5px;
+    width: 64%
+}
+
+/*Estilos para los submenus de los apartados del navegador*/
+.Submenu{
+    background: #333333;
+    box-sizing: border-box;
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    -moz-box-sizing: border-box;
+    opacity: 0;
+    padding: 0;
+    transition: opacity 1.5s;
+    visibility: hidden;
+    -webkit-box-sizing: border-box;
+	width: auto;
+}
+
+/*Estilos para los títulos de los submenus*/
+.Titulos_submenu{
+    color: #fff;
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    margin: 5px;
+    text-decoration: none;
+}
+
+/*Estilos para que cuando se pone el cursor encima de los h2 del nav salgan los submenus*/
+nav h2:hover .Submenu{
+    opacity: 1;
+    visibility: visible;
+}
+
+/*Estilos para que cuando se ponga el cursor encima de una opción de los submenus se pongan de un color al cabo de 1 segundo*/
+.Submenu li a:hover{
+	color: #CE7D35;
+    transition: 1s;
+}
+
+/*Estilos especiales para aplicar en los formularios*/
+.form-izq-50{
+    float: left;
+    padding: 15px 10px 8px 50px;
+    width: 50%;
+}
+
+/*Estilos para el botón de enviar de los formularios*/
+.enviar_cancelar{
+    margin: 20px 0px 10px 20px;
+    padding: 5px;
+}
+
+/*Estilos para aplicar un margen inferior de 8px*/
+.mar-inferior{
+    margin-bottom: 8px;
+}
+
+/*Estilos para las listas*/
+.listas{
+    margin:0;
+    padding:0;
+}
+
+/*Estilos específicos para los td de las tablas*/
+.td_estilos{
+    border-left: 3px dotted black;
+}
+
+/*Estilos para aplicar un width del 100% y un margen onferior de -35px*/
+.width-100{
+    margin-bottom: -35px;
+    width: 100%;
+}
+
+/*Estilos para aplicar un margen superior de 14px e inferior de 20px*/
+.margin-14-20{
+    margin-top: 14px;
+    margin-bottom: 20px;
+}
+
+/*Estilos para aplicar en los formularios un float a la izquierda del 25%*/
+.form-izq-30{
+    float: left;
+    width: 30%;
+}
+
+/*Estilos para aplicar un float a la derecha del 75%*/
+.float-der-70{
+    float: right;
+    width: 70%;
+}
+
+/*Estilos para aplicar un float a la izquierda del 33%*/
+.float-izq-33{
+    float:left;
+    width:33%;
+}
+
+/*Estilos para aplicar un float a la derecha del 33%*/
+.float-der-33{
+    float:right;
+    width:33%;
+}
+/*Estilos para aplicar un padding de 15px arriba, 50px derecha, 8px abajo y 50 px derecha*/
+.padding-15{
+    padding: 15px 50px 8px 50px;
+}
+
+/*Estilos para aplicar un margen superior de 0px*/
+.margin-top-0{
+    margin-top: 0px;
+}
+
+/*Estilos para la tabla que contiene el div*/
+.div-table{
+    padding: 0px 10px 20px 10px;
+}
+
+/*Estilos para los li de las listas*/
+ul.lista li{
+    display: inline-block;
+    padding: 10px 20px 5px 15px;
+}
+
+/*Estilos para los p de las listas*/
+.p-lista{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/*Estilos para los enlaces internos*/
+.enlaces_internos{
+    color:black;
+}
+
+/*Estilos especiales para los enlaces internos*/
+.enlaces_internos:hover{
+    font-style: italic;
+}
+
+/*Estilos para lo que venga a continuación del main*/
+.antifloat{
+    clear: both;
+    content: "";
+    display: table;
+}
+
+/*Estilos para los p de la página principal*/
+.p_PP{
+   font-family: 'Courier New', Courier, monospace;
+   text-align: justify;
+}
+
+/*Estilos para las imágenes de facebook e instagram*/
+.Face_ins{
+    height:25px;
+    margin-right: 15px;
+    vertical-align: middle;
+    width:25px;
+}
+
+/*Estilo para justificar texto en campo activo*/
+.activo{
+    text-align: justify;
+}
+
+/*Estilo para hacer el fondo blanco*/
+.bc-white{
+    background-color: #fff;
+}
+
+/*Estilo para poner en la misma linea*/
+.ib{
+    display: inline-block;
+}
+
+/*Estilo para poner en la siguiente linea y ocupar el 100%*/
+.db-w100{
+    display: block;
+    width: 100%;
+}
