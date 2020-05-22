@@ -166,6 +166,19 @@ class EmpleadoDeleteView(StaffRequiredMixin, DeleteView):
     template_name = 'empleado_delete.html'
     success_url = reverse_lazy('empleado_list')
 
+"""Vista para ver el listado de equipos en formato JSON"""
+class EmpleadoJsonList(View):
+    def get(self, request):
+        if('nombre' in request.GET):
+            emList = Empleado.objects.filter(nombre__contins=request.GET['nombre'])
+        else:
+            emList = Empleado.objects.all()
+        return JsonResponse(list(emList.values()), safe=False)
+
+
+"""Vista para ver el detalle de los equipos en formato JSON"""
+
+
 
 """Vista para el formulario de creación de procesos"""
 class ProcesoCreateView(StaffRequiredMixin, View):
@@ -264,17 +277,4 @@ class NovedadesCreateView(View):
             return HttpResponse("Ha habido un error.")
 
 
-class EquipoJsonList(View):
-    def get(self, request):
-        if('marca' in request.GET):
-            eList = Equipo.objects.filter(marca__contains=request.GET['marca'])
-        elif ('modelo' in request.GET):
-            eList = Equipo.objects.filter(modelo__contains=request.GET['modelo'])
-        else:
-            eList = Equipo.objects.all()
-        return JsonResponse(list(eList.values()), safe=False)
 
-class EquipoJsonDetail(View):
-    def get(self, request, pk):
-        equipo = Equipo.objects.get(pk=pk)
-        return JsonResponse(model_to_dict(equipo))

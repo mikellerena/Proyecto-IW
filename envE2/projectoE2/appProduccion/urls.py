@@ -18,11 +18,12 @@ urlpatterns = [
     path('produccion/empleados/<str:pk>/', views.EmpleadoDetailView.as_view(), name='empleado_detail'),
     path('produccion/empleados/<str:pk>/update/', views.EmpleadoUpdateView.as_view(), name='empleado_edit'),
     path('produccion/empleados/<str:pk>/delete', views.EmpleadoDeleteView.as_view(), name='empleado_delete'),
+    path('produccion/empleados/api/', views.EmpleadoJsonList.as_view(), name='api_empleado_list'),
+    path('produccion/empleados/api/<str:pk>/', views.EmpleadoJsonDetail.as_view(), name='api_empleado_detail'),
     path('produccion/procesos/create/', views.ProcesoCreateView.as_view(), name='proceso_create'),
     path('produccion/procesos/', views.ProcesoListView.as_view(), name='proceso_list'),
     path('produccion/procesos/<str:pk>/', views.ProcesoDetailView.as_view(), name='proceso_detail'),
     path('produccion/procesos/<str:pk>/update/', views.ProcesoUpdateView.as_view(), name='proceso_edit'),
     path('produccion/procesos/<str:pk>/delete/', views.ProcesoDeleteView.as_view(), name='proceso_delete'),
     path('produccion/novedades', views.NovedadesCreateView.as_view(), name='novedades_create'),
-
 ]

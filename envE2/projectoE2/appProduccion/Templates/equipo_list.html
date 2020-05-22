@@ -2,9 +2,12 @@
 {% load static %}
 
 {% block contenido %}
+<div class="centrar">
+    <button id="ver">Formato Tabla</button>
+    <a href="{% url 'equipo_list' %}"><button>Formato Lista</button></a>
+</div>
 <div id="cont">
     <ul class="lista">
-        <button id="ver">Formato Tabla</button>
         {% for eq in equipo_list %}
         <li>
             <p class="mar-inferior p-lista">Equipo</p>
@@ -25,6 +28,5 @@
 {% endblock %}
 
 {% block js %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/equipo.js' %}"></script>
 {% endblock %}
