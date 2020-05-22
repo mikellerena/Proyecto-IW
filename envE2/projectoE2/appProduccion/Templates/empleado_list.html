@@ -18,6 +18,7 @@
                 <a href="{% url 'empleado_delete' em.dni %}">Borrar</a>
             </div>
             <ul class="listas">
+                <li>ID: {{ em.id }}</li><br>
                 <li>Nombre: {{ em.nombre }}</li><br>
                 <li>DNI: {{ em.dni }}</li>
             </ul>

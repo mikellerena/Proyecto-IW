@@ -1,4 +1,4 @@
-const URL = "http://127.0.0.1:8000/appProduccion/produccion/empleados/api/";
+const URL = "http://127.0.0.1:8000/appProduccion/produccion/procesos/api/";
 
 let ver = document.getElementById('ver');
 ver.addEventListener('click', event => {
@@ -21,25 +21,29 @@ function crearTabla(json){
             <thead>
                 <tr>
                     <td>ID</td>
+                    <td class="td_estilos">Codigo Orden<br>Frabricación</td>
+                    <td class="td_estilos">Codigo Proceso</td>
+                    <td class="td_estilos">Referencia</td>
                     <td class="td_estilos">Nombre</td>
-                    <td class="td_estilos">DNI</td>
                 </tr>
             </thead>
             <tbody>`;
 
     for (let dato of json){
-        tabla += crearFila(dato.id, dato.nombre, dato.dni);
+        tabla += crearFila(dato.id, dato.codigo_orden_fabricacion, dato.codigo_proceso, dato.referencia, dato.nombre_proceso);
     }
     tabla += `</tbody></table>`;
     return tabla;
 }
 
-function crearFila(id, nombre, dni){
+function crearFila(id, codigo_orden_fabricacion, codigo_proceso, referencia, nombre_proceso){
     return `
         <tr>
             <td>${id}</td>
-            <td class="td_estilos">${nombre}</td>
-            <td class="td_estilos">${dni}</td>
+            <td class="td_estilos">${codigo_orden_fabricacion}</td>
+            <td class="td_estilos">${codigo_proceso}</td>
+            <td class="td_estilos">${referencia}</td>
+            <td class="td_estilos">${nombre_proceso}</td>
             <td class="td_estilos">
                 <div class="mar-inferior">
                     <a href="http://127.0.0.1:8000/appProduccion/produccion/empleados/${id}/">Ver</a> ||

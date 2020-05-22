@@ -1,22 +1,32 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-<ul class="lista">
-    {% for pro in proceso_list %}
-    <li>
-        <p class="mar-inferior p-lista">Proceso</p>
-        <div class="mar-inferior">
-            <a href="{% url 'proceso_detail' pro.codigo_proceso %}">Ver</a> ||
-            <a href="{% url 'proceso_edit' pro.codigo_proceso %}">Editar</a> ||
-            <a href="{% url 'proceso_delete' pro.codigo_proceso %}">Borrar</a>
-        </div>
-        <ul class="listas">
-            <li>Codigo Orden Fabricación: {{ pro.codigo_orden_fabricacion }}</li><br>
-            <li>Codigo Proceso: {{ pro.codigo_proceso }}</li><br>
-            <li>Referencia: {{ pro.referencia }}</li><br>
-            <li>Nombre: {{ pro.nombre_proceso }}</li>
-        </ul>
-    </li>
-    {% endfor %}
-</ul>
+<div class="centrar">
+    <a href="{% url 'equipo_list' %}"><button>Ver como<br>Lista</button></a>
+    <button id="ver">Ver como<br>Tabla</button>
+</div>
+<div id="cont">
+    <ul class="lista">
+        {% for pro in proceso_list %}
+        <li>
+            <p class="mar-inferior p-lista">Proceso</p>
+            <div class="mar-inferior">
+                <a href="{% url 'proceso_detail' pro.codigo_proceso %}">Ver</a> ||
+                <a href="{% url 'proceso_edit' pro.codigo_proceso %}">Editar</a> ||
+                <a href="{% url 'proceso_delete' pro.codigo_proceso %}">Borrar</a>
+            </div>
+            <ul class="listas">
+                <li>Codigo Orden Fabricación: {{ pro.codigo_orden_fabricacion }}</li><br>
+                <li>Codigo Proceso: {{ pro.codigo_proceso }}</li><br>
+                <li>Referencia: {{ pro.referencia }}</li><br>
+                <li>Nombre: {{ pro.nombre_proceso }}</li>
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/proceso.js' %}"></script>
 {% endblock %}
