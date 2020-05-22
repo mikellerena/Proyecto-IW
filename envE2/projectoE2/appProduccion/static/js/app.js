@@ -24,15 +24,19 @@
         });
     });
 
+
+
+/*_____________________________*/
 const URL = "http://127.0.0.1:8000/appProduccion/produccion/equipos/api/";
 
 let ver = document.getElementById('ver');
 ver.addEventListener('click', event => {
+    event.preventDefault();
     loadData();
 })
 
 function loadData(){
-    console.log(url);
+    console.log(URL);
     fetch(URL)
         .then((response) => response.json())
         .then((json) => {
@@ -52,7 +56,7 @@ function crearTabla(json){
             </thead>
             <tbody>`;
 
-    for (dato of json){
+    for (let dato of json){
         tabla += crearFila(dato.id, dato.marca, dato.modelo);
     }
     tabla += `</tbody></table>`;
