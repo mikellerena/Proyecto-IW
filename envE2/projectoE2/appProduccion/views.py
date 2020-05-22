@@ -302,8 +302,14 @@ class NovedadesCreateView(View):
             return HttpResponse('Has sido registrado.')
         else:
             return HttpResponse("Ha habido un error.")
+<<<<<<< HEAD
+=======
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> master
+>>>>>>> master
