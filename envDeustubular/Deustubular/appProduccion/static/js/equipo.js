@@ -17,7 +17,7 @@ function loadData(){
 
 function crearTabla(json){
     let tabla = `
-        <table>
+        <table id="table-js">
             <thead>
                 <tr>
                     <td>ID</td>

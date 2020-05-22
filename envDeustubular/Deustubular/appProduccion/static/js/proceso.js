@@ -17,7 +17,7 @@ function loadData(){
 
 function crearTabla(json){
     let tabla = `
-        <table>
+        <table id="table-js">
             <thead>
                 <tr>
                     <td>ID</td>
@@ -25,6 +25,7 @@ function crearTabla(json){
                     <td class="td_estilos">Codigo Proceso</td>
                     <td class="td_estilos">Referencia</td>
                     <td class="td_estilos">Nombre</td>
+                    <td class="td_estilos">Enlaces</td>
                 </tr>
             </thead>
             <tbody>`;

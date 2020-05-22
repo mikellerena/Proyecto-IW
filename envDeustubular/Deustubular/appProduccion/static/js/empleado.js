@@ -17,12 +17,13 @@ function loadData(){
 
 function crearTabla(json){
     let tabla = `
-        <table>
+        <table id="table-js">
             <thead>
                 <tr>
                     <td>ID</td>
                     <td class="td_estilos">Nombre</td>
                     <td class="td_estilos">DNI</td>
+                    <td class="td_estilos">Enlaces</td>
                 </tr>
             </thead>
             <tbody>`;

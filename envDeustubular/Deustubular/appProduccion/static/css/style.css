@@ -311,6 +311,11 @@ fieldset{
     margin-bottom: -20px;
     margin-left: 25px;
 }
+
+#table-js{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 /********************************************ESTILOS PARA LAS CLASES********************************************/
 /*Estilos para el h3 del footer*/
 .h3_footer{
