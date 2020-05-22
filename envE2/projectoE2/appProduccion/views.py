@@ -87,7 +87,7 @@ class EquipoDeleteView(StaffRequiredMixin, DeleteView):
 
 
 """Vista para ver el listado de equipos en formato JSON"""
-class EquipoJsonList(View):
+class EquipoJsonListView(View):
     def get(self, request):
         if('marca' in request.GET):
             eList = Equipo.objects.filter(marca__contains=request.GET['marca'])
@@ -99,7 +99,7 @@ class EquipoJsonList(View):
 
 
 """Vista para ver el detalle de los equipos en formato JSON"""
-class EquipoJsonDetail(View):
+class EquipoJsonDetailView(View):
     def get(self, request, pk):
         equipo = Equipo.objects.get(pk=pk)
         return JsonResponse(model_to_dict(equipo))
@@ -166,6 +166,22 @@ class EmpleadoDeleteView(StaffRequiredMixin, DeleteView):
     template_name = 'empleado_delete.html'
     success_url = reverse_lazy('empleado_list')
 
+"""Vista para ver el listado de empleados en formato JSON"""
+class EmpleadoJsonListView(View):
+    def get(self, request):
+        if('nombre' in request.GET):
+            emList = Empleado.objects.filter(nombre__contins=request.GET['nombre'])
+        else:
+            emList = Empleado.objects.all()
+        return JsonResponse(list(emList.values()), safe=False)
+
+
+"""Vista para ver el detalle de los empleados en formato JSON"""
+class EmpleadoJsonDetailView(View):
+    def get(self, request, pk):
+        empleado = Empleado.objects.get(pk=pk)
+        return JsonResponse(model_to_dict(empleado))
+
 
 """Vista para el formulario de creación de procesos"""
 class ProcesoCreateView(StaffRequiredMixin, View):
@@ -229,6 +245,23 @@ class ProcesoDeleteView(StaffRequiredMixin, DeleteView):
     success_url = reverse_lazy('proceso_list')
 
 
+# """Vista para ver el listado de procesos en formato JSON"""
+# class ProcesoJsonListView(View):
+#     def get(self, request):
+#         if('codigo_proceso' in request.GET):
+#             pList = Proceso.objects.filter(codigo_proceso__contins=request.GET['codigo_proceso'])
+#         else:
+#             pList = Proceso.objects.all()
+#         return JsonResponse(list(pList.values()), safe=False)
+#
+#
+# """Vista para ver el detalle de los procesos en formato JSON"""
+# class ProcesoJsonDetailView(View):
+#     def get(self, request, pk):
+#         proceso = Proceso.objects.get(pk=pk)
+#         return JsonResponse(model_to_dict(proceso))
+
+
 """Vista para que el usuario pueda cerrar sesión"""
 class LogoutView(RedirectView):
     permanent = False
@@ -240,6 +273,8 @@ class LogoutView(RedirectView):
             logout(self.request)
         return super(LogoutView, self).get_redirect_url(*args, **kwargs)
 
+
+"""Vista para la suscribirse"""
 @method_decorator(csrf_exempt, name='dispatch')
 class NovedadesCreateView(View):
     def get(self, request, *args, **kwargs):
@@ -262,3 +297,9 @@ class NovedadesCreateView(View):
             return HttpResponse('Has sido registrado.')
         else:
             return HttpResponse("Ha habido un error.")
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> master
