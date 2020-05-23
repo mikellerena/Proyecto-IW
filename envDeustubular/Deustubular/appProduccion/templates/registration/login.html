@@ -20,8 +20,8 @@
     </header>
     <main>
         <div id="Inicio_sesion">
-            <h2 class="Inicio_sesion_header">Iniciar sesion</h2>
-            <form class="Inicio_sesion_cuerpo" method="POST" action="{% url 'login' %}">
+            <h2 id="Inicio_sesion_header">Iniciar sesion</h2>
+            <form id="Inicio_sesion_cuerpo" method="POST" action="{% url 'login' %}">
                 {% csrf_token %}
                 <p><input class="db-w100"  type="text" placeholder="Nombre de usuario" name="username"></p>
                 <p><input class="db-w100"  type="password" placeholder="Contraseña" name="password"></p>
