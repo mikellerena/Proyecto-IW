@@ -32,7 +32,7 @@ class EquipoCreateView(StaffRequiredMixin, View):
         form = EquipoForm()
         context = {
             'form': form,
-            'titulo_pagina': 'Apartado para la creación de empleados'
+            'titulo_pagina': 'Apartado para la creación de equipos'
         }
         return render(request, 'create_equipo_form.html', context)
 
@@ -167,6 +167,7 @@ class EmpleadoDeleteView(StaffRequiredMixin, DeleteView):
     template_name = 'empleado_delete.html'
     success_url = reverse_lazy('empleado_list')
 
+
 """Vista para ver el listado de empleados en formato JSON"""
 class EmpleadoJsonListView(View):
     def get(self, request):
@@ -178,6 +179,7 @@ class EmpleadoJsonListView(View):
 
 
 """Vista para ver el detalle de los empleados en formato JSON"""
+# Se ha creado para su posible uso en un futuro
 class EmpleadoJsonDetailView(View):
     def get(self, request, pk):
         empleado = Empleado.objects.get(pk=pk)
@@ -257,6 +259,7 @@ class ProcesoJsonListView(View):
 
 
 """Vista para ver el detalle de los procesos en formato JSON"""
+# Se ha creado para su posible uso en un futuro
 class ProcesoJsonDetailView(View):
     def get(self, request, pk):
         proceso = Proceso.objects.get(pk=pk)
@@ -275,7 +278,7 @@ class LogoutView(RedirectView):
         return super(LogoutView, self).get_redirect_url(*args, **kwargs)
 
 
-"""Vista para la suscribirse"""
+"""Vista para suscribirse"""
 @method_decorator(csrf_exempt, name='dispatch')
 class NovedadesCreateView(View):
     def get(self, request, *args, **kwargs):
