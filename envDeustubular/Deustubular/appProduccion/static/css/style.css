@@ -190,9 +190,8 @@ fieldset{
     width:20px;
 }
 
-/*Estilos generales inico de sesión y registro*/
-#Inicio_sesion,
-#Registro{
+/*Estilos generales inico de sesión*/
+#Inicio_sesion{
     background: #456;
     font-family: 'Courier New', Courier, monospace;
     width: 400px;
@@ -202,15 +201,13 @@ fieldset{
 }
 
 /*Estilos para el cuerpo*/
-#Inicio_sesion_cuerpo,
-#Registro_cuerpo{
+#Inicio_sesion_cuerpo{
     background: #ebebeb;
     padding: 12px;
 }
 
 /*Estilos para el header*/
-.Inicio_sesion_header,
-#Registro_header{
+#Inicio_sesion_header{
     background: #28d;
     color: #fff;
     font-size: 1.4em;
@@ -222,18 +219,15 @@ fieldset{
 }
 
 /*Estilos para los párrafos*/
-#Inicio_sesion p,
-#Registro p {
+#Inicio_sesion p{
     margin-top: 0;
     margin-bottom: 0;
     padding: 12px;
 }
 
 /*Estilos para los inputs*/
-#Inicio_sesion input,
-#Registro input {
+#Inicio_sesion input{
     box-sizing: border-box;
-
     border-width: 1px;
     border-style: solid;
     padding: 16px;
@@ -244,10 +238,7 @@ fieldset{
 
 /*Estilos para el campo email y contraseña*/
 #Inicio_sesion input[type="text"],
-#Inicio_sesion input[type="password"],
-#Registro input[type="text"],
-#Registro input[type="password"],
-#Registro input[type="email"] {
+#Inicio_sesion input[type="password"]{
     background: #fff;
     border-color: #bbb;
     color: #555;
@@ -255,16 +246,12 @@ fieldset{
 
 /*Estilos especiales para el campo email y contraseña*/
 #Inicio_sesion input[type="text"]:focus,
-#Inicio_sesion input[type="password"]:focus,
-#Registro input[type="text"]:focus,
-#Registro input[type="password"]:focus,
-#Registro input[type="email"] {
+#Inicio_sesion input[type="password"]:focus{
     border-color: #888;
 }
 
 /*Estilos para el botón de confirmar*/
-#Inicio_sesion input[type="submit"],
-#Registro input[type="submit"] {
+#Inicio_sesion input[type="submit"]{
     background: #28d;
     border-color: transparent;
     color: #fff;
@@ -272,14 +259,12 @@ fieldset{
 }
 
 /*Estilos especiales para el botón de confirmar*/
-#Inicio_sesion input[type="submit"]:hover,
-#Registro input[type="submit"]:hover {
+#Inicio_sesion input[type="submit"]:hover{
     background: #17c;
 }
 
 /*Estilos especiales para el botón de confirmar*/
-#Inicio_sesion input[type="submit"]:focus,
-#Registro input[type="submit"]:focus {
+#Inicio_sesion input[type="submit"]:focus{
     border-color: #05a;
 }
 
@@ -315,6 +300,37 @@ fieldset{
 #table-js{
     margin-top: 20px;
     margin-bottom: 20px;
+}
+ /*Estilos para el cuadro de texto de búsqueda*/
+#fil{
+    background: #fff;
+    border-color: #bbb;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    color: #555;
+    font-family: inherit;
+    font-size: 0.95em;
+    outline: 0;
+    padding: 16px;
+}
+
+/*Estilos para el boton del cuadro de busqueda*/
+#busq{
+    background: #28d;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+/*Estilos especiales para el boton del cuadro de busqueda*/
+#busq:hover{
+    background: #17c;
+}
+
+/*Estilos especiales para el boton del cuadro de busqueda*/
+#busq:focus{
+    border-color: #05a;
 }
 /********************************************ESTILOS PARA LAS CLASES********************************************/
 /*Estilos para el h3 del footer*/
