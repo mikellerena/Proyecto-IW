@@ -55,3 +55,60 @@ function introducirTabla(json){
     let tabla = crearTabla(json);
     document.getElementById('cont').innerHTML = tabla;
 }
+
+
+
+
+
+let busq = document.getElementById('busq');
+busq.addEventListener('click', event => {
+    event.preventDefault();
+    let fil = document.getElementById('fil');
+    console.log(fil.value);
+    loadData(fil.value);
+})
+
+function loadData(fil){
+    let url = URL + "?nombre=" + fil;
+    console.log(url);
+    fetch(url)
+        .then((response) => response.json())
+        .then((json) => {
+            introducirLista(json);
+        });
+}
+
+function crearLista(json){
+    let lista = `
+        <ul class="lista">
+            `;
+
+    for (let dato of json){
+        lista += crearEmpleado(dato.id, dato.nombre, dato.dni);
+    }
+    lista += `</ul>`;
+    return lista;
+}
+
+function crearEmpleado(id, nombre, dni){
+    return `
+        <li>
+            <p class="mar-inferior p-lista">Empleado</p>
+            <div class="mar-inferior">
+                <a href="http://127.0.0.1:8000/appProduccion/produccion/empleados/${id}/">Ver</a> ||
+                    <a href="http://127.0.0.1:8000/appProduccion/produccion/empleados/${id}/update/">Editar</a> ||
+                    <a href="http://127.0.0.1:8000/appProduccion/produccion/empleados/${id}/delete/">Borrar</a>
+            </div>
+            <ul class="listas">
+                <li>ID: ${id}</li><br>
+                <li>Nombre: ${nombre}</li><br>
+                <li>DNI: ${dni}</li>
+            </ul>
+            <br>
+        </li>`;
+}
+
+function introducirLista(json){
+    let lista = crearLista(json);
+    document.getElementById('cont').innerHTML = lista;
+}

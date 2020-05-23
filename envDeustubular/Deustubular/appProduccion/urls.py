@@ -32,4 +32,6 @@ urlpatterns = [
     path('produccion/procesos/api/<int:pk>/', views.ProcesoJsonDetailView.as_view(), name='api_proceso_detail'),
 
     path('produccion/novedades', views.NovedadesCreateView.as_view(), name='novedades_create'),
+
+    path('produccion/empleados/buscar', views.EmpleadoJsonListView.as_view(), name='buscar_empleado'),
 ]
