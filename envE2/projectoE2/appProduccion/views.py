@@ -247,21 +247,21 @@ class ProcesoDeleteView(StaffRequiredMixin, DeleteView):
     success_url = reverse_lazy('proceso_list')
 
 
-# """Vista para ver el listado de procesos en formato JSON"""
-# class ProcesoJsonListView(View):
-#     def get(self, request):
-#         if('codigo_proceso' in request.GET):
-#             pList = Proceso.objects.filter(codigo_proceso__contins=request.GET['codigo_proceso'])
-#         else:
-#             pList = Proceso.objects.all()
-#         return JsonResponse(list(pList.values()), safe=False)
-#
-#
-# """Vista para ver el detalle de los procesos en formato JSON"""
-# class ProcesoJsonDetailView(View):
-#     def get(self, request, pk):
-#         proceso = Proceso.objects.get(pk=pk)
-#         return JsonResponse(model_to_dict(proceso))
+"""Vista pAra ver el listado de procesos en formato JSON"""
+class ProcesoJsonListView(View):
+    def get(self, request):
+        if('codigo_proceso' in request.GET):
+            pList = Proceso.objects.filter(codigo_proceso__contins=request.GET['codigo_proceso'])
+        else:
+            pList = Proceso.objects.all()
+        return JsonResponse(list(pList.values()), safe=False)
+
+
+"""Vista para ver el detalle de los procesos en formato JSON"""
+class ProcesoJsonDetailView(View):
+    def get(self, request, pk):
+        proceso = Proceso.objects.get(pk=pk)
+        return JsonResponse(model_to_dict(proceso))
 
 
 """Vista para que el usuario pueda cerrar sesión"""
