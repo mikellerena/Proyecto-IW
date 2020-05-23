@@ -25,6 +25,13 @@ class StaffRequiredMixin(object):
 def principal(request):
     return render(request, 'pagina_principal.html')
 
+def buscarEmpleado(request):
+    nombre = request.GET.get('nombre')
+    empleado = Empleado.objects.filter(nombre=nombre)
+    return JsonResponse(list(emList.values()), safe=False)
+
+
+
 
 """Vista para el formulario de creacion de equipo"""
 class EquipoCreateView(StaffRequiredMixin, View):
@@ -101,6 +108,7 @@ class EquipoJsonListView(View):
 
 
 """Vista para ver el detalle de los equipos en formato JSON"""
+# Se ha creado para su posible uso en un futuro
 class EquipoJsonDetailView(View):
     def get(self, request, pk):
         equipo = Equipo.objects.get(pk=pk)
@@ -130,7 +138,7 @@ class EmpleadoCreateView(StaffRequiredMixin, View):
 class EmpleadoListView(ListView):
     model = Empleado
     template_name = 'empleado_list.html'
-    queryset = Empleado.objects.order_by('nombre')
+    queryset = Empleado.objects.order_by('id')
 
     def get_context_data(self, **kwargs):
         context = super(EmpleadoListView, self).get_context_data(**kwargs)
@@ -172,7 +180,7 @@ class EmpleadoDeleteView(StaffRequiredMixin, DeleteView):
 class EmpleadoJsonListView(View):
     def get(self, request):
         if('nombre' in request.GET):
-            emList = Empleado.objects.filter(nombre__contins=request.GET['nombre'])
+            emList = Empleado.objects.filter(nombre__contains=request.GET['nombre'])
         else:
             emList = Empleado.objects.all()
         return JsonResponse(list(emList.values()), safe=False)
@@ -208,7 +216,7 @@ class ProcesoCreateView(StaffRequiredMixin, View):
 class ProcesoListView(ListView):
     model = Proceso
     template_name = 'proceso_list.html'
-    queryset = Proceso.objects.order_by('codigo_proceso')
+    queryset = Proceso.objects.order_by('id')
 
     def get_context_data(self, **kwargs):
         context = super(ProcesoListView, self).get_context_data(**kwargs)
@@ -303,7 +311,6 @@ class NovedadesCreateView(View):
             #           form_email_to,
             #           fail_silently = False
             # )
-            return HttpResponse('Has sido registrado.')
+            return HttpResponse('Has sido registrado. Recibiras nuestras novedades la proxima vez que enviemos un emial ')
         else:
             return HttpResponse("Ha habido un error.")
-
