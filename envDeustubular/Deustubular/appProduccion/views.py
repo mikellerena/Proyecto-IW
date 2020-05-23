@@ -290,6 +290,6 @@ class NovedadesCreateView(View):
         form = NovedadesForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponse('Has sido registrado. Recibiras nuestras novedades la proxima vez que enviemos un emial.')
+            return HttpResponse('Has sido registrado. Recibiras nuestras novedades la proxima vez que enviemos un email.')
         else:
             return HttpResponse("Ha habido un error.")
