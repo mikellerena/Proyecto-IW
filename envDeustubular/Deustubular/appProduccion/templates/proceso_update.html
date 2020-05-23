@@ -19,7 +19,7 @@
                 <p>{{ form.fecha_inicio.errors }}</p>
                 <p class="margin-14-20">{{ form.fecha_fin.label_tag }}</p>
                 <p>{{ form.fecha_fin.errors }}</p>
-                <p class="margin-14-20 activo">{{form.activo.label_tag }}<br>(Si el proceso esta activo actualmente poner misma fecha inicio y fin y marcar esta casilla)</p>
+                <p class="margin-14-20">{{form.activo.label_tag }}<br>(Si el proceso esta activo actualmente poner misma fecha inicio y fin y marcar esta casilla)</p>
                 <p>{{ form.activo.errors }}</p>
             </div>
             <div class="float-der-70 padding-15">
@@ -29,7 +29,7 @@
                 <p>{{ form.referencia }}</p>
                 <p>{{ form.fecha_inicio }}</p>
                 <p>{{ form.fecha_fin }}</p>
-                <p>{{ form.activo }}</p>
+                <p class="activo">{{ form.activo }}</p>
             </div>
         </div>
         <div class="padding-15 margin-top-0">
@@ -38,7 +38,8 @@
             <p>{{ form.empleados.label_tag }}</p>
             <p>{{ form.empleados }}</p>
         </div>
-        <input class="enviar" type="submit" value="Editar Proceso">
+        <input class="enviar" type="submit" value="Nuevo Proceso">
+        <a class="enviar_cancelar" href="{% url 'proceso_list' %}">Cancelar</a>
     </form>
 </fieldset>
 {% endblock %}

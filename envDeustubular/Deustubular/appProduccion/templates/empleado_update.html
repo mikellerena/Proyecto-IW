@@ -5,19 +5,35 @@
     <legend>Modificar Empleado</legend>
     <form action="" method="post">
         {% csrf_token %}
-        {% for field in form %}
-            <div>
-                <div class="form-izq-50">
-                    {{ field.label_tag }}
-                </div>
-                <div class="float-der-50">
-                    {{ field }}
-                </div>
-                {{ field.errors }}
+        <div class="antifloat width-100">
+            <div class="float-izq-50 padding-15">
+                <p class="margin-14-20">{{ form.dni.label_tag }}</p>
+                <p>{{ form.dni.errors }}</p>
+                <p class="margin-14-20">{{ form.nombre.label_tag }}</p>
+                <p>{{ form.nombre.errors }}</p>
+                <p class="margin-14-20">{{ form.apellidos.label_tag }}</p>
+                <p>{{ form.apellidos.errors }}</p>
+                <p class="margin-14-20">{{ form.email.label_tag }}</p>
+                <p>{{ form.email.errors }}</p>
+                <p class="margin-14-20">{{ form.telefono.label_tag }}</p>
+                <p>{{ form.telefono.errors }}</p>
+                <p class="margin-14-20">{{ form.direccion.label_tag }}</p>
+                <p>{{ form.direccion.errors }}</p>
+                <p class="margin-14-20 activo">{{form.fecha_nacimiento.label_tag }}</p>
+                <p>{{ form.fecha_nacmiento.errors }}</p>
             </div>
-        {% endfor %}
-        <br>
-        <input class="enviar" type="submit" value="Editar Empleado">
+            <div class="float-der-50 padding-15">
+                <p>{{ form.dni }}</p>
+                <p>{{ form.nombre }}</p>
+                <p>{{ form.apellidos }}</p>
+                <p>{{ form.email }}</p>
+                <p>{{ form.telefono }}</p>
+                <p>{{ form.direccion }}</p>
+                <p>{{ form.fecha_nacimiento }}</p>
+            </div>
+        </div>
+        <input class="enviar_cancelar" type="submit" value="Editar Empleado">
+        <a class="enviar_cancelar" href="{% url 'empleado_list' %}">Cancelar</a>
     </form>
 </fieldset>
 {% endblock %}
