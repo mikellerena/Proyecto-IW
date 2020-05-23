@@ -6,19 +6,23 @@
     <legend>Novedades</legend>
     <form method="post" id="id_nov_form" data-post-url="{% url 'novedades_create' %}">
         {% csrf_token %}
-        {% for field in form %}
-            <div>
-                <div class="form-izq-50">
-                    {{ field.label_tag}}
-                </div>
-                <div class="float-der-50">
-                    {{ field }}
-                </div>
-                {{ field.errors }}
+        <div class="antifloat width-100">
+            <div class="float-izq-50 padding-15">
+                <p class="margin-14-20">{{ form.usuario.label_tag }}</p>
+                <p>{{ form.modelo.errors }}</p>
+                <p class="margin-14-20">{{ form.genero.label_tag }}</p>
+                <p>{{ form.marca.errors }}</p>
+                <p class="margin-14-20">{{ form.email.label_tag }}</p>
+                <p>{{ form.categoria.errors }}</p>
             </div>
-        {% endfor %}
+            <div class="float-der-50 padding-15">
+                <p>{{ form.usuario }}</p>
+                <p>{{ form.genero }}</p>
+                <p>{{ form.email }}</p>
+            </div>
+        </div>
         <ul class="antifloat">
-            <li id="nota"><p>Nota: Proximamente recibiras novedades.</p></li>
+            <li id="nota"><p>Nota: Proximamente recibiras noticias nuestras.</p></li>
         </ul>
         <p><input class="enviar" id="btn-nov" type="submit" value="Suscribirse"></p>
     </form>

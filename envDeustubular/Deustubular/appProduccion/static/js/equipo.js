@@ -95,16 +95,15 @@ function crearEquipo(id, marca, modelo){
         <li>
             <p class="mar-inferior p-lista">Equipo</p>
             <div class="mar-inferior">
-                <a href="http://127.0.0.1:8000/appProduccion/produccion/empleados/${id}/">Ver</a> ||
-                    <a href="http://127.0.0.1:8000/appProduccion/produccion/empleados/${id}/update/">Editar</a> ||
-                    <a href="http://127.0.0.1:8000/appProduccion/produccion/empleados/${id}/delete/">Borrar</a>
+                <a href="http://127.0.0.1:8000/appProduccion/produccion/equipos/${id}/">Ver</a> ||
+                <a href="http://127.0.0.1:8000/appProduccion/produccion/equipos/${id}/update/">Editar</a> ||
+                <a href="http://127.0.0.1:8000/appProduccion/produccion/equipos/${id}/delete/">Borrar</a>
             </div>
             <ul class="listas">
                 <li>ID: ${id}</li><br>
                 <li>Marca: ${marca}</li><br>
                 <li>Modelo: ${modelo}</li>
             </ul>
-            <br>
         </li>`;
 }
 

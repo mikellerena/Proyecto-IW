@@ -462,7 +462,7 @@ nav h2:hover .Submenu{
 
 /*Estilos para aplicar un margen superior de 14px e inferior de 20px*/
 .margin-14-20{
-    margin-top: 14px;
+    margin-top: 17px;
     margin-bottom: 20px;
 }
 
@@ -550,6 +550,8 @@ ul.lista li{
 
 /*Estilo para justificar texto en campo activo*/
 .activo{
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: justify;
 }
 
@@ -568,3 +570,4 @@ ul.lista li{
     display: block;
     width: 100%;
 }
+
