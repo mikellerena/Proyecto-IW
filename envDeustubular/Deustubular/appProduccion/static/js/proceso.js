@@ -96,11 +96,11 @@ function crearLista(json){
 function crearEquipo(id, codigo_orden_fabricacion, codigo_proceso, referencia, nombre_proceso){
     return `
         <li>
-            <p class="mar-inferior p-lista">Equipo</p>
+            <p class="mar-inferior p-lista">Proceso</p>
             <div class="mar-inferior">
-                <a href="http://127.0.0.1:8000/appProduccion/produccion/empleados/${id}/">Ver</a> ||
-                <a href="http://127.0.0.1:8000/appProduccion/produccion/empleados/${id}/update/">Editar</a> ||
-                <a href="http://127.0.0.1:8000/appProduccion/produccion/empleados/${id}/delete/">Borrar</a>
+                <a href="http://127.0.0.1:8000/appProduccion/produccion/procesos/${id}/">Ver</a> ||
+                <a href="http://127.0.0.1:8000/appProduccion/produccion/procesos/${id}/update/">Editar</a> ||
+                <a href="http://127.0.0.1:8000/appProduccion/produccion/procesos/${id}/delete/">Borrar</a>
             </div>
             <ul class="listas">
                 <li>ID: ${id}</li><br>
@@ -109,7 +109,6 @@ function crearEquipo(id, codigo_orden_fabricacion, codigo_proceso, referencia, n
                 <li>Referencia: ${referencia}</li><br>
                 <li>Nombre: ${nombre_proceso }</li>
             </ul>
-            <br>
         </li>`;
 }
 
