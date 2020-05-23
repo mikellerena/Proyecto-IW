@@ -311,6 +311,7 @@ fieldset{
     color: #555;
     font-family: inherit;
     font-size: 0.95em;
+    height: 20px;
     outline: 0;
     padding: 16px;
 }
@@ -321,6 +322,7 @@ fieldset{
     border-color: transparent;
     color: #fff;
     cursor: pointer;
+    height: 20px;
 }
 
 /*Estilos especiales para el boton del cuadro de busqueda*/
