@@ -5,37 +5,37 @@ from django.contrib.auth.views import LoginView, LogoutView
 urlpatterns = [
 
     # urls principales
-    path('produccion/', LoginView.as_view(), name='login'),
-    path('produccion/logout/', LogoutView.as_view(), name='logout'),
-    path('produccion/principal/', views.principal, name='principal'),
+    path('', LoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
+    path('principal/', views.principal, name='principal'),
 
     # urls de equipos
-    path('produccion/equipos/create/', views.EquipoCreateView.as_view(), name='equipo_create'),
-    path('produccion/equipos/', views.EquipoListView.as_view(), name='equipo_list'),
-    path('produccion/equipos/<int:pk>/', views.EquipoDetailView.as_view(), name='equipo_detail'),
-    path('produccion/equipos/<int:pk>/update/', views.EquipoUpdateView.as_view(), name='equipo_edit'),
-    path('produccion/equipos/<int:pk>/delete/', views.EquipoDeleteView.as_view(), name='equipo_delete'),
-    path('produccion/equipos/api/', views.EquipoJsonListView.as_view(), name='api_equipo_list'),
-    path('produccion/equipos/api/<int:pk>/', views.EquipoJsonDetailView.as_view(), name='api_equipo_detail'),
+    path('equipos/create/', views.EquipoCreateView.as_view(), name='equipo_create'),
+    path('equipos/', views.EquipoListView.as_view(), name='equipo_list'),
+    path('equipos/<int:pk>/', views.EquipoDetailView.as_view(), name='equipo_detail'),
+    path('equipos/<int:pk>/update/', views.EquipoUpdateView.as_view(), name='equipo_edit'),
+    path('equipos/<int:pk>/delete/', views.EquipoDeleteView.as_view(), name='equipo_delete'),
+    path('equipos/api/', views.EquipoJsonListView.as_view(), name='api_equipo_list'),
+    path('equipos/api/<int:pk>/', views.EquipoJsonDetailView.as_view(), name='api_equipo_detail'),
 
     # urls de empleados
-    path('produccion/empleados/create/', views.EmpleadoCreateView.as_view(), name='empleado_create'),
-    path('produccion/empleados/', views.EmpleadoListView.as_view(), name='empleado_list'),
-    path('produccion/empleados/<int:pk>/', views.EmpleadoDetailView.as_view(), name='empleado_detail'),
-    path('produccion/empleados/<int:pk>/update/', views.EmpleadoUpdateView.as_view(), name='empleado_edit'),
-    path('produccion/empleados/<int:pk>/delete', views.EmpleadoDeleteView.as_view(), name='empleado_delete'),
-    path('produccion/empleados/api/', views.EmpleadoJsonListView.as_view(), name='api_empleado_list'),
-    path('produccion/empleados/api/<int:pk>/', views.EmpleadoJsonDetailView.as_view(), name='api_empleado_detail'),
+    path('empleados/create/', views.EmpleadoCreateView.as_view(), name='empleado_create'),
+    path('empleados/', views.EmpleadoListView.as_view(), name='empleado_list'),
+    path('empleados/<int:pk>/', views.EmpleadoDetailView.as_view(), name='empleado_detail'),
+    path('empleados/<int:pk>/update/', views.EmpleadoUpdateView.as_view(), name='empleado_edit'),
+    path('empleados/<int:pk>/delete', views.EmpleadoDeleteView.as_view(), name='empleado_delete'),
+    path('empleados/api/', views.EmpleadoJsonListView.as_view(), name='api_empleado_list'),
+    path('empleados/api/<int:pk>/', views.EmpleadoJsonDetailView.as_view(), name='api_empleado_detail'),
 
     # urls de proesos
-    path('produccion/procesos/create/', views.ProcesoCreateView.as_view(), name='proceso_create'),
-    path('produccion/procesos/', views.ProcesoListView.as_view(), name='proceso_list'),
-    path('produccion/procesos/<int:pk>/', views.ProcesoDetailView.as_view(), name='proceso_detail'),
-    path('produccion/procesos/<int:pk>/update/', views.ProcesoUpdateView.as_view(), name='proceso_edit'),
-    path('produccion/procesos/<int:pk>/delete/', views.ProcesoDeleteView.as_view(), name='proceso_delete'),
-    path('produccion/procesos/api/', views.ProcesoJsonListView.as_view(), name='api_proceso_list'),
-    path('produccion/procesos/api/<int:pk>/', views.ProcesoJsonDetailView.as_view(), name='api_proceso_detail'),
+    path('procesos/create/', views.ProcesoCreateView.as_view(), name='proceso_create'),
+    path('procesos/', views.ProcesoListView.as_view(), name='proceso_list'),
+    path('procesos/<int:pk>/', views.ProcesoDetailView.as_view(), name='proceso_detail'),
+    path('procesos/<int:pk>/update/', views.ProcesoUpdateView.as_view(), name='proceso_edit'),
+    path('procesos/<int:pk>/delete/', views.ProcesoDeleteView.as_view(), name='proceso_delete'),
+    path('procesos/api/', views.ProcesoJsonListView.as_view(), name='api_proceso_list'),
+    path('procesos/api/<int:pk>/', views.ProcesoJsonDetailView.as_view(), name='api_proceso_detail'),
 
     # url de novedades
-    path('produccion/novedades', views.NovedadesCreateView.as_view(), name='novedades_create'),
+    path('novedades', views.NovedadesCreateView.as_view(), name='novedades_create'),
 ]

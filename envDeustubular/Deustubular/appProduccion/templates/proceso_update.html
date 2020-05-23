@@ -1,45 +1,107 @@
-{% extends "base.html" %}
+{% load static %}
 
-{% block contenido %}
-<fieldset>
-    <legend>Modificar Proceso</legend>
-    <form action="" method="post">
-        {% csrf_token %}
-        <div class="antifloat width-100">
-            <div class="form-izq-30 padding-15">
-                <p class="margin-14-20">{{ form.codigo_orden_fabricacion.label_tag }}</p>
-                <p>{{ form.codigo_orden_fabricacion.errors }}</p>
-                <p class="margin-14-20">{{ form.codigo_proceso.label_tag }}</p>
-                <p>{{ form.codigo_proceso.errors }}</p>
-                <p class="margin-14-20">{{ form.nombre_proceso.label_tag }}</p>
-                <p>{{ form.nombre_proceso.errors }}</p>
-                <p class="margin-14-20">{{ form.referencia.label_tag }}</p>
-                <p>{{ form.referencia.errors }}</p>
-                <p class="margin-14-20">{{ form.fecha_inicio.label_tag }}</p>
-                <p>{{ form.fecha_inicio.errors }}</p>
-                <p class="margin-14-20">{{ form.fecha_fin.label_tag }}</p>
-                <p>{{ form.fecha_fin.errors }}</p>
-                <p class="margin-14-20">{{form.activo.label_tag }}<br>(Si el proceso esta activo actualmente poner misma fecha inicio y fin y marcar esta casilla)</p>
-                <p>{{ form.activo.errors }}</p>
-            </div>
-            <div class="float-der-70 padding-15">
-                <p>{{ form.codigo_orden_fabricacion }}</p>
-                <p>{{ form.codigo_proceso }}</p>
-                <p>{{ form.nombre_proceso }}</p>
-                <p>{{ form.referencia }}</p>
-                <p>{{ form.fecha_inicio }}</p>
-                <p>{{ form.fecha_fin }}</p>
-                <p class="activo">{{ form.activo }}</p>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deustubular S.L.</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="antifloat">
+        <div class="header-izq">
+            <a href="{% url 'principal' %}"><img id="Logo" src="{% static 'imagenes/logo.png' %}" alt="LOGO"></a>
         </div>
-        <div class="padding-15 margin-top-0">
-            <p>{{ form.equipo.label_tag }}</p>
-            <p>{{ form.equipo }}</p>
-            <p>{{ form.empleados.label_tag }}</p>
-            <p>{{ form.empleados }}</p>
+        <div class="header-der">
+            <h1>Deustubular S.L.</h1>
+            <a href="{% url 'proceso_list' %}"><img id="Atras" src="{% static 'imagenes/atras.png' %}" alt="ATRÁS"></a>
+            <a href="{% url 'logout' %}"><img id="Log_out" src="{% static 'imagenes/logout.png' %}" alt="LOGOUT"></a>
         </div>
-        <input class="enviar_cancelar" type="submit" value="Nuevo Proceso">
-        <a class="enviar_cancelar" href="{% url 'proceso_list' %}">Cancelar</a>
-    </form>
-</fieldset>
+    </header>
+    <nav>
+        <h2 id="PP"><a href="{% url 'principal' %}" class="enlaces_internos" style="text-decoration:none;">PÁGINA PRINCIPAL</a></h2>
+        <h2 id="gestion_empleados">GESTION DE LOS EMPLEADOS
+            <ul class="Submenu">
+                <li><a class="Titulos_submenu" href="{% url 'empleado_create' %}">Añadir empleado</a></li>
+                <li><a class="Titulos_submenu" href="{% url 'empleado_list' %}">Listar los empleados<br>
+                    (Detalles, Modificar &amp; Borrar)</a></li>
+            </ul>
+        </h2>
+        <h2 id="gestion_equipos">GESTION DE LOS EQUIPOS
+            <ul class="Submenu">
+                <li><a class="Titulos_submenu" href="{% url 'equipo_create' %}">Añadir equipo</a></li>
+                <li><a class="Titulos_submenu" href="{% url 'equipo_list' %}">Listar los equipos<br>
+                    (Detalles, Modificar &amp; Borrar)</a></li>
+            </ul>
+        </h2>
+        <h2 id="gestion_procesos">GESTION DE LOS PROCESOS
+            <ul class="Submenu">
+                <li><a class="Titulos_submenu" href="{% url 'proceso_create' %}">Añadir proceso</a></li>
+                <li><a class="Titulos_submenu" href="{% url 'proceso_list' %}">Listar los procesos<br>
+                    (Detalles, Modificar &amp; Borrar)</a></li>
+            </ul>
+        </h2>
+    </nav>
+    <main class="antifloat">
+        <h2 class="centrar">Modificar el proceso</h2>
+        <fieldset>
+            <legend>Modificar Proceso</legend>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="antifloat width-100">
+                    <div class="form-izq-30 padding-15">
+                        <p class="margin-14-20">{{ form.codigo_orden_fabricacion.label_tag }}</p>
+                        <p>{{ form.codigo_orden_fabricacion.errors }}</p>
+                        <p class="margin-14-20">{{ form.codigo_proceso.label_tag }}</p>
+                        <p>{{ form.codigo_proceso.errors }}</p>
+                        <p class="margin-14-20">{{ form.nombre_proceso.label_tag }}</p>
+                        <p>{{ form.nombre_proceso.errors }}</p>
+                        <p class="margin-14-20">{{ form.referencia.label_tag }}</p>
+                        <p>{{ form.referencia.errors }}</p>
+                        <p class="margin-14-20">{{ form.fecha_inicio.label_tag }}</p>
+                        <p>{{ form.fecha_inicio.errors }}</p>
+                        <p class="margin-14-20">{{ form.fecha_fin.label_tag }}</p>
+                        <p>{{ form.fecha_fin.errors }}</p>
+                        <p class="margin-14-20">{{form.activo.label_tag }}<br>(Si el proceso esta activo actualmente poner misma fecha inicio y fin y marcar esta casilla)</p>
+                        <p>{{ form.activo.errors }}</p>
+                    </div>
+                    <div class="float-der-70 padding-15">
+                        <p>{{ form.codigo_orden_fabricacion }}</p>
+                        <p>{{ form.codigo_proceso }}</p>
+                        <p>{{ form.nombre_proceso }}</p>
+                        <p>{{ form.referencia }}</p>
+                        <p>{{ form.fecha_inicio }}</p>
+                        <p>{{ form.fecha_fin }}</p>
+                        <p class="activo">{{ form.activo }}</p>
+                    </div>
+                </div>
+                <div class="padding-15 margin-top-0">
+                    <p>{{ form.equipo.label_tag }}</p>
+                    <p>{{ form.equipo }}</p>
+                    <p>{{ form.empleados.label_tag }}</p>
+                    <p>{{ form.empleados }}</p>
+                </div>
+                <input class="enviar_cancelar" type="submit" value="Nuevo Proceso">
+                <a class="enviar_cancelar" href="{% url 'proceso_list' %}">Cancelar</a>
+            </form>
+        </fieldset>
+</body>
+<footer>
+    <div class="footer-izq">
+        <h3 class="h3_footer">TODOS LOS DERECHOS RESERVADOS PARA ESTOS MARAVILLOSOS ALUMNOS</h3>
+    </div>
+    <div class="footer-der">
+        <div id="Contactos">
+            <a href="{%  url 'novedades_create' %}"><h2>Contáctanos</h2></a>
+            <img id="Telefono" src="{% static 'imagenes/telefono.png' %}" alt="TELEFONO">
+            <label for="Telefono">906348756</label>
+            <a href="https://twitter.com/?lang=es"><img id="Twitter" src="{% static 'imagenes/twitter.png' %}" alt="TWITTER"></a>
+            <a href="https://es-es.facebook.com/"><img class="Face_ins" src="{% static 'imagenes/facebook.png' %}" alt="FACEBOOK"></a>
+            <a href="https://www.instagram.com/?hl=es"><img class="Face_ins" src="{% static 'imagenes/instagram.png' %}" alt="INSTAGRAM"></a>
+        </div>
+    </div>
+</footer>
+{%block js %}
+
 {% endblock %}
+</html>

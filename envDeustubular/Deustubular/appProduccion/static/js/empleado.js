@@ -1,4 +1,4 @@
-const URL = "http://127.0.0.1:8000/appProduccion/produccion/empleados/api/";
+const URL = "http://127.0.0.1:8000/appProduccion/empleados/api/";
 
 //let ver = document.getElementById('ver');
 //ver.addEventListener('click', event => {
@@ -95,9 +95,9 @@ function crearEmpleado(id, nombre, dni){
         <li>
             <p class="mar-inferior p-lista">Empleado</p>
             <div class="mar-inferior">
-                <a href="http://127.0.0.1:8000/appProduccion/produccion/empleados/${id}/">Ver</a> ||
-                    <a href="http://127.0.0.1:8000/appProduccion/produccion/empleados/${id}/update/">Editar</a> ||
-                    <a href="http://127.0.0.1:8000/appProduccion/produccion/empleados/${id}/delete/">Borrar</a>
+                <a href="http://127.0.0.1:8000/appProduccion/empleados/${id}/">Ver</a> ||
+                <a href="http://127.0.0.1:8000/appProduccion/empleados/${id}/update/">Editar</a> ||
+                <a href="http://127.0.0.1:8000/appProduccion/empleados/${id}/delete/">Borrar</a>
             </div>
             <ul class="listas">
                 <li>ID: ${id}</li><br>
