@@ -25,13 +25,6 @@ class StaffRequiredMixin(object):
 def principal(request):
     return render(request, 'pagina_principal.html')
 
-def buscarEmpleado(request):
-    nombre = request.GET.get('nombre')
-    empleado = Empleado.objects.filter(nombre=nombre)
-    return JsonResponse(list(emList.values()), safe=False)
-
-
-
 
 """Vista para el formulario de creacion de equipo"""
 class EquipoCreateView(StaffRequiredMixin, View):

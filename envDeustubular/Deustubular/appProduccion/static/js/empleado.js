@@ -57,7 +57,7 @@ function introducirTabla(json){
 }
 
 
-
+/*Busqueda por nombre de empleado*/
 
 
 let busq = document.getElementById('busq');

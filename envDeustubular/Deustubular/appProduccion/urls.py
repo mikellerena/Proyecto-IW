@@ -3,10 +3,13 @@ from . import views
 from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
+
+    # urls principales
     path('produccion/', LoginView.as_view(), name='login'),
     path('produccion/logout/', LogoutView.as_view(), name='logout'),
     path('produccion/principal/', views.principal, name='principal'),
 
+    # urls de equipos
     path('produccion/equipos/create/', views.EquipoCreateView.as_view(), name='equipo_create'),
     path('produccion/equipos/', views.EquipoListView.as_view(), name='equipo_list'),
     path('produccion/equipos/<int:pk>/', views.EquipoDetailView.as_view(), name='equipo_detail'),
@@ -15,6 +18,7 @@ urlpatterns = [
     path('produccion/equipos/api/', views.EquipoJsonListView.as_view(), name='api_equipo_list'),
     path('produccion/equipos/api/<int:pk>/', views.EquipoJsonDetailView.as_view(), name='api_equipo_detail'),
 
+    # urls de empleados
     path('produccion/empleados/create/', views.EmpleadoCreateView.as_view(), name='empleado_create'),
     path('produccion/empleados/', views.EmpleadoListView.as_view(), name='empleado_list'),
     path('produccion/empleados/<int:pk>/', views.EmpleadoDetailView.as_view(), name='empleado_detail'),
@@ -23,6 +27,7 @@ urlpatterns = [
     path('produccion/empleados/api/', views.EmpleadoJsonListView.as_view(), name='api_empleado_list'),
     path('produccion/empleados/api/<int:pk>/', views.EmpleadoJsonDetailView.as_view(), name='api_empleado_detail'),
 
+    # urls de proesos
     path('produccion/procesos/create/', views.ProcesoCreateView.as_view(), name='proceso_create'),
     path('produccion/procesos/', views.ProcesoListView.as_view(), name='proceso_list'),
     path('produccion/procesos/<int:pk>/', views.ProcesoDetailView.as_view(), name='proceso_detail'),
@@ -31,7 +36,6 @@ urlpatterns = [
     path('produccion/procesos/api/', views.ProcesoJsonListView.as_view(), name='api_proceso_list'),
     path('produccion/procesos/api/<int:pk>/', views.ProcesoJsonDetailView.as_view(), name='api_proceso_detail'),
 
+    # url de novedades
     path('produccion/novedades', views.NovedadesCreateView.as_view(), name='novedades_create'),
-
-    path('produccion/empleados/buscar', views.EmpleadoJsonListView.as_view(), name='buscar_empleado'),
 ]
