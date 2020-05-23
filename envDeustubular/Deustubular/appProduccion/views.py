@@ -93,8 +93,6 @@ class EquipoJsonListView(View):
     def get(self, request):
         if('marca' in request.GET):
             eList = Equipo.objects.filter(marca__contains=request.GET['marca'])
-        elif ('modelo' in request.GET):
-            eList = Equipo.objects.filter(modelo__contains=request.GET['modelo'])
         else:
             eList = Equipo.objects.all()
         return JsonResponse(list(eList.values()), safe=False)
@@ -251,8 +249,8 @@ class ProcesoDeleteView(StaffRequiredMixin, DeleteView):
 """Vista para ver el listado de procesos en formato JSON"""
 class ProcesoJsonListView(View):
     def get(self, request):
-        if('codigo_proceso' in request.GET):
-            pList = Proceso.objects.filter(codigo_proceso__contins=request.GET['codigo_proceso'])
+        if('nombre_proceso' in request.GET):
+            pList = Proceso.objects.filter(nombre_proceso__contains=request.GET['nombre_proceso'])
         else:
             pList = Proceso.objects.all()
         return JsonResponse(list(pList.values()), safe=False)
