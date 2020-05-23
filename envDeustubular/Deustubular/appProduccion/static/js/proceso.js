@@ -17,23 +17,24 @@ function loadData(){
 
 function crearTabla(json){
     let tabla = `
-        <table id="table-js">
-            <thead>
-                <tr>
-                    <td>ID</td>
-                    <td class="td_estilos">Codigo Orden<br>Frabricación</td>
-                    <td class="td_estilos">Codigo Proceso</td>
-                    <td class="td_estilos">Referencia</td>
-                    <td class="td_estilos">Nombre</td>
-                    <td class="td_estilos">Enlaces</td>
-                </tr>
-            </thead>
-            <tbody>`;
+        <div class="div-table">
+            <table id="table-js">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td class="td_estilos">Codigo Orden<br>Frabricación</td>
+                        <td class="td_estilos">Codigo Proceso</td>
+                        <td class="td_estilos">Referencia</td>
+                        <td class="td_estilos">Nombre</td>
+                        <td class="td_estilos">Enlaces</td>
+                    </tr>
+                </thead>
+                <tbody>`;
 
     for (let dato of json){
         tabla += crearFila(dato.id, dato.codigo_orden_fabricacion, dato.codigo_proceso, dato.referencia, dato.nombre_proceso);
     }
-    tabla += `</tbody></table>`;
+    tabla += `</tbody></table></div>`;
     return tabla;
 }
 
